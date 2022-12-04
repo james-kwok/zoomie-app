@@ -1,0 +1,41 @@
+@use 'styles/partials/colors' as *;
+@use 'styles/partials/breakpoints' as *;
+@use 'styles/partials/typography' as *;
+
+* {
+  box-sizing: border-box;
+  font-family: $site-font-family;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  font-size: $mobile-medium-size;
+  line-height: $mobile-medium-lh;
+  font-weight: $mobile-medium-weight-light;
+}
+
+h1,
+h1,
+h3,
+p,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-size: $mobile-big-size;
+  line-height: $mobile-big-lh;
+  font-weight: $mobile-big-weight;
+  text-transform: uppercase;
+  color: white;
+  height: 2rem;
+  min-width: 8.25rem;
+  border-radius: 1.25rem;
+  background-image: linear-gradient(to right, $primary, $secondary);
+  border: none;
+  box-shadow: 2px 1px 5px rgb(0 0 0 / 0.15);
+}
