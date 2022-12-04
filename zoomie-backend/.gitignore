@@ -1,0 +1,5 @@
+/node_modules
+/.env
+/dogs_data.json
+/locations_data.json
+/users_data.json
