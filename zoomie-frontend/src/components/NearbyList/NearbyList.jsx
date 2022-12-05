@@ -2,7 +2,7 @@ import './NearbyList.scss';
 import LocationCardXL from '../LocationCardXL/LocationCardXL';
 import pinIcon from '../../assets/icons/pin-icon.svg';
 
-const NearbyList = () => {
+const NearbyList = ({ locations, dogs }) => {
   return (
     <>
       <div className="NearbyList">
@@ -11,7 +11,7 @@ const NearbyList = () => {
           <h2 className="NearbyList__title">Check-in to nearby parks</h2>
         </div>
         <div className="NearbyList__gallery">
-          <LocationCardXL />
+          <LocationCardXL locations={locations} dogs={dogs} />
         </div>
       </div>
     </>
