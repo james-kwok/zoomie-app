@@ -1,10 +1,10 @@
 import './App.scss';
+import Nav from './components/Nav/Nav';
 
 function App() {
   return (
     <>
-      <p>Welcome to Zoomie</p>
-      <button>Hello</button>
+      <Nav />
     </>
   );
 }
