@@ -1,0 +1,34 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+.NearbyList {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 0 1rem 1rem;
+
+  &__text-container {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-heavy;
+    color: $secondary-dark;
+    text-transform: uppercase;
+  }
+
+  &__gallery {
+    display: flex;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+    overflow-x: scroll;
+    overflow-y: hidden;
+    ::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
+    }
+  }
+}
