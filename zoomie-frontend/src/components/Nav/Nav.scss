@@ -2,27 +2,49 @@
 @use '../../styles/partials/colors' as *;
 @use '../../styles/partials/typography' as *;
 
-
 .Nav {
-    height: 3.5rem;
-    width: 100%;
+  height: 3.5rem;
+  width: 100%;
+  display: flex;
+  padding: 0.75rem 1rem;
+
+  &__logo-container {
     display: flex;
-    padding: 0.75rem 1rem;
+    align-items: center;
+  }
 
-    &__logo-container {
-        display: flex;
-        align-items: center;
-    }
+  &__logo {
+    height: 2rem;
+  }
 
-    &__logo {
-        height: 2rem;
-    }
+  &__logo-text {
+    height: 1rem;
+  }
 
-    &__logo-text {
-        height: 1rem;
-    }
+  &__profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    width: 50%;
+  }
 
-    &__profile-container {
-        display: flex;
-    }
+  &__profile-text {
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-heavy;
+    color: $secondary-dark;
+    margin-right: 0.25rem;
+  }
+
+  &__profile-pic {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.25rem;
+  }
+
+  &__profile-icon {
+    height: 0.5rem;
+    width: auto;
+  }
 }

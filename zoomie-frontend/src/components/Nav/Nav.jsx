@@ -17,7 +17,7 @@ const Nav = () => {
           />
         </div>
         <div className="Nav__profile-container">
-          <p className="Nav__profile-text">Signed in as Charlie</p>
+          <p className="Nav__profile-text">Charlie</p>
           <img
             className="Nav__profile-pic"
             src={placeholder}
