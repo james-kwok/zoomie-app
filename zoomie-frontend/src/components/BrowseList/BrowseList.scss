@@ -1,0 +1,28 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+.BrowseList {
+  padding: 1rem;
+  &__title {
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-heavy;
+    color: $secondary-dark;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+  }
+
+  &__link-text {
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-heavy;
+    color: $secondary;
+  }
+}

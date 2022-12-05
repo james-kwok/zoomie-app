@@ -30,8 +30,6 @@ const LocationCardXL = ({ location, dogs, remainingDogs }) => {
             </p>
           </div>
         </div>
-        {/* );
-        })} */}
       </div>
     </>
   );
