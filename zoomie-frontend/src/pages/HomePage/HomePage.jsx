@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import BrowseList from '../../components/BrowseList/BrowseList';
 import NearbyList from '../../components/NearbyList/NearbyList';
 
 const HomePage = () => {
@@ -36,6 +37,7 @@ const HomePage = () => {
   return (
     <>
       <NearbyList locations={locations} dogs={dogs} />
+      <BrowseList locations={locations} dogs={dogs} />
     </>
   );
 };

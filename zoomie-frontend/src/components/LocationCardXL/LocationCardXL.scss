@@ -3,15 +3,6 @@
 @use '../../styles/partials/typography' as *;
 
 .LocationCardXL {
-  display: flex;
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
-  overflow-x: scroll;
-  overflow-y: hidden;
-  ::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-  }
-  
   &__card {
     height: 7.5rem;
     margin-right: 0.5rem;
