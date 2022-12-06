@@ -3,10 +3,16 @@
 @use '../../styles/partials/typography' as *;
 
 .Nav {
-  height: 3.5rem;
+  background-color: $white;
+  height: 4.375rem;
   width: 100%;
+  box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.15);
   display: flex;
   padding: 0.75rem 1rem;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 
   &__logo-container {
     display: flex;
@@ -14,11 +20,11 @@
   }
 
   &__logo {
-    height: 2rem;
+    height: 2.5rem;
   }
 
   &__logo-text {
-    height: 1rem;
+    height: 1.25rem;
   }
 
   &__profile-container {
@@ -34,17 +40,17 @@
     line-height: $mobile-medium-lh;
     font-weight: $mobile-medium-weight-heavy;
     color: $secondary-dark;
-    margin-right: 0.25rem;
+    margin-right: 0.5rem;
   }
 
   &__profile-pic {
-    height: 1.5rem;
-    width: 1.5rem;
-    margin-right: 0.25rem;
+    height: 1.875rem;
+    width: 1.875rem;
+    margin-right: 0.5rem;
   }
 
   &__profile-icon {
-    height: 0.5rem;
+    height: 0.625rem;
     width: auto;
   }
 }

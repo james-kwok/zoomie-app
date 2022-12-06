@@ -3,6 +3,7 @@
 @use '../../styles/partials/typography' as *;
 
 .BrowseList {
+  margin: 1rem 0;
   padding: 1rem;
   &__title {
     font-size: $mobile-medium-size;

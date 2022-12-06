@@ -17,6 +17,11 @@
     margin: 1rem;
   }
 
+  &__icon {
+    height: 1rem;
+    margin-right: 0.25rem;
+  }
+
   &__title {
     font-size: $mobile-medium-size;
     line-height: $mobile-medium-lh;

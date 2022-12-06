@@ -3,8 +3,15 @@
 @use '../../styles/partials/typography' as *;
 
 .LocationCardXL {
+  cursor: pointer;
+  :hover {
+    transition: all .2s ease-in-out;
+    transform: scale(1.01);
+    opacity: 100%;
+    filter: contrast(105%)
+  }
   &__card {
-    height: 7.5rem;
+    height: 9.375rem;
     margin-right: 0.5rem;
     position: relative;
     box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.15);
@@ -12,13 +19,14 @@
   }
 
   &__gradient {
+    opacity: 85%;
     &::after {
       display: block;
       position: relative;
       background-image: linear-gradient($black, $black);
       opacity: 30%;
-      margin-top: -126.6px;
-      height: 7.5rem;
+      margin-top: -156px;
+      height: 9.375rem;
       width: 100%;
       content: '';
       border-radius: 0.625rem;
@@ -26,47 +34,50 @@
   }
 
   &__image {
-    height: 7.5rem;
-    width: 9.375rem;
+    height: 9.375rem;
+    width: 11.7rem;
     border-radius: 0.625rem;
   }
 
   &__title {
-    width: 8.5rem;
+    width: 11rem;
     color: $white;
     font-size: $mobile-big-size;
     line-height: $mobile-big-lh;
     font-weight: $mobile-big-weight;
     position: absolute;
-    bottom: 2.5rem;
-    left: 0.5rem;
+    bottom: 3.25rem;
+    left: 0.625rem;
+    pointer-events: none;
   }
 
   &__text {
-    width: 9.375rem;
+    width: 11.7rem;
     color: $white;
     font-size: $mobile-small-size;
     line-height: $mobile-small-lh;
     font-weight: $mobile-small-weight-light;
     position: absolute;
-    bottom: 1.75rem;
-    left: 0.5rem;
+    bottom: 2.25rem;
+    left: 0.625rem;
+    pointer-events: none;
   }
 
   &__gallery {
     display: flex;
     align-items: center;
     position: absolute;
-    bottom: 0.5rem;
-    left: 0.5rem;
+    bottom: 0.625rem;
+    left: 0.625rem;
+    pointer-events: none;
   }
 
   &__avatar {
-    height: 1rem;
-    width: 1rem;
+    height: 1.25rem;
+    width: 1.25rem;
     object-fit: cover;
     border-radius: 1.25rem;
-    margin-right: 0.25rem;
+    margin-right: 0.3125rem;
   }
 
   &__remaining-dogs {

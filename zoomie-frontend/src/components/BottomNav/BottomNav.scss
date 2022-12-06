@@ -3,7 +3,7 @@
 @use '../../styles/partials/typography' as *;
 
 .BottomNav {
-  height: 2.5rem;
+  height: 3.125rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -25,5 +25,15 @@
     justify-content: center;
     width: 50%;
     cursor: pointer;
+  }
+
+  &__home-icon {
+    height: 2rem;
+    width: auto;
+  }
+
+  &__profile-icon {
+    height: 2rem;
+    width: auto;
   }
 }
