@@ -3,20 +3,20 @@
 @use '../../styles/partials/typography' as *;
 
 .LocationCardXL {
-  margin-top: 0.25rem;
+  margin: 0.25rem 0;
   cursor: pointer;
-  :hover {
-    transition: all .2s ease-in-out;
-    transform: scale(1.01);
-    opacity: 100%;
-    filter: contrast(105%)
-  }
   &__card {
     height: 9.375rem;
     margin-right: 0.5rem;
     position: relative;
     box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.15);
     border-radius: 0.625rem;
+    :hover {
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.03);
+      opacity: 100%;
+      filter: contrast(105%);
+    }
   }
 
   &__gradient {
