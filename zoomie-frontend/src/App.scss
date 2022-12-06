@@ -5,6 +5,14 @@
 * {
   box-sizing: border-box;
   font-family: $site-font-family;
+  ::selection {
+    background: $secondary; /* WebKit/Blink Browsers */
+    color: $white;
+  }
+  ::-moz-selection {
+    background: $secondary; /* Gecko Browsers */
+    color: $white;
+  }
 }
 
 body {
