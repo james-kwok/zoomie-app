@@ -8,8 +8,9 @@
   flex-wrap: wrap;
   padding: 0.5rem;
   border-radius: 0.625rem;
-  box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.15);
-  margin-bottom: 0.5rem;
+  box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.08);
+  margin: 0.25rem 0 1rem 0;
+  cursor: pointer;
 
   &__image {
     height: 3.75rem;

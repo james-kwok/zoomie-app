@@ -3,6 +3,7 @@
 @use '../../styles/partials/typography' as *;
 
 .LocationCardXL {
+  margin-top: 0.25rem;
   cursor: pointer;
   :hover {
     transition: all .2s ease-in-out;
