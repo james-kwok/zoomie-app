@@ -6,11 +6,11 @@
   box-sizing: border-box;
   font-family: $site-font-family;
   ::selection {
-    background: $secondary; /* WebKit/Blink Browsers */
+    background: $secondary;
     color: $white;
   }
   ::-moz-selection {
-    background: $secondary; /* Gecko Browsers */
+    background: $secondary;
     color: $white;
   }
 }
