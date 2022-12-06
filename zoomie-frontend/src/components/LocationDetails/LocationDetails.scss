@@ -1,0 +1,64 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+.LocationDetails {
+  overflow-x: hidden;
+  margin-top: 4.375rem;
+  &__hero {
+    height: 15rem;
+    width: 100%;
+  }
+
+  &__hero-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__info {
+    width: 100%;
+  }
+
+  &__location {
+    width: 50%;
+  }
+
+  &__text-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__info-title {
+    font-size: $mobile-xl-size;
+    line-height: $mobile-xl-lh;
+    font-weight: $mobile-xl-weight;
+    color: $secondary;
+  }
+
+  &__address {
+    font-size: $mobile-big-size;
+    line-height: $mobile-big-lh;
+    font-weight: $mobile-big-weight-light;
+    color: $secondary;
+  }
+
+  &__category-label {
+    border-radius: 0.125rem;
+    height: 1.5rem;
+    width: 4rem;
+    background-color: $secondary;
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
+
+  &__category-text {
+    font-size: $mobile-small-size;
+    line-height: $mobile-small-lh;
+    font-weight: $mobile-small-weight-light;
+    color: $white;
+    text-transform: uppercase;
+    margin: auto;
+  }
+}

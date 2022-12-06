@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './NearbyList.scss';
 import LocationCardXL from '../LocationCardXL/LocationCardXL';
 import pinIcon from '../../assets/icons/pin-icon.svg';
@@ -16,12 +17,13 @@ const NearbyList = ({ locations, dogs }) => {
         <div className="NearbyList__gallery">
           {displayLocations.map((location, index) => {
             return (
-              <LocationCardXL
-                key={index}
-                location={location}
-                dogs={displayDogs}
-                remainingDogs={remainingDogs}
-              />
+              <Link to={`/locations/${location.location_id}`} key={index}>
+                <LocationCardXL
+                  location={location}
+                  dogs={displayDogs}
+                  remainingDogs={remainingDogs}
+                />
+              </Link>
             );
           })}
         </div>

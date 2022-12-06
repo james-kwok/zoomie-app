@@ -6,12 +6,12 @@
   box-sizing: border-box;
   font-family: $site-font-family;
   ::selection {
-    background: $secondary;
-    color: $white;
+    background: $primary;
+    color: $secondary;
   }
   ::-moz-selection {
-    background: $secondary;
-    color: $white;
+    background: $primary;
+    color: $secondary;
   }
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
@@ -42,13 +42,13 @@ span {
 button {
   font-size: $mobile-big-size;
   line-height: $mobile-big-lh;
-  font-weight: $mobile-big-weight;
+  font-weight: $mobile-big-weight-heavy;
   text-transform: uppercase;
-  color: white;
+  color: $black;
   height: 2rem;
   min-width: 8.25rem;
   border-radius: 1.25rem;
-  background-image: linear-gradient(to right, $primary, $secondary);
+  background-color: $primary;
   border: none;
   box-shadow: 2px 1px 5px rgb(0 0 0 / 0.15);
 }
