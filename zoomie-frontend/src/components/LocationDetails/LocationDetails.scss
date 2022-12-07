@@ -18,15 +18,26 @@
 
   &__info {
     width: 100%;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid $bg-light;
   }
 
   &__location {
-    width: 50%;
+    width: 100%;
   }
 
   &__text-container {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+  }
+
+  &__title, &__attendance-title {
+    font-size: $mobile-small-size;
+    line-height: $mobile-small-lh;
+    font-weight: $mobile-small-weight-light;
+    color: $gray;
+    text-transform: uppercase;
   }
 
   &__info-title {
@@ -34,6 +45,8 @@
     line-height: $mobile-xl-lh;
     font-weight: $mobile-xl-weight;
     color: $secondary;
+    width: 100%;
+    margin: 0.5rem 0 0.25rem 0;
   }
 
   &__address {
@@ -41,10 +54,12 @@
     line-height: $mobile-big-lh;
     font-weight: $mobile-big-weight-light;
     color: $secondary;
+    width: 100%;
+    margin-bottom: 0.5rem;
   }
 
   &__category-label {
-    border-radius: 0.125rem;
+    border-radius: 0.25rem;
     height: 1.5rem;
     width: 4rem;
     background-color: $secondary;
@@ -60,5 +75,67 @@
     color: $white;
     text-transform: uppercase;
     margin: auto;
+  }
+
+  &__button-wrapper {
+    height: 3.375rem;
+    width: 100%;
+    position: fixed;
+    bottom: 3rem;
+    left: 0;
+    padding: 0 1rem;
+  }
+
+  &___button {
+    cursor: pointer;
+  }
+
+  &__button-text {
+    pointer-events: none;
+  }
+
+  &__map {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid $bg-light;
+  }
+
+  &__map-placeholder {
+    width: 100%;
+    height: 14.5rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  &__attendance {
+    padding: 1.5rem 1rem;
+  }
+
+  &__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.5rem 0 8rem 0;
+  }
+
+  &__profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__avatar {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 2rem;
+    margin: 0.75rem;
+  }
+
+  &__dog-name {
+    font-size: $mobile-small-size;
+    line-height: $mobile-small-lh;
+    font-weight: $mobile-small-weight-light;
+    color: $secondary;
   }
 }

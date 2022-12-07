@@ -44,11 +44,18 @@ button {
   line-height: $mobile-big-lh;
   font-weight: $mobile-big-weight-heavy;
   text-transform: uppercase;
-  color: $black;
-  height: 2rem;
-  min-width: 8.25rem;
-  border-radius: 1.25rem;
+  color: $secondary;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
   background-color: $primary;
   border: none;
-  box-shadow: 2px 1px 5px rgb(0 0 0 / 0.15);
+  box-shadow: 2px 1px 5px rgb(0 0 0 / 0.08);
+  cursor: pointer;
+  &:hover {
+    background-color: $secondary;
+    color: $white;
+    transition: all 0.25s ease-in-out;
+    transform: scale(1.04);
+  }
 }
