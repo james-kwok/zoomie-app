@@ -1,0 +1,56 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+.NavBack {
+  background-color: $white;
+  height: 4.375rem;
+  width: 100%;
+  box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.05);
+  display: flex;
+  padding: 0.75rem 1rem;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+
+  &__logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  &__back-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    width: 50%;
+  }
+
+  &__profile-text {
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-heavy;
+    color: $secondary;
+    margin-right: 0.5rem;
+  }
+
+  &__profile-pic {
+    height: 1.875rem;
+    width: 1.875rem;
+    margin-right: 0.5rem;
+  }
+
+  &__profile-icon {
+    height: 0.625rem;
+    width: auto;
+  }
+}
