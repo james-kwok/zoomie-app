@@ -26,7 +26,7 @@
 
   &__container {
     width: 58%;
-    margin: 0 0 0 1rem;
+    margin: 0 0 0 1.25rem;
   }
 
   &__title {
@@ -35,7 +35,7 @@
     line-height: $mobile-medium-lh;
     font-weight: $mobile-medium-weight-heavy;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -47,7 +47,7 @@
     line-height: $mobile-medium-lh;
     font-weight: $mobile-medium-weight-light;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
