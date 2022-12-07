@@ -10,10 +10,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Nav />
         <Routes>
           <Route path="/" element={<Navigate to="/locations" />} />
-          <Route path="/locations" element={<HomePage />} />
+          <Route path="/locations" element={<><Nav /><HomePage /></>} />
           <Route path="/locations/:id" element={<><NavBack /><LocationDetailsPage /></>} />
         </Routes>
         <BottomNav />
