@@ -3,24 +3,30 @@
 @use '../../styles/partials/typography' as *;
 
 .LocationCard {
-  height: 5rem;
+  height: 6.25rem;
   display: flex;
   flex-wrap: wrap;
-  padding: 0.5rem;
+  align-items: center;
+  padding-right: 0.5rem;
   border-radius: 0.625rem;
   box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.08);
   margin: 0.25rem 0 1rem 0;
   cursor: pointer;
 
+  &:hover {
+    box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 0.1);
+  }
+
   &__image {
-    height: 3.75rem;
-    width: 4.375rem;
-    border-radius: 0.3125rem;
+    height: 100%;
+    width: 4.875rem;
+    object-fit: cover;
+    border-radius: 0.625rem 0 0 0.625rem;
   }
 
   &__container {
-    width: 70%;
-    margin: 0 0 0 0.5rem;
+    width: 58%;
+    margin: 0 0 0 1rem;
   }
 
   &__title {
@@ -28,6 +34,11 @@
     font-size: $mobile-medium-size;
     line-height: $mobile-medium-lh;
     font-weight: $mobile-medium-weight-heavy;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__text {
@@ -35,6 +46,11 @@
     font-size: $mobile-medium-size;
     line-height: $mobile-medium-lh;
     font-weight: $mobile-medium-weight-light;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__gallery {
