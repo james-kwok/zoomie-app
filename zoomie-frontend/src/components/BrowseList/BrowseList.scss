@@ -14,6 +14,10 @@
     margin-bottom: 1rem;
   }
 
+  &__list-link {
+    text-decoration: none;
+  }
+
   &__link {
     display: flex;
     justify-content: center;

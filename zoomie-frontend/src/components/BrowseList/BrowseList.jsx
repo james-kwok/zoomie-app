@@ -1,5 +1,6 @@
-import LocationCard from '../LocationCard/LocationCard';
+import { Link } from 'react-router-dom';
 import './BrowseList.scss';
+import LocationCard from '../LocationCard/LocationCard';
 import chevronRight from '../../assets/icons/chevron-right.svg';
 
 const BrowseList = ({ locations, dogs }) => {
@@ -13,12 +14,13 @@ const BrowseList = ({ locations, dogs }) => {
         <div className="BrowseList__list">
           {displayLocations.map((location, index) => {
             return (
-              <LocationCard
-                key={index}
-                location={location}
-                dogs={displayDogs}
-                remainingDogs={remainingDogs}
-              />
+              <Link className="BrowseList__list-link" to={`/locations/${location.location_id}`} key={index}>
+                <LocationCard
+                  location={location}
+                  dogs={displayDogs}
+                  remainingDogs={remainingDogs}
+                />
+              </Link>
             );
           })}
         </div>
