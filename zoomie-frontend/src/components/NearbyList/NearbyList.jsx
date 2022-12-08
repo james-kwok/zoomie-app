@@ -17,7 +17,7 @@ const NearbyList = ({ locations, dogs }) => {
         <div className="NearbyList__gallery">
           {displayLocations.map((location, index) => {
             return (
-              <Link to={`/locations/${location.location_id}`} key={index}>
+              <Link to={`/locations/${location.id}`} key={index}>
                 <LocationCardXL
                   location={location}
                   dogs={displayDogs}

@@ -14,7 +14,7 @@ const BrowseList = ({ locations, dogs }) => {
         <div className="BrowseList__list">
           {displayLocations.map((location, index) => {
             return (
-              <Link className="BrowseList__list-link" to={`/locations/${location.location_id}`} key={index}>
+              <Link className="BrowseList__list-link" to={`/locations/${location.id}`} key={index}>
                 <LocationCard
                   location={location}
                   dogs={displayDogs}

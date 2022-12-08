@@ -1,13 +1,15 @@
 exports.up = function (knex) {
   return knex.schema.createTable('dogs', (table) => {
-    table.uuid('dog_id').primary();
+    table.increments('id').primary();
     table.string('name').notNullable();
     table.string('breed').notNullable();
     table.string('img').notNullable();
     table.string('bio').notNullable();
     table
-      .uuid('user_id')
-      .references('user_id')
+      .integer('user_id')
+      .unsigned()
+      .notNullable()
+      .references('id')
       .inTable('users')
       .onUpdate('CASCADE')
       .onDelete('CASCADE');

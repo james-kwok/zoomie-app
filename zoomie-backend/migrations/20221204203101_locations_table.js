@@ -1,6 +1,6 @@
 exports.up = function (knex) {
   return knex.schema.createTable('locations', (table) => {
-    table.uuid('location_id').primary();
+    table.increments('id').primary();
     table.string('address').notNullable();
     table.string('name').notNullable();
     table.string('img').notNullable();

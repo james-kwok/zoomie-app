@@ -12,7 +12,7 @@ const getLocationsList = (req, res) => {
 
 const getSingleLocation = (req, res) => {
   db('locations')
-    .where({ location_id: req.params.id })
+    .where({ id: req.params.id })
     .then((data) => {
       if (!data.length) {
         return res
