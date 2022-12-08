@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import logoWhite from '../../assets/logos/zoomie-logo-white.svg';
 import logoTextWhite from '../../assets/logos/zoomie-text-white.svg';
+import backIcon from '../../assets/icons/back-arrow-white.svg';
 import './SignUpForm.scss';
 import bg from '../../assets/images/bg.png';
 
 const SignUpForm = () => {
+  const navigate = useNavigate();
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
@@ -34,6 +37,7 @@ const SignUpForm = () => {
       .then((res) => {
         console.log(res);
         setSuccess(true);
+        navigate('/locations');
         e.target.reset();
       })
       .catch((error) => {
@@ -47,12 +51,20 @@ const SignUpForm = () => {
       <div className="SignUpForm">
         <img className="SignUpForm__bg" src={bg} alt="background-image" />
         <div className="SignUpForm__logo-container">
-          <img className="SignUpForm__logo" src={logoWhite} alt="zoomie-logo" />
+          <Link to='/locations' className="SignUpForm__navigate-link">
+            <img
+              className="SignUpForm__navigate"
+              src={backIcon}
+              alt="back-to-locations"
+            />
+            <p className="SignUpForm__navigate-text">Back</p>
+            {/* <img className="SignUpForm__logo" src={logoWhite} alt="zoomie-logo" />
           <img
             className="SignUpForm__logo-text"
             src={logoTextWhite}
             alt="zoomie-text"
-          />
+          /> */}
+          </Link>
           <div className="SignUpForm__text-container">
             <h1 className="SignUpForm__title">Sign Up</h1>
             <p className="SignUpForm__text">
@@ -63,7 +75,9 @@ const SignUpForm = () => {
         <div className="SignUpForm__sheet">
           <form onSubmit={onSubmit} className="SignUpForm__form">
             <section className="SignUpForm__section">
-              <label className="SignUpForm__label" htmlFor="username">Email</label>
+              <label className="SignUpForm__label" htmlFor="username">
+                Email
+              </label>
               <input
                 onChange={onChange}
                 id="email"
@@ -75,7 +89,9 @@ const SignUpForm = () => {
               />
             </section>
             <section className="SignUpForm__section">
-              <label className="SignUpForm__label" htmlFor="password">Password</label>
+              <label className="SignUpForm__label" htmlFor="password">
+                Password
+              </label>
               <input
                 onChange={onChange}
                 id="password"

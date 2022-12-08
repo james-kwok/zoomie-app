@@ -27,7 +27,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/signup" />} />
+          <Route path="/" element={<Navigate to="/locations" />} />
           <Route
             path="/locations"
             element={
