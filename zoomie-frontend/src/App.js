@@ -6,7 +6,7 @@ import Nav from './components/Nav/Nav';
 import NavBack from './components/NavBack/NavBack';
 import HomePage from './pages/HomePage/HomePage';
 import LocationDetailsPage from './pages/LocationDetailsPage/LocationDetailsPage';
-import SignUpForm from './components/SignUpForm/SignUpForm';
+import SignUpPage from './pages/SignUpPage/SignUpPage';
 
 const App = () => {
   useEffect(() => {
@@ -27,14 +27,14 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/locations" />} />
+          <Route path="/" element={<Navigate to="/signup" />} />
           <Route
             path="/locations"
             element={
               <>
                 <Nav />
                 <HomePage />
-                <SignUpForm />
+                <BottomNav />
               </>
             }
           />
@@ -44,11 +44,12 @@ const App = () => {
               <>
                 <NavBack />
                 <LocationDetailsPage />
+                <BottomNav />
               </>
             }
           />
+          <Route path="/signup" element={<SignUpPage />} />
         </Routes>
-        <BottomNav />
       </BrowserRouter>
     </>
   );

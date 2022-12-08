@@ -32,7 +32,10 @@
     align-items: center;
     justify-content: flex-end;
     margin-left: auto;
-    width: 50%;
+  }
+
+  &__signup {
+    width: 8.5rem;
   }
 
   &__profile-text {

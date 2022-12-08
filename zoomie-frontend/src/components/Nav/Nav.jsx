@@ -18,7 +18,11 @@ const Nav = () => {
           />
         </Link>
         <div className="Nav__profile-container">
-          <p className="Nav__profile-text">Charlie</p>
+          <Link to="/signup">
+            <button className="Nav__signup">Sign Up</button>
+          </Link>
+          {/* code for signed in users */}
+          {/* <p className="Nav__profile-text">Charlie</p>
           <img
             className="Nav__profile-pic"
             src={placeholder}
@@ -28,7 +32,7 @@ const Nav = () => {
             className="Nav__profile-icon"
             src={dropdown}
             alt="select-another-dog-profile"
-          />
+          /> */}
         </div>
       </div>
     </>
