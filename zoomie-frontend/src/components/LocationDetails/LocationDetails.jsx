@@ -1,7 +1,32 @@
 import './LocationDetails.scss';
-import mapPlaceholder from '../../assets/images/placeholder-map.png';
+import mapboxgl from '!mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import React, { useRef, useEffect, useState } from 'react';
 
-const LocationDetails = ({ location, dog }) => {
+mapboxgl.accessToken =
+  'pk.eyJ1IjoiamFla3dvayIsImEiOiJjbGJmbXExNzkwN21nM3ZwZHA4ZHE4dWRjIn0.7Ffd3Qdpt9hn4g8IR-FQjw';
+
+const LocationDetails = ({ location, dog, lng, lat}) => {
+  console.log(lng, lat)
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  // const [lng, setLng] = useState(-70.00);
+  // const [lat, setLat] = useState(41.00);
+  // const [zoom, setZoom] = useState(9);
+
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/mapbox/streets-v12',
+      center: [lng, lat],
+      zoom: 12,
+    });
+    new mapboxgl.Marker()
+      .setLngLat([lng, lat])
+      .addTo(map.current);
+  },);
+
   return (
     <>
       <div className="LocationDetails">
@@ -31,11 +56,10 @@ const LocationDetails = ({ location, dog }) => {
         </div>
         <div className="LocationDetails__map">
           <h3 className="LocationDetails__title">Location Map</h3>
-          <img
-            className="LocationDetails__map-placeholder"
-            src={mapPlaceholder}
-            alt="location-map"
-          />
+          <div className="LocationDetails__map-info">
+            {/* Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} */}
+          </div>
+          <div ref={mapContainer} className="LocationDetails__map-container" />
         </div>
         <div className="LocationDetails__attendance">
           <h2 className="LocationDetails__attendance-title">Who's Going?</h2>

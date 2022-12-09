@@ -2,6 +2,9 @@ exports.up = function (knex) {
   return knex.schema.createTable('locations', (table) => {
     table.increments('id').primary();
     table.string('address').notNullable();
+    table.string('city').notNullable();
+    table.string('lat').notNullable();
+    table.string('lng').notNullable();
     table.string('name').notNullable();
     table.string('img').notNullable();
   });

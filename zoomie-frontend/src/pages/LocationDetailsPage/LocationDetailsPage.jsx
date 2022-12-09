@@ -15,7 +15,7 @@ const LocationDetailsPage = () => {
       .get(locationsURL)
       .then((response) => {
         setLocations(response.data);
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
       })
       .catch((error) => {
         console.log(error);
@@ -37,9 +37,19 @@ const LocationDetailsPage = () => {
     return <></>;
   }
 
+  const valuesToArray = Object.values(locations)
+  // console.log(valuesToArray)
+
+  const lngLatValues = valuesToArray.slice(3, -2)
+  // [lngLatValues[1], lngLatValues[0]] = [lngLatValues[0], lngLatValues[1]]
+
+  console.log(isNaN(locations.lng))
+
   return (
     <>
-      <LocationDetails location={locations} dog={dogs} />
+      {(locations.lng && locations.lat) ? (
+        <LocationDetails location={locations} dog={dogs} lng={locations.lng} lat={locations.lat} />
+      ) : null}
     </>
   );
 };

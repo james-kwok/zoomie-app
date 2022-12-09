@@ -78,6 +78,7 @@
   }
 
   &__button-wrapper {
+    z-index: 1;
     height: 3.375rem;
     width: 100%;
     position: fixed;
@@ -99,12 +100,11 @@
     border-bottom: 1px solid $bg-light;
   }
 
-  &__map-placeholder {
-    width: 100%;
-    height: 14.5rem;
-    object-fit: cover;
-    border-radius: 0.5rem;
+  &__map-container {
+    z-index: 0;
+    height: 25rem;
     margin-top: 1rem;
+    border-radius: 1rem;
   }
 
   &__attendance {
