@@ -3,16 +3,11 @@ import mapboxgl from '!mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import React, { useRef, useEffect, useState } from 'react';
 
-mapboxgl.accessToken =
-  'pk.eyJ1IjoiamFla3dvayIsImEiOiJjbGJmbXExNzkwN21nM3ZwZHA4ZHE4dWRjIn0.7Ffd3Qdpt9hn4g8IR-FQjw';
+mapboxgl.accessToken = process.env.REACT_APP_MB_ACCESS
 
-const LocationDetails = ({ location, dog, lng, lat}) => {
-  console.log(lng, lat)
+const LocationDetails = ({ location, dog, lng, lat }) => {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  // const [lng, setLng] = useState(-70.00);
-  // const [lat, setLat] = useState(41.00);
-  // const [zoom, setZoom] = useState(9);
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -20,12 +15,10 @@ const LocationDetails = ({ location, dog, lng, lat}) => {
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
       center: [lng, lat],
-      zoom: 12,
+      zoom: 15,
     });
-    new mapboxgl.Marker()
-      .setLngLat([lng, lat])
-      .addTo(map.current);
-  },);
+    new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map.current);
+  });
 
   return (
     <>

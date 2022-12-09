@@ -37,18 +37,15 @@ const LocationDetailsPage = () => {
     return <></>;
   }
 
-  const valuesToArray = Object.values(locations)
-  // console.log(valuesToArray)
-
-  const lngLatValues = valuesToArray.slice(3, -2)
-  // [lngLatValues[1], lngLatValues[0]] = [lngLatValues[0], lngLatValues[1]]
-
-  console.log(isNaN(locations.lng))
-
   return (
     <>
-      {(locations.lng && locations.lat) ? (
-        <LocationDetails location={locations} dog={dogs} lng={locations.lng} lat={locations.lat} />
+      {locations.lng && locations.lat ? (
+        <LocationDetails
+          location={locations}
+          dog={dogs}
+          lng={locations.lng}
+          lat={locations.lat}
+        />
       ) : null}
     </>
   );
