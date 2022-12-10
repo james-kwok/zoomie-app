@@ -6,7 +6,7 @@ import Nav from './components/Nav/Nav';
 import NavBack from './components/NavBack/NavBack';
 import HomePage from './pages/HomePage/HomePage';
 import LocationDetailsPage from './pages/LocationDetailsPage/LocationDetailsPage';
-import SignUpPage from './pages/SignUpPage/SignUpPage';
+import SignUpLogInPage from './pages/SignUpPage/SignUpLogInPage';
 
 const App = () => {
   useEffect(() => {
@@ -48,7 +48,7 @@ const App = () => {
               </>
             }
           />
-          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/signup" element={<SignUpLogInPage />} />
         </Routes>
       </BrowserRouter>
     </>

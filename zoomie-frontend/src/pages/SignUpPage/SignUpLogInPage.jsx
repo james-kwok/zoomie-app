@@ -1,7 +1,7 @@
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
-import './SignUpPage.scss';
+import './SignUpLogInPage.scss';
 
-const SignUpPage = () => {
+const SignUpLogInPage = () => {
 
   return (
     <>
@@ -10,4 +10,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default SignUpLogInPage;
