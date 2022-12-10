@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use('/locations', locationsRouter);
 app.use('/dogs', dogsRouter);
-app.use('/signup', usersRouter);
+app.use('/users', usersRouter);
 
 const PORT = process.env.PORT;
 app.listen(PORT, (_req, _res) => {

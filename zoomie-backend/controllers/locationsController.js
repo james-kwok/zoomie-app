@@ -1,31 +1,25 @@
 const db = require('knex')(require('../knexfile'));
 
-const getLocationsList = (req, res) => {
-  db('locations')
-    .then((data) => {
-      res.status(200).json(data);
-    })
-    .catch((error) => {
-      res.status(404).send(`Error retrieving locations ${error}`);
+const getLocationsList = async (req, res) => {
+  try {
+    const locations = await db('locations');
+    res.status(200).json(locations);
+  } catch (error) {
+    res.status(404).json({
+      message: 'Locations not found.',
     });
+  }
 };
 
-const getSingleLocation = (req, res) => {
-  db('locations')
-    .where({ id: req.params.id })
-    .then((data) => {
-      if (!data.length) {
-        return res
-          .status(404)
-          .send(`Location with id: ${req.params.id} is not found`);
-      }
-      res.status(200).json(data[0]);
-    })
-    .catch((error) => {
-      res
-        .status(400)
-        .send(`Error retrieving location ${req.params.id} ${error}`);
+const getSingleLocation = async (req, res) => {
+  try {
+    const location = await db('locations').where({ id: req.params.id });
+    res.status(200).json(location[0]);
+  } catch (error) {
+    res.status(404).json({
+      message: 'Location not found.',
     });
+  }
 };
 
 module.exports = {
