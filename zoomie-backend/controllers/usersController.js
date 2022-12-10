@@ -1,6 +1,6 @@
 const db = require('knex')(require('../knexfile'));
 const bcrypt = require('bcrypt');
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken');
 
 const addUser = async (req, res) => {
   const { email, password } = req.body;
@@ -45,8 +45,7 @@ const getUser = async (req, res) => {
       .json({ error: 'Login requires email and password fields.' });
   }
   try {
-    const users = await db('users')
-      .where({ email: req.body.email });
+    const users = await db('users').where({ email: req.body.email });
     if (users.length === 0) {
       return res.status(401).json({ error: 'Invalid login credentials.' });
     }
@@ -58,7 +57,9 @@ const getUser = async (req, res) => {
     if (!passwordIsValid) {
       return res.status(401).json({ error: 'Incorrect password.' });
     }
-    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
+      expiresIn: '1h',
+    });
 
     return res.status(200).json({
       message: 'User logged in successfully',
