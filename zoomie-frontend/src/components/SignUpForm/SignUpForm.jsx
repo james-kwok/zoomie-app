@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
-import logoWhite from '../../assets/logos/zoomie-logo-white.svg';
-import logoTextWhite from '../../assets/logos/zoomie-text-white.svg';
 import backIcon from '../../assets/icons/back-arrow-white.svg';
 import './SignUpForm.scss';
 import bg from '../../assets/images/bg.png';
@@ -26,7 +24,7 @@ const SignUpForm = () => {
     e.preventDefault();
     axios
       .post(
-        'http://localhost:8080/signup',
+        'http://localhost:8080/users/signup',
         { email: e.target.email.value, password: e.target.password.value },
         {
           headers: {
