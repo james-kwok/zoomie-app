@@ -1,7 +1,11 @@
 import './LocationCard.scss';
 import chevronRight from '../../assets/icons/chevron-right.svg';
 
-const LocationCard = ({ location, dogs, remainingDogs }) => {
+const LocationCard = ({ location, checkins }) => {
+  const findCheckins = checkins.filter((checkin) => {
+    return checkin.location_id === location.id;
+  });
+  const firstThreeCheckins = findCheckins.slice(0, 3);
   return (
     <>
       <div className="LocationCard">
@@ -15,22 +19,26 @@ const LocationCard = ({ location, dogs, remainingDogs }) => {
           <p className="LocationCard__text">{location.address}</p>
 
           <div className="LocationCard__gallery">
-            {dogs.map((dog, index) => {
+            {firstThreeCheckins.map((item, index) => {
               return (
                 <img
                   className="LocationCard__avatar"
                   key={index}
-                  src={dog.img}
-                  alt={dog.name}
+                  src={item.img}
+                  alt={item.name}
                 />
               );
             })}
             <p className="LocationCard__remaining-dogs">
-              ...+ {remainingDogs.length} more
+              {findCheckins.length} Attending
             </p>
           </div>
         </div>
-        <img className="LocationCard__chevron" src={chevronRight} alt="click to view details" />
+        <img
+          className="LocationCard__chevron"
+          src={chevronRight}
+          alt="click to view details"
+        />
       </div>
     </>
   );

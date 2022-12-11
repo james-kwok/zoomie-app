@@ -1,6 +1,11 @@
 import './LocationCardXL.scss';
 
-const LocationCardXL = ({ location, dogs, remainingDogs }) => {
+const LocationCardXL = ({ location, checkins }) => {
+  const findCheckins = checkins.filter((checkin) => {
+    return checkin.location_id === location.id;
+  });
+
+  const firstThreeCheckins = findCheckins.slice(0, 3);
   return (
     <>
       <div className="LocationCardXL">
@@ -15,18 +20,18 @@ const LocationCardXL = ({ location, dogs, remainingDogs }) => {
           <h1 className="LocationCardXL__title">{location.name}</h1>
           <p className="LocationCardXL__text">{location.address}</p>
           <div className="LocationCardXL__gallery">
-            {dogs.map((dog, index) => {
+            {firstThreeCheckins.map((item, index) => {
               return (
                 <img
                   className="LocationCardXL__avatar"
                   key={index}
-                  src={dog.img}
-                  alt={dog.name}
+                  src={item.img}
+                  alt={item.name}
                 />
               );
             })}
             <p className="LocationCardXL__remaining-dogs">
-              ...+ {remainingDogs.length} more
+              {findCheckins.length} Attending
             </p>
           </div>
         </div>

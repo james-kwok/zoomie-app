@@ -3,10 +3,8 @@ import './BrowseList.scss';
 import LocationCard from '../LocationCard/LocationCard';
 import chevronRight from '../../assets/icons/chevron-right.svg';
 
-const BrowseList = ({ locations, dogs }) => {
-  const displayLocations = locations.slice(0, 5);
-  const displayDogs = dogs.slice(0, 3);
-  const remainingDogs = dogs.slice(3);
+const BrowseList = ({ locations, checkins }) => {
+  const displayLocations = locations.slice(0, 10);
   return (
     <>
       <div className="BrowseList">
@@ -14,12 +12,12 @@ const BrowseList = ({ locations, dogs }) => {
         <div className="BrowseList__list">
           {displayLocations.map((location, index) => {
             return (
-              <Link className="BrowseList__list-link" to={`/locations/${location.id}`} key={index}>
-                <LocationCard
-                  location={location}
-                  dogs={displayDogs}
-                  remainingDogs={remainingDogs}
-                />
+              <Link
+                className="BrowseList__list-link"
+                to={`/locations/${location.id}`}
+                key={index}
+              >
+                <LocationCard location={location} checkins={checkins} />
               </Link>
             );
           })}

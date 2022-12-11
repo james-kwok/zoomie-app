@@ -5,9 +5,9 @@ import NearbyList from '../../components/NearbyList/NearbyList';
 
 const HomePage = () => {
   const locationsURL = 'http://localhost:8080/locations';
-  const dogsURL = 'http://localhost:8080/dogs';
+  const checkinsURL = `http://localhost:8080/checkins/`;
   const [locations, setLocations] = useState([]);
-  const [dogs, setDogs] = useState([]);
+  const [checkins, setCheckins] = useState([]);
 
   useEffect(() => {
     axios
@@ -22,22 +22,22 @@ const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get(dogsURL)
+      .get(checkinsURL)
       .then((response) => {
-        setDogs(response.data);
+        setCheckins(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  if (!locations || !dogs) {
+  if (!locations || !checkins) {
     return <></>;
   }
   return (
     <>
-      <NearbyList locations={locations} dogs={dogs} />
-      <BrowseList locations={locations} dogs={dogs} />
+      <NearbyList locations={locations} checkins={checkins} />
+      <BrowseList locations={locations} checkins={checkins} />
     </>
   );
 };
