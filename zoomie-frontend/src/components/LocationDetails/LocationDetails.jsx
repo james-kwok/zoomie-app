@@ -1,11 +1,11 @@
 import './LocationDetails.scss';
 import mapboxgl from '!mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 
-mapboxgl.accessToken = process.env.REACT_APP_MB_ACCESS
+mapboxgl.accessToken = process.env.REACT_APP_MB_ACCESS;
 
-const LocationDetails = ({ location, dog, lng, lat }) => {
+const LocationDetails = ({ location, checkins, lng, lat }) => {
   const mapContainer = useRef(null);
   const map = useRef(null);
 
@@ -27,7 +27,7 @@ const LocationDetails = ({ location, dog, lng, lat }) => {
           <img
             className="LocationDetails__hero-image"
             src={location.img}
-            alt={dog.name}
+            alt={location.name}
           />
         </div>
         <div className="LocationDetails__info">
@@ -57,7 +57,7 @@ const LocationDetails = ({ location, dog, lng, lat }) => {
         <div className="LocationDetails__attendance">
           <h2 className="LocationDetails__attendance-title">Who's Going?</h2>
           <div className="LocationDetails__gallery">
-            {dog.map((item, index) => {
+            {checkins.map((item, index) => {
               return (
                 <div className="LocationDetails__profile" key={index}>
                   <img

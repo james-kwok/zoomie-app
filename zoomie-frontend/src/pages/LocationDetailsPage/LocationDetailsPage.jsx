@@ -6,9 +6,9 @@ import LocationDetails from '../../components/LocationDetails/LocationDetails';
 const LocationDetailsPage = () => {
   const { id } = useParams();
   const locationsURL = `http://localhost:8080/locations/${id}`;
-  const dogsURL = 'http://localhost:8080/dogs';
+  const checkinsURL = `http://localhost:8080/checkins/${id}`;
   const [locations, setLocations] = useState([]);
-  const [dogs, setDogs] = useState([]);
+  const [checkins, setCheckins] = useState([]);
 
   useEffect(() => {
     axios
@@ -24,16 +24,17 @@ const LocationDetailsPage = () => {
 
   useEffect(() => {
     axios
-      .get(dogsURL)
+      .get(checkinsURL)
       .then((response) => {
-        setDogs(response.data);
+        setCheckins(response.data);
+        console.log(response.data)
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  if (!locations || !dogs) {
+  if (!locations || !checkins) {
     return <></>;
   }
 
@@ -42,7 +43,7 @@ const LocationDetailsPage = () => {
       {locations.lng && locations.lat ? (
         <LocationDetails
           location={locations}
-          dog={dogs}
+          checkins={checkins}
           lng={locations.lng}
           lat={locations.lat}
         />
