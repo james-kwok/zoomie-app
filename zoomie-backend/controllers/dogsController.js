@@ -22,22 +22,7 @@ const getSingleDog = async (req, res) => {
   }
 };
 
-// const getDogProfile = async (req, res) => {
-//   try {
-//     const profile = await db('users')
-//       .join('dogs', 'dogs.id')
-//       .select('users.id')
-//       .where({ user_id: id });
-//     res.status(200).json(profile);
-//   } catch (error) {
-//     res.status(404).json({
-//       message: 'Profile not found.',
-//     });
-//   }
-// };
-
 module.exports = {
   getDogList,
   getSingleDog,
-  // getDogProfile,
 };
