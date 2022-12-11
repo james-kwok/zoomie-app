@@ -27,33 +27,10 @@
     height: 1.25rem;
   }
 
-  &__profile-container {
+  &__button-container {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-left: auto;
-  }
-
-  &__signup {
-    width: 8.5rem;
-  }
-
-  &__profile-text {
-    font-size: $mobile-medium-size;
-    line-height: $mobile-medium-lh;
-    font-weight: $mobile-medium-weight-heavy;
-    color: $secondary;
-    margin-right: 0.5rem;
-  }
-
-  &__profile-pic {
-    height: 1.875rem;
-    width: 1.875rem;
-    margin-right: 0.5rem;
-  }
-
-  &__profile-icon {
-    height: 0.625rem;
-    width: auto;
   }
 }

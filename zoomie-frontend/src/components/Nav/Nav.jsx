@@ -1,11 +1,17 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Nav.scss';
 import logo from '../../assets/logos/zoomie-logo.svg';
 import logoText from '../../assets/logos/zoomie-text.svg';
-import placeholder from '../../assets/images/placeholder-avatar.png';
-import dropdown from '../../assets/icons/dropdown-arrow.svg';
+import AuthButton from '../AuthButton/AuthButton';
 
-const Nav = () => {
+const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    sessionStorage.setItem('loggedIn', JSON.stringify(false));
+    setIsLoggedIn(false);
+    navigate('/locations');
+  };
   return (
     <>
       <div className="Nav">
@@ -17,22 +23,10 @@ const Nav = () => {
             alt="zoomie-logo-text"
           />
         </Link>
-        <div className="Nav__profile-container">
-          <Link to="/signup">
-            <button className="Nav__signup">Sign Up</button>
+        <div className="Nav__button-container">
+          <Link to="/welcome" onClick={handleLogOut}>
+            <AuthButton isLoggedIn={isLoggedIn} />
           </Link>
-          {/* code for signed in users */}
-          {/* <p className="Nav__profile-text">Charlie</p>
-          <img
-            className="Nav__profile-pic"
-            src={placeholder}
-            alt="profile-picture"
-          />
-          <img
-            className="Nav__profile-icon"
-            src={dropdown}
-            alt="select-another-dog-profile"
-          /> */}
         </div>
       </div>
     </>

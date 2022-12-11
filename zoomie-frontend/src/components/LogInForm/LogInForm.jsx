@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import backIcon from '../../assets/icons/back-arrow-white.svg';
-import './SignUpForm.scss';
+import './LogInForm.scss';
 import bg from '../../assets/images/bg.png';
 
-const SignUpForm = ({ setIsLoggedIn, setNewUser }) => {
+const LogInForm = ({ setIsLoggedIn, setNewUser }) => {
   const navigate = useNavigate();
-  const [isSignUpError, setIsSignUpError] = useState(false);
+  const [isLoginError, setIsLoginError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
@@ -25,59 +25,57 @@ const SignUpForm = ({ setIsLoggedIn, setNewUser }) => {
     e.preventDefault();
 
     if (!e.target.email.value || !e.target.password.value) {
-      setIsSignUpError(true);
-      setError('Make sure to fill out all the fields');
-      return;
+      setIsLoginError(true);
+      setError('All fields are required to log in.');
     }
 
-    const signUp = async () => {
+    const logIn = async () => {
       try {
-        const res = await axios.post('http://localhost:8080/users/signup', {
+        const res = await axios.post('http://localhost:8080/users/login', {
           email: e.target.email.value,
           password: e.target.password.value,
         });
         if (!res.data) {
-          setIsSignUpError(true);
+          setIsLoginError(true);
           setError(
             'Oops, something went wrong. Check your inputs and try again!'
           );
+          return;
         }
         setIsLoggedIn(true);
         sessionStorage.setItem('authToken', res.data.token);
         sessionStorage.setItem('loggedIn', 'true');
         navigate('/');
       } catch (error) {
-        setIsSignUpError(true);
+        setIsLoginError(true);
         setError('Something went wrong, try again later.');
       }
     };
-    signUp();
+    logIn();
   };
 
   return (
     <>
-      <div className="SignUpForm">
-        <img className="SignUpForm__bg" src={bg} alt="background-image" />
-        <div className="SignUpForm__logo-container">
-          <Link to="/locations" className="SignUpForm__navigate-link">
+      <div className="LogInForm">
+        <img className="LogInForm__bg" src={bg} alt="background-image" />
+        <div className="LogInForm__logo-container">
+          <Link to="/locations" className="LogInForm__navigate-link">
             <img
-              className="SignUpForm__navigate"
+              className="LogInForm__navigate"
               src={backIcon}
               alt="back-to-locations"
             />
-            <p className="SignUpForm__navigate-text">Back</p>
+            <p className="LogInForm__navigate-text">Back</p>
           </Link>
-          <div className="SignUpForm__text-container">
-            <h1 className="SignUpForm__title">Sign Up</h1>
-            <p className="SignUpForm__text">
-              Sign up to check-in and browse nearby dog parks.
-            </p>
+          <div className="LogInForm__text-container">
+            <h1 className="LogInForm__title">Log In</h1>
+            <p className="LogInForm__text">Welcome back! 🐶</p>
           </div>
         </div>
-        <div className="SignUpForm__sheet">
-          <form onSubmit={onSubmit} className="SignUpForm__form">
-            <section className="SignUpForm__section">
-              <label className="SignUpForm__label" htmlFor="username">
+        <div className="LogInForm__sheet">
+          <form onSubmit={onSubmit} className="LogInForm__form">
+            <section className="LogInForm__section">
+              <label className="LogInForm__label" htmlFor="username">
                 Email
               </label>
               <input
@@ -87,11 +85,11 @@ const SignUpForm = ({ setIsLoggedIn, setNewUser }) => {
                 type="email"
                 value={email}
                 placeholder="Email Address"
-                className="SignUpForm__input"
+                className="LogInForm__input"
               />
             </section>
-            <section className="SignUpForm__section">
-              <label className="SignUpForm__label" htmlFor="password">
+            <section className="LogInForm__section">
+              <label className="LogInForm__label" htmlFor="password">
                 Password
               </label>
               <input
@@ -101,17 +99,17 @@ const SignUpForm = ({ setIsLoggedIn, setNewUser }) => {
                 type="password"
                 value={password}
                 placeholder="Password"
-                className="SignUpForm__input"
+                className="LogInForm__input"
               />
             </section>
-            <button>Sign Up</button>
+            <button>Log In</button>
             <p
               onClick={() => {
                 setNewUser((current) => !current);
               }}
-              className="SignUpForm__switch"
+              className="LogInForm__switch"
             >
-              Got an account? Log in here!
+              New to Zoomie? Sign up here!
             </p>
           </form>
         </div>
@@ -120,4 +118,4 @@ const SignUpForm = ({ setIsLoggedIn, setNewUser }) => {
   );
 };
 
-export default SignUpForm;
+export default LogInForm;

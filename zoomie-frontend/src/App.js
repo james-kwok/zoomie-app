@@ -1,14 +1,18 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.scss';
 import BottomNav from './components/BottomNav/BottomNav';
 import Nav from './components/Nav/Nav';
 import NavBack from './components/NavBack/NavBack';
 import HomePage from './pages/HomePage/HomePage';
 import LocationDetailsPage from './pages/LocationDetailsPage/LocationDetailsPage';
-import SignUpLogInPage from './pages/SignUpPage/SignUpLogInPage';
+import SignUpLogInPage from './pages/SignUpLogInPage/SignUpLogInPage';
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    JSON.parse(sessionStorage.getItem('loggedIn'))
+  );
+
   useEffect(() => {
     getLocation();
   }, []);
@@ -32,7 +36,7 @@ const App = () => {
             path="/locations"
             element={
               <>
-                <Nav />
+                <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
                 <HomePage />
                 <BottomNav />
               </>
@@ -42,13 +46,23 @@ const App = () => {
             path="/locations/:id"
             element={
               <>
-                <NavBack />
-                <LocationDetailsPage />
+                <NavBack isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+                <LocationDetailsPage
+                  isLoggedIn={isLoggedIn}
+                  setIsLoggedIn={setIsLoggedIn}
+                />
                 <BottomNav />
               </>
             }
           />
-          <Route path="/signup" element={<SignUpLogInPage />} />
+          <Route
+            path="/welcome"
+            element={
+              <SignUpLogInPage
+                setIsLoggedIn={setIsLoggedIn}
+              />
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>
