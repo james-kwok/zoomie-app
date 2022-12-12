@@ -49,7 +49,6 @@ const App = () => {
                 <NavBack isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
                 <LocationDetailsPage
                   isLoggedIn={isLoggedIn}
-                  setIsLoggedIn={setIsLoggedIn}
                 />
                 <BottomNav />
               </>

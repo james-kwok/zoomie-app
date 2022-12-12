@@ -2,10 +2,12 @@ import './LocationDetails.scss';
 import mapboxgl from '!mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import React, { useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 mapboxgl.accessToken = process.env.REACT_APP_MB_ACCESS;
 
-const LocationDetails = ({ location, checkins, lng, lat }) => {
+const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
+  const navigate = useNavigate();
   const mapContainer = useRef(null);
   const map = useRef(null);
 
@@ -19,6 +21,10 @@ const LocationDetails = ({ location, checkins, lng, lat }) => {
     });
     new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map.current);
   });
+
+  const handleButton = () => {
+    navigate('/welcome');
+  };
 
   return (
     <>
@@ -41,17 +47,26 @@ const LocationDetails = ({ location, checkins, lng, lat }) => {
               <p className="LocationDetails__category-text">Off-leash</p>
             </div>
             <div className="LocationDetails__button-wrapper">
-              <button className="LocationDetails__button">
-                <span className="LocationDetails__button-text">Check In</span>
-              </button>
+              {isLoggedIn ? (
+                <button type="submit" className="LocationDetails__button">
+                  <span className="LocationDetails__button-text">Check In</span>
+                </button>
+              ) : (
+                <button
+                  onClick={handleButton}
+                  className="LocationDetails__button"
+                >
+                  <span className="LocationDetails__button-text">
+                    Log in to check-in
+                  </span>
+                </button>
+              )}
             </div>
           </div>
         </div>
         <div className="LocationDetails__map">
           <h3 className="LocationDetails__title">Location Map</h3>
-          <div className="LocationDetails__map-info">
-            {/* Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} */}
-          </div>
+          <div className="LocationDetails__map-info"></div>
           <div ref={mapContainer} className="LocationDetails__map-container" />
         </div>
         <div className="LocationDetails__attendance">

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import LocationDetails from '../../components/LocationDetails/LocationDetails';
 
-const LocationDetailsPage = () => {
+const LocationDetailsPage = ({ isLoggedIn }) => {
   const { id } = useParams();
   const locationsURL = `http://localhost:8080/locations/${id}`;
   const checkinsURL = `http://localhost:8080/checkins/${id}`;
@@ -45,6 +45,7 @@ const LocationDetailsPage = () => {
           checkins={checkins}
           lng={locations.lng}
           lat={locations.lat}
+          isLoggedIn={isLoggedIn}
         />
       ) : null}
     </>
