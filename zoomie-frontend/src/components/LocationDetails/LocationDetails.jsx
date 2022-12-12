@@ -30,7 +30,7 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
     try {
 
     } catch (error) {
-      
+
     }
   }
 
@@ -65,7 +65,7 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
                   className="LocationDetails__button"
                 >
                   <span className="LocationDetails__button-text">
-                    Log in to check-in
+                    Log In To Check In
                   </span>
                 </button>
               )}
