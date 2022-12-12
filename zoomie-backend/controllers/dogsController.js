@@ -22,7 +22,24 @@ const getSingleDog = async (req, res) => {
   }
 };
 
+const getUserDog = async (req, res) => {
+  try {
+    const userDog = await db('dogs').where({ user_id: req.params.userId });
+    if (userDog.length === 0) {
+      return res.status(404).json({
+        message: 'User not found.',
+      });
+    }
+    res.status(200).json(userDog);
+  } catch (error) {
+    res.status(400).json({
+      message: 'Dog profile is not available.',
+    });
+  }
+};
+
 module.exports = {
   getDogList,
   getSingleDog,
+  getUserDog,
 };
