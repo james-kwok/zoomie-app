@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './App.scss';
 import BottomNav from './components/BottomNav/BottomNav';
@@ -15,10 +15,9 @@ const App = () => {
     JSON.parse(sessionStorage.getItem('loggedIn'))
   );
   const handleLogOut = () => {
-    const navigate = useNavigate();
     sessionStorage.setItem('loggedIn', JSON.stringify(false));
+    sessionStorage.clear();
     setIsLoggedIn(false);
-    navigate('/locations');
   };
 
   useEffect(() => {

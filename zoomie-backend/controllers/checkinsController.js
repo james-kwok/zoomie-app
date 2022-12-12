@@ -44,7 +44,7 @@ const postCheckIn = async (req, res) => {
 };
 
 module.exports = {
+  getCheckIns,
   getCheckedInDogs,
   postCheckIn,
-  getCheckIns,
 };
