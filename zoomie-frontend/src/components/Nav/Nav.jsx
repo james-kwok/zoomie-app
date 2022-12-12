@@ -1,17 +1,10 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Nav.scss';
 import logo from '../../assets/logos/zoomie-logo.svg';
 import logoText from '../../assets/logos/zoomie-text.svg';
 import AuthButton from '../AuthButton/AuthButton';
 
-const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
-  const navigate = useNavigate();
-
-  const handleLogOut = () => {
-    sessionStorage.setItem('loggedIn', JSON.stringify(false));
-    setIsLoggedIn(false);
-    navigate('/locations');
-  };
+const Nav = ({ isLoggedIn, handleLogOut }) => {
   return (
     <>
       <div className="Nav">

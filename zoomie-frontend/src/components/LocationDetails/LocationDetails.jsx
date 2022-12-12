@@ -2,12 +2,13 @@ import './LocationDetails.scss';
 import mapboxgl from '!mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import React, { useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 mapboxgl.accessToken = process.env.REACT_APP_MB_ACCESS;
 
 const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
   const navigate = useNavigate();
+  const { id } = useParams();
   const mapContainer = useRef(null);
   const map = useRef(null);
 
@@ -74,14 +75,18 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
           <div className="LocationDetails__gallery">
             {checkins.map((item, index) => {
               return (
-                <div className="LocationDetails__profile" key={index}>
+                <Link
+                  to={`/dogs/${item.id}`}
+                  key={index}
+                  className="LocationDetails__profile"
+                >
                   <img
                     className="LocationDetails__avatar"
                     src={item.img}
                     alt={item.name}
                   />
                   <p className="LocationDetails__dog-name">{item.name}</p>
-                </div>
+                </Link>
               );
             })}
           </div>

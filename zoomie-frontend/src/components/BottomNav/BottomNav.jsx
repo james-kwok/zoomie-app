@@ -1,4 +1,3 @@
-import { useState, useEffect, useNavigate } from 'react';
 import { Link } from 'react-router-dom';
 import './BottomNav.scss';
 import homeIcon from '../../assets/icons/home-icon.svg';
@@ -15,13 +14,13 @@ const BottomNav = () => {
             alt="home-icon"
           />
         </Link>
-        <div className="BottomNav__right">
+        <Link to="/profile" className="BottomNav__right">
           <img
             className="BottomNav__profile-icon"
             src={profileIcon}
             alt="profile-icon"
           />
-        </div>
+        </Link>
       </div>
     </>
   );

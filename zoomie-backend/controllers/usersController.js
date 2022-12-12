@@ -76,22 +76,7 @@ const getUser = async (req, res) => {
   }
 };
 
-const getDogProfile = async (req, res) => {
-  try {
-    const profile = await db('users')
-      .join('dogs', 'users.id', '=', 'dogs.user_id')
-      .select('users.id', 'dogs.name', 'dogs.breed', 'dogs.img', 'dogs.bio')
-      .where({ 'users.id': req.params.id });
-    res.status(200).json(profile);
-  } catch (error) {
-    res.status(404).json({
-      message: 'Profile not found.',
-    });
-  }
-};
-
 module.exports = {
   addUser,
   getUser,
-  getDogProfile,
 };

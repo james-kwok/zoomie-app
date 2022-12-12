@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './App.scss';
 import BottomNav from './components/BottomNav/BottomNav';
@@ -7,11 +7,19 @@ import NavBack from './components/NavBack/NavBack';
 import HomePage from './pages/HomePage/HomePage';
 import LocationDetailsPage from './pages/LocationDetailsPage/LocationDetailsPage';
 import SignUpLogInPage from './pages/SignUpLogInPage/SignUpLogInPage';
+import UserProfile from './components/UserProfile/UserProfile';
+import DogProfile from './components/DogProfile/DogProfile';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
     JSON.parse(sessionStorage.getItem('loggedIn'))
   );
+  const handleLogOut = () => {
+    const navigate = useNavigate();
+    sessionStorage.setItem('loggedIn', JSON.stringify(false));
+    setIsLoggedIn(false);
+    navigate('/locations');
+  };
 
   useEffect(() => {
     getLocation();
@@ -36,7 +44,7 @@ const App = () => {
             path="/locations"
             element={
               <>
-                <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+                <Nav isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
                 <HomePage />
                 <BottomNav />
               </>
@@ -46,21 +54,33 @@ const App = () => {
             path="/locations/:id"
             element={
               <>
-                <NavBack isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-                <LocationDetailsPage
-                  isLoggedIn={isLoggedIn}
-                />
+                <NavBack isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
+                <LocationDetailsPage isLoggedIn={isLoggedIn} />
                 <BottomNav />
               </>
             }
           />
           <Route
-            path="/welcome"
+            path="/profile"
             element={
-              <SignUpLogInPage
-                setIsLoggedIn={setIsLoggedIn}
-              />
+              <>
+                <NavBack isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
+                <UserProfile isLoggedIn={isLoggedIn} />
+              </>
             }
+          />
+          <Route
+            path="/dogs/:id"
+            element={
+              <>
+                <NavBack isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
+                <DogProfile />
+              </>
+            }
+          />
+          <Route
+            path="/welcome"
+            element={<SignUpLogInPage setIsLoggedIn={setIsLoggedIn} />}
           />
         </Routes>
       </BrowserRouter>

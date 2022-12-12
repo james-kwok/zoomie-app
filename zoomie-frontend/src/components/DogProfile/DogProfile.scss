@@ -1,0 +1,38 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+.DogProfile {
+    margin: 5.375rem 1rem;
+  &__card {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.08);
+    &:hover {
+      box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 0.1);
+    }
+  }
+
+  &__avatar {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 20rem;
+    object-fit: cover;
+  }
+
+  &__name {
+    font-size: $mobile-xl-size;
+    line-height: $mobile-xl-lh;
+    font-weight: $mobile-xl-weight;
+    color: $secondary;
+    margin: 1rem 3rem;
+  }
+
+  &__bio {
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-light;
+    margin: 1rem 3rem;
+  }
+}

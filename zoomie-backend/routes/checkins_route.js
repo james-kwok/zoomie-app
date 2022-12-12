@@ -4,7 +4,7 @@ const checkinsController = require('../controllers/checkinsController');
 const auth = require('../middleware/auth');
 
 router.get('/', checkinsController.getCheckIns)
+router.post('/', auth, checkinsController.postCheckIn)
 router.get('/:id', checkinsController.getCheckedInDogs)
-router.post('/profile', auth, checkinsController.postCheckIn)
 
 module.exports = router;

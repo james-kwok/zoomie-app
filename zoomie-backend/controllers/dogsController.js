@@ -24,7 +24,7 @@ const getSingleDog = async (req, res) => {
 
 const getUserDog = async (req, res) => {
   try {
-    const userDog = await db('dogs').where({ user_id: req.params.userId });
+    const userDog = await db('dogs').where({ user_id: req.userData.id });
     if (userDog.length === 0) {
       return res.status(404).json({
         message: 'User not found.',
