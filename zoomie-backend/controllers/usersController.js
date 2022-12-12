@@ -26,9 +26,13 @@ const addUser = async (req, res) => {
     });
 
     const newUserCreated = newUser[0];
+    const token = jwt.sign({ id: newUser.id }, process.env.JWT_SECRET, {
+      expiresIn: '1h',
+    });
     res.status(201).json({
       message: 'User created successfully.',
       user: newUserCreated,
+      token: token,
     });
   } catch (error) {
     res.status(500).json({
