@@ -1,8 +1,9 @@
-import './LocationDetails.scss';
+import axios from 'axios';
 import mapboxgl from '!mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import './LocationDetails.scss';
 
 mapboxgl.accessToken = process.env.REACT_APP_MB_ACCESS;
 
@@ -10,9 +11,18 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
   const navigate = useNavigate();
   const mapContainer = useRef(null);
   const map = useRef(null);
+  const [error, setError] = useState('');
+  const [failedAuth, setFailedAuth] = useState(false);
+  const authToken = sessionStorage.getItem('authToken');
 
   useEffect(() => {
-    if (map.current) return; // initialize map only once
+    if (!authToken) {
+      setFailedAuth(true);
+    }
+  }, [authToken]);
+
+  useEffect(() => {
+    if (map.current) return;
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
@@ -26,13 +36,30 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
     navigate('/welcome');
   };
 
-  const postCheckIn = () => {
+  const postCheckIn = async (e) => {
     try {
-
+      e.preventDefault();
+      const res = await axios.post(
+        'http://localhost:8080/checkins',
+        {
+          location_id: location.id,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        }
+      );
+      if (!res.data) {
+        setError('Unable to post check-in.');
+        return;
+      }
+      navigate('/locations');
     } catch (error) {
-
+      setError('Something went wrong, try again later.');
+      console.log(error);
     }
-  }
+  };
 
   return (
     <>
@@ -56,7 +83,11 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
             </div>
             <div className="LocationDetails__button-wrapper">
               {isLoggedIn ? (
-                <button type="submit" className="LocationDetails__button">
+                <button
+                  onClick={postCheckIn}
+                  type="submit"
+                  className="LocationDetails__button"
+                >
                   <span className="LocationDetails__button-text">Check In</span>
                 </button>
               ) : (

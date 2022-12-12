@@ -31,8 +31,13 @@ const getCheckedInDogs = async (req, res) => {
 
 const postCheckIn = async (req, res) => {
   try {
+    const dogId = await db
+      .select('id')
+      .from('dogs')
+      .where('user_id', '=', req.userData.id);
+    console.log(dogId[0].id);
     const checkins = await db('check-ins').insert({
-      dog_id: req.body.dog_id,
+      dog_id: dogId[0].id,
       location_id: req.body.location_id,
     });
     res.status(201).json({ checkins });
