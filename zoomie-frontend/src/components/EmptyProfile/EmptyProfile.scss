@@ -7,16 +7,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  vertical-align: middle;
   text-align: center;
   padding: 1rem;
 
   &__title {
+    width: 100%;
     font-size: $mobile-xl-size;
     line-height: $mobile-xl-lh;
     font-weight: $mobile-xl-weight;
   }
 
   &__copy {
+    width: 100%;
     font-size: $mobile-medium-size;
     line-height: $mobile-medium-lh;
     font-weight: $mobile-medium-weight-light;
