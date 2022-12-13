@@ -1,7 +1,7 @@
 import checkinIcon from '../../assets/icons/checkin-icon.svg';
 import './DogProfile.scss';
 
-const DogProfile = ({dogProfile, findCheckins}) => {
+const DogProfile = ({ dogProfile, findCheckins }) => {
   return (
     <>
       <div className="UserProfile">
