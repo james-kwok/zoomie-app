@@ -7,8 +7,8 @@ import NavBack from './components/NavBack/NavBack';
 import HomePage from './pages/HomePage/HomePage';
 import LocationDetailsPage from './pages/LocationDetailsPage/LocationDetailsPage';
 import SignUpLogInPage from './pages/SignUpLogInPage/SignUpLogInPage';
-import DogProfile from './components/DogProfile/DogProfile';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
+import DogProfilePage from './pages/DogProfilePage/DogProfilePage';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -79,7 +79,7 @@ const App = () => {
             element={
               <>
                 <NavBack isLoggedIn={isLoggedIn} />
-                <DogProfile />
+                <DogProfilePage />
                 <BottomNav />
               </>
             }
