@@ -16,7 +16,6 @@ const DogProfile = () => {
       .get(dogProfileURL)
       .then((response) => {
         setDogProfile(response.data);
-        console.log(response.data);
         window.scrollTo(0, 0);
       })
       .catch((error) => {
