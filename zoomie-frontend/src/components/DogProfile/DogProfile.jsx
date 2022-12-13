@@ -38,7 +38,7 @@ const DogProfile = () => {
     return checkin.id === dogProfile.id;
   });
 
-  if (!dogProfile) {
+  if (!dogProfile || !checkins || !findCheckins) {
     return <></>;
   }
   return (

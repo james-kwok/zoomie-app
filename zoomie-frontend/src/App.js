@@ -70,6 +70,7 @@ const App = () => {
                   setIsLoggedIn={setIsLoggedIn}
                   handleLogOut={handleLogOut}
                 />
+                <BottomNav />
               </>
             }
           />
@@ -79,6 +80,7 @@ const App = () => {
               <>
                 <NavBack isLoggedIn={isLoggedIn} />
                 <DogProfile />
+                <BottomNav />
               </>
             }
           />

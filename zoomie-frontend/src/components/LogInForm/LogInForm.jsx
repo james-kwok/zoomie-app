@@ -8,7 +8,6 @@ import bg from '../../assets/images/bg.png';
 const LogInForm = ({ setIsLoggedIn, setNewUser }) => {
   const navigate = useNavigate();
   const [isLoginError, setIsLoginError] = useState(false);
-  const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     email: '',
