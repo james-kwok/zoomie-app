@@ -4,7 +4,7 @@ import logo from '../../assets/logos/zoomie-logo.svg';
 import logoText from '../../assets/logos/zoomie-text.svg';
 import AuthButton from '../AuthButton/AuthButton';
 
-const Nav = ({ isLoggedIn, handleLogOut }) => {
+const Nav = ({ isLoggedIn }) => {
   return (
     <>
       <div className="Nav">
@@ -17,9 +17,7 @@ const Nav = ({ isLoggedIn, handleLogOut }) => {
           />
         </Link>
         <div className="Nav__button-container">
-          <Link to="/welcome" onClick={handleLogOut}>
             <AuthButton isLoggedIn={isLoggedIn} />
-          </Link>
         </div>
       </div>
     </>

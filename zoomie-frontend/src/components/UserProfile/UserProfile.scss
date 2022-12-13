@@ -1,0 +1,92 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+.UserProfile {
+  margin: 5.375rem 1rem;
+  &__card {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.08);
+    &:hover {
+      box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 0.1);
+    }
+  }
+
+  &__avatar {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 20rem;
+    object-fit: cover;
+  }
+
+  &__name {
+    color: $secondary;
+    font-size: $mobile-xl-size;
+    line-height: $mobile-xl-lh;
+    font-weight: $mobile-xl-weight;
+    margin: 1rem 3rem;
+  }
+
+  &__breed {
+    color: $secondary;
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-heavy;
+  }
+
+  &__bio {
+    color: $secondary;
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-light;
+    margin: 1rem 3rem;
+  }
+
+  &__edit-form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-decoration: none;
+  }
+
+  &__icon {
+    height: 1rem;
+    width: 1rem;
+  }
+
+  &__link {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    color: $tertiary;
+  }
+
+  &__checkin-card {
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 1rem;
+    box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.08);
+    &:hover {
+      box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 0.1);
+    }
+  }
+
+  &__checkin-icon {
+    width: 2rem;
+    height: auto;
+  }
+
+  &__checkin-number {
+    color: $secondary;
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-light;
+    margin-top: 1rem;
+  }
+
+  &__logout-button {
+    margin-top: 2rem;
+  }
+}

@@ -1,12 +1,15 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import checkinIcon from '../../assets/icons/checkin-icon.svg';
 import './DogProfile.scss';
 
 const DogProfile = () => {
   const { id } = useParams();
   const dogProfileURL = `http://localhost:8080/dogs/${id}`;
+  const checkinsURL = 'http://localhost:8080/checkins';
   const [dogProfile, setDogProfile] = useState(null);
+  const [checkins, setCheckins] = useState([]);
 
   useEffect(() => {
     axios
@@ -21,20 +24,46 @@ const DogProfile = () => {
       });
   }, [id]);
 
+  useEffect(() => {
+    axios
+      .get(checkinsURL)
+      .then((response) => {
+        setCheckins(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const findCheckins = checkins.filter((checkin) => {
+    return checkin.id === dogProfile.id;
+  });
+
   if (!dogProfile) {
     return <></>;
   }
   return (
     <>
-      <div className="DogProfile">
-        <div className="DogProfile__card">
+      <div className="UserProfile">
+        <div className="UserProfile__card">
           <img
-            className="DogProfile__avatar"
+            className="UserProfile__avatar"
             src={dogProfile.img}
             alt={dogProfile.name}
           />
-          <p className="DogProfile__name">{dogProfile.name}</p>
-          <p className="DogProfile__bio">{dogProfile.bio}</p>
+          <p className="UserProfile__name">{dogProfile.name}</p>
+          <p className="UserProfile__breed">{dogProfile.breed}</p>
+          <p className="UserProfile__bio">{dogProfile.bio}</p>
+        </div>
+        <div className="UserProfile__checkin-card">
+          <img
+            className="UserProfile__checkin-icon"
+            src={checkinIcon}
+            alt="checkin-icon"
+          />
+          <p className="UserProfile__checkin-number">
+            {findCheckins.length} Check Ins
+          </p>
         </div>
       </div>
     </>

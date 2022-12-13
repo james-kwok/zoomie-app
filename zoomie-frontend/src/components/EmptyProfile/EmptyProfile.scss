@@ -1,0 +1,29 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+.EmptyProfile {
+  margin-top: 5.375rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+
+  &__title {
+    font-size: $mobile-xl-size;
+    line-height: $mobile-xl-lh;
+    font-weight: $mobile-xl-weight;
+  }
+
+  &__copy {
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-light;
+    margin-top: 1.5rem;
+  }
+
+  &__button {
+    margin-top: 1.5rem;
+  }
+}

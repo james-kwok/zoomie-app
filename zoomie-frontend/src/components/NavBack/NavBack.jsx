@@ -3,7 +3,7 @@ import './NavBack.scss';
 import backIcon from '../../assets/icons/back-arrow.svg';
 import AuthButton from '../AuthButton/AuthButton';
 
-const NavBack = ({ isLoggedIn, handleLogOut }) => {
+const NavBack = ({ isLoggedIn }) => {
   return (
     <>
       <div className="NavBack">
@@ -15,9 +15,7 @@ const NavBack = ({ isLoggedIn, handleLogOut }) => {
           />
         </Link>
         <div className="Nav__button-container">
-          <Link to="/welcome" onClick={handleLogOut}>
-            <AuthButton isLoggedIn={isLoggedIn} />
-          </Link>
+          <AuthButton isLoggedIn={isLoggedIn} />
         </div>
       </div>
     </>

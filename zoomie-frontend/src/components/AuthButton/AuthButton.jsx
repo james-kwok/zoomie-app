@@ -1,11 +1,22 @@
 import React from 'react';
-import './AuthButton.scss'
+import { Link } from 'react-router-dom';
+import './AuthButton.scss';
 
 const AuthButton = ({ isLoggedIn }) => {
   if (isLoggedIn) {
-    return <button className="AuthButton">Log out</button>;
+    return (
+      <Link to="/profile">
+        <button className="AuthButton">My Profile</button>
+      </Link>
+    );
   } else {
-    return <button className="AuthButton">Log In</button>;
+    return (
+      <>
+        <Link to="/welcome">
+          <button className="AuthButton">Log In</button>
+        </Link>
+      </>
+    );
   }
 };
 

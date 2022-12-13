@@ -7,13 +7,14 @@ import NavBack from './components/NavBack/NavBack';
 import HomePage from './pages/HomePage/HomePage';
 import LocationDetailsPage from './pages/LocationDetailsPage/LocationDetailsPage';
 import SignUpLogInPage from './pages/SignUpLogInPage/SignUpLogInPage';
-import UserProfile from './components/UserProfile/UserProfile';
 import DogProfile from './components/DogProfile/DogProfile';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
     JSON.parse(sessionStorage.getItem('loggedIn'))
   );
+
   const handleLogOut = () => {
     sessionStorage.setItem('loggedIn', JSON.stringify(false));
     sessionStorage.clear();
@@ -43,7 +44,7 @@ const App = () => {
             path="/locations"
             element={
               <>
-                <Nav isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
+                <Nav isLoggedIn={isLoggedIn} />
                 <HomePage />
                 <BottomNav />
               </>
@@ -53,7 +54,7 @@ const App = () => {
             path="/locations/:id"
             element={
               <>
-                <NavBack isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
+                <NavBack isLoggedIn={isLoggedIn} />
                 <LocationDetailsPage isLoggedIn={isLoggedIn} />
                 <BottomNav />
               </>
@@ -63,8 +64,12 @@ const App = () => {
             path="/profile"
             element={
               <>
-                <NavBack isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
-                <UserProfile isLoggedIn={isLoggedIn} />
+                <NavBack isLoggedIn={isLoggedIn} />
+                <ProfilePage
+                  isLoggedIn={isLoggedIn}
+                  setIsLoggedIn={setIsLoggedIn}
+                  handleLogOut={handleLogOut}
+                />
               </>
             }
           />
@@ -72,7 +77,7 @@ const App = () => {
             path="/dogs/:id"
             element={
               <>
-                <NavBack isLoggedIn={isLoggedIn} handleLogOut={handleLogOut} />
+                <NavBack isLoggedIn={isLoggedIn} />
                 <DogProfile />
               </>
             }
