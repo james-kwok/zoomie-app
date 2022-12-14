@@ -3,7 +3,7 @@
 @use '../../styles/partials/typography' as *;
 
 .DogProfile {
-    margin: 5.375rem 1rem;
+  margin: 5.375rem 1rem;
   &__card {
     display: block;
     text-align: center;
@@ -34,5 +34,29 @@
     line-height: $mobile-medium-lh;
     font-weight: $mobile-medium-weight-light;
     margin: 1rem 3rem;
+  }
+
+  &__checkin-card {
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 1rem;
+    box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.08);
+    &:hover {
+      box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 0.1);
+    }
+  }
+
+  &__checkin-icon {
+    width: 2rem;
+    height: auto;
+  }
+
+  &__checkin-number {
+    color: $secondary;
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-light;
+    margin-top: 1rem;
   }
 }

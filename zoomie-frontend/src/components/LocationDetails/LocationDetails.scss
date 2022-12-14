@@ -87,7 +87,7 @@
       border-radius: 0.25rem;
       height: 1.5rem;
       width: 6.5rem;
-      background-color: #6A8037;
+      background-color: #6a8037;
       display: flex;
       text-align: center;
       align-items: center;
@@ -127,19 +127,6 @@
     pointer-events: none;
   }
 
-  &__map {
-    padding: 1.5rem 1rem;
-    border-bottom: 1px solid $bg-light;
-  }
-
-  &__map-container {
-    z-index: 0;
-    height: 25rem;
-    margin-top: 1rem;
-    border-radius: 1rem;
-    margin-bottom: 6rem;
-  }
-
   &__attendance {
     padding: 1.5rem 1rem;
   }
@@ -164,6 +151,13 @@
     object-fit: cover;
     border-radius: 2rem;
     margin: 0.75rem;
+    box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.08);
+
+    &:hover {
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.02);
+      box-shadow: 1px 1px 5px 1px rgb(0 0 0 / 0.2);
+    }
   }
 
   &__dog-name {
@@ -171,5 +165,18 @@
     line-height: $mobile-small-lh;
     font-weight: $mobile-small-weight-light;
     color: $secondary;
+  }
+
+  &__map {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid $bg-light;
+  }
+
+  &__map-container {
+    z-index: 0;
+    height: 25rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 6rem;
   }
 }

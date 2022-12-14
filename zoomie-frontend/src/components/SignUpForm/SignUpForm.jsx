@@ -9,6 +9,7 @@ import CreateDogPage from '../../pages/CreateDogPage/CreateDogPage';
 import './SignUpForm.scss';
 
 const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
+  const [expand, setExpand] = useState(true);
   const [isSignUpError, setIsSignUpError] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
@@ -54,9 +55,13 @@ const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
     signUp();
   };
 
+  const expandSheet = () => {
+    setExpand(false);
+  };
+
   return (
     <>
-    {/* form to create a dog profile will render after sign up */}
+      {/* form to create a dog profile will render after sign up */}
       {isLoggedIn ? (
         <>
           <CreateDogPage />
@@ -80,7 +85,14 @@ const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
               </p>
             </div>
           </div>
-          <div className="SignUpForm__sheet">
+          <div
+            className={
+              expand === true
+                ? 'SignUpForm__sheet'
+                : 'SignUpForm__sheet--expand'
+            }
+            onClick={expandSheet}
+          >
             <form onSubmit={onSubmit} className="SignUpForm__form">
               <section className="SignUpForm__section">
                 <div className="SignUpForm__icon-container">
@@ -105,8 +117,14 @@ const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
               </section>
               <section className="SignUpForm__section">
                 <div className="SignUpForm__icon-container">
-                  <img className="SignUpForm__icon" src={lockIcon} alt="lock-icon" />
-                  <label className="SignUpForm__label" htmlFor="password">Password</label>
+                  <img
+                    className="SignUpForm__icon"
+                    src={lockIcon}
+                    alt="lock-icon"
+                  />
+                  <label className="SignUpForm__label" htmlFor="password">
+                    Password
+                  </label>
                 </div>
                 <input
                   onChange={onChange}

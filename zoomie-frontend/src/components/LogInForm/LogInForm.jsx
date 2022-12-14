@@ -9,6 +9,7 @@ import './LogInForm.scss';
 
 const LogInForm = ({ setIsLoggedIn, setNewUser }) => {
   const navigate = useNavigate();
+  const [expand, setExpand] = useState(true);
   const [isLoginError, setIsLoginError] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
@@ -55,6 +56,10 @@ const LogInForm = ({ setIsLoggedIn, setNewUser }) => {
     logIn();
   };
 
+  const expandSheet = () => {
+    setExpand(false);
+  };
+
   return (
     <>
       <div className="LogInForm">
@@ -73,7 +78,14 @@ const LogInForm = ({ setIsLoggedIn, setNewUser }) => {
             <p className="LogInForm__text">Welcome back! 🐶</p>
           </div>
         </div>
-        <div className="LogInForm__sheet">
+        <div
+            className={
+              expand === true
+                ? 'LogInForm__sheet'
+                : 'LogInForm__sheet--expand'
+            }
+            onClick={expandSheet}
+          >
           <form onSubmit={onSubmit} className="LogInForm__form">
             <section className="LogInForm__section">
               <div className="LogInForm__icon-container">

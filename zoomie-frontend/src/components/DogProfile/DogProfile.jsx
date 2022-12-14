@@ -7,24 +7,24 @@ const DogProfile = ({ dogProfile, checkins }) => {
   });
   return (
     <>
-      <div className="UserProfile">
-        <div className="UserProfile__card">
+      <div className="DogProfile">
+        <div className="DogProfile__card">
           <img
-            className="UserProfile__avatar"
+            className="DogProfile__avatar"
             src={dogProfile.img}
             alt={dogProfile.name}
           />
-          <p className="UserProfile__name">{dogProfile.name}</p>
-          <p className="UserProfile__breed">{dogProfile.breed}</p>
-          <p className="UserProfile__bio">{dogProfile.bio}</p>
+          <p className="DogProfile__name">{dogProfile.name}</p>
+          <p className="DogProfile__breed">{dogProfile.breed}</p>
+          <p className="DogProfile__bio">{dogProfile.bio}</p>
         </div>
-        <div className="UserProfile__checkin-card">
+        <div className="DogProfile__checkin-card">
           <img
-            className="UserProfile__checkin-icon"
+            className="DogProfile__checkin-icon"
             src={checkinIcon}
             alt="checkin-icon"
           />
-          <p className="UserProfile__checkin-number">
+          <p className="DogProfile__checkin-number">
             {findCheckins.length} Check Ins
           </p>
         </div>
