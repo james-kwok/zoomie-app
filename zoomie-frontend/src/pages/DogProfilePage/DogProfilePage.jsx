@@ -36,12 +36,9 @@ const DogProfilePage = () => {
     return <></>;
   }
 
-  const findCheckins = checkins.filter((checkin) => {
-    return checkin.id === dogProfile.id;
-  });
   return (
     <>
-      <DogProfile dogProfile={dogProfile} findCheckins={findCheckins} />
+      <DogProfile dogProfile={dogProfile} checkins={checkins} />
     </>
   );
 };

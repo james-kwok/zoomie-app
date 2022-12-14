@@ -6,6 +6,7 @@ const SignUpLogInPage = ({ isLoggedIn, setIsLoggedIn }) => {
   const [newUser, setNewUser] = useState(true);
   return (
     <>
+    {/* if user is new to app, render sign up form */}
       {newUser ? (
         <SignUpForm isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setNewUser={setNewUser} />
       ) : (

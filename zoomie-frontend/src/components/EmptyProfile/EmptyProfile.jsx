@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './EmptyProfile.scss';
 
+// not using this component at the moment
 const EmptyProfile = () => {
   const navigate = useNavigate();
   const handleButton = () => {

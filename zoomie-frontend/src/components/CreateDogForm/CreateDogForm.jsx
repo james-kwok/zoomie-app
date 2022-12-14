@@ -5,6 +5,7 @@ import Lottie from 'react-lottie';
 import animation from '../../assets/lottie/dog-lottie.json';
 import './CreateDogForm.scss';
 
+// this component renders after sign up
 const CreateDogForm = () => {
   const navigate = useNavigate();
   const postDogURL = 'http://localhost:8080/dogs/post';
@@ -64,7 +65,6 @@ const CreateDogForm = () => {
         navigate('/');
       } catch (error) {
         setError('Something went wrong, try again later.');
-        console.log(error);
       }
     };
     createProfile();
@@ -73,6 +73,7 @@ const CreateDogForm = () => {
     <>
       <div className="CreateDogForm">
         <form onSubmit={onSubmit} className="CreateDogForm__form">
+          {/* experimenting with Lottie */}
           <div className="CreateDogForm__animation-container">
             <Lottie options={defaultOptions} height={250} width={250} />
           </div>

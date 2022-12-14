@@ -8,6 +8,7 @@ const UserProfile = ({ displayProfile, checkins, setIsLoggedIn }) => {
   const findCheckins = checkins.filter((checkin) => {
     return checkin.id === displayProfile.id;
   });
+  // only way to log out in the app at the moment
   const handleLogOut = () => {
     sessionStorage.setItem('loggedIn', JSON.stringify(false));
     sessionStorage.clear();

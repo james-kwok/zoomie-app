@@ -1,7 +1,10 @@
 import checkinIcon from '../../assets/icons/checkin-icon.svg';
 import './DogProfile.scss';
 
-const DogProfile = ({ dogProfile, findCheckins }) => {
+const DogProfile = ({ dogProfile, checkins }) => {
+  const findCheckins = checkins.filter((checkin) => {
+    return checkin.id === dogProfile.id;
+  });
   return (
     <>
       <div className="UserProfile">

@@ -4,6 +4,7 @@ import LocationCardXL from '../LocationCardXL/LocationCardXL';
 import './NearbyList.scss';
 
 const NearbyList = ({ locations, checkins }) => {
+  // will remove this array method when geolocation feature is developed
   const displayLocations = locations.slice(4, 10);
   return (
     <>

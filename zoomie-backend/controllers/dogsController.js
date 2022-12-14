@@ -38,6 +38,7 @@ const getUserDog = async (req, res) => {
   }
 };
 
+// using placeholder <img> until upload image feature is ready
 const postDogProfile = async (req, res) => {
   try {
     console.log(req.userData)

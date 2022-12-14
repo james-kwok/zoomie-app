@@ -56,6 +56,7 @@ const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
 
   return (
     <>
+    {/* form to create a dog profile will render after sign up */}
       {isLoggedIn ? (
         <>
           <CreateDogPage />

@@ -2,6 +2,7 @@ const db = require('knex')(require('../knexfile'));
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+// sign up
 const addUser = async (req, res) => {
   const { email, password } = req.body;
 
@@ -24,8 +25,10 @@ const addUser = async (req, res) => {
       email: email,
       password: bcrypt.hashSync(password, 10),
     });
-
+    
+    // note to self: assign id to newUserCreated in sign up flow
     const newUserCreated = newUser[0];
+    // attaching jwt to new sign ups to prevent user from having to sign in right after
     const token = jwt.sign({ id: newUser[0] }, process.env.JWT_SECRET, {
       expiresIn: '1h',
     });
@@ -42,6 +45,7 @@ const addUser = async (req, res) => {
   }
 };
 
+// log in
 const getUser = async (req, res) => {
   if (!req.body.email || !req.body.password) {
     return res

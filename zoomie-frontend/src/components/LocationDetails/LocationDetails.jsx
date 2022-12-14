@@ -25,6 +25,7 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
     }
   }, [authToken]);
 
+  // mapbox API for map feature, will explore more of their features in the future
   useEffect(() => {
     if (map.current) return;
     map.current = new mapboxgl.Map({
@@ -108,6 +109,7 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
                 <p className="LocationDetails__category-text">Fenced</p>
               </div>
             </div>
+            {/* conditional button for guest vs logged in state */}
             <div className="LocationDetails__button-wrapper">
               {isLoggedIn ? (
                 <button

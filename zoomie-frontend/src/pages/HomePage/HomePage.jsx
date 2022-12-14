@@ -5,7 +5,7 @@ import NearbyList from '../../components/NearbyList/NearbyList';
 
 const HomePage = () => {
   const locationsURL = 'http://localhost:8080/locations';
-  const checkinsURL = `http://localhost:8080/checkins/`;
+  const checkinsURL = "http://localhost:8080/checkins/";
   const [locations, setLocations] = useState([]);
   const [checkins, setCheckins] = useState([]);
 

@@ -19,6 +19,7 @@ const App = () => {
     getLocation();
   }, []);
 
+  // web API for geolocating user, not used yet, will implement in future
   const getLocation = () => {
     if (!navigator.geolocation) {
       console.log(navigator.geolocation);
