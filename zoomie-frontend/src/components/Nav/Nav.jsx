@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logos/zoomie-logo.svg';
-import logoText from '../../assets/logos/zoomie-text.svg';
+import logo from '../../assets/logos/zoomie-logo.png';
+import logoText from '../../assets/logos/zoomie-text.png';
 import AuthButton from '../AuthButton/AuthButton';
 import './Nav.scss';
 

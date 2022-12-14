@@ -32,12 +32,22 @@
     margin-bottom: 0.5rem;
   }
 
-  &__title, &__attendance-title {
-    font-size: $mobile-small-size;
-    line-height: $mobile-small-lh;
-    font-weight: $mobile-small-weight-light;
+  &__icon-container {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__icon {
+    height: 1.25rem;
+    margin-right: 0.5rem;
+  }
+
+  &__title,
+  &__attendance-title {
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-light;
     color: $gray;
-    text-transform: uppercase;
   }
 
   &__info-title {
@@ -58,14 +68,36 @@
     margin-bottom: 0.5rem;
   }
 
+  &__category-container {
+    display: flex;
+  }
+
   &__category-label {
     border-radius: 0.25rem;
     height: 1.5rem;
-    width: 4rem;
-    background-color: $secondary;
+    width: 6.5rem;
+    background-color: $tertiary;
     display: flex;
     text-align: center;
     align-items: center;
+    padding: 0 0.75rem;
+    margin-right: 0.5rem;
+
+    &--alt {
+      border-radius: 0.25rem;
+      height: 1.5rem;
+      width: 6.5rem;
+      background-color: #6A8037;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      padding: 0 0.75rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__category-tag {
+    height: 0.75rem;
   }
 
   &__category-text {
@@ -105,6 +137,7 @@
     height: 25rem;
     margin-top: 1rem;
     border-radius: 1rem;
+    margin-bottom: 6rem;
   }
 
   &__attendance {

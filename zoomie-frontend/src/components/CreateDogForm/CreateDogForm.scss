@@ -5,6 +5,10 @@
 .CreateDogForm {
   padding: 2rem;
 
+  &__animation-container {
+   display: flex;
+  }
+
   &__section {
     width: 100%;
     display: flex;

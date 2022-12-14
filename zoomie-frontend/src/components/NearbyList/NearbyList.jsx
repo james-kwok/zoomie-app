@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
-import pinIcon from '../../assets/icons/pin-icon.svg';
+import pinIcon from '../../assets/icons/pin-icon.png';
 import LocationCardXL from '../LocationCardXL/LocationCardXL';
 import './NearbyList.scss';
 
 const NearbyList = ({ locations, checkins }) => {
-  const displayLocations = locations.slice(0, 10);
+  const displayLocations = locations.slice(4, 10);
   return (
     <>
       <div className="NearbyList">
         <div className="NearbyList__text-container">
-          <img className="NearbyList__icon" src={pinIcon} alt="location icon" />
+          <img className="NearbyList__icon" src={pinIcon} alt="location-icon" />
           <h2 className="NearbyList__title">Check-in to nearby parks</h2>
         </div>
         <div className="NearbyList__gallery">

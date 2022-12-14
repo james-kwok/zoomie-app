@@ -1,5 +1,5 @@
 import './LocationCard.scss';
-import chevronRight from '../../assets/icons/chevron-right.svg';
+import chevronRight from '../../assets/icons/chevron-right.png';
 
 const LocationCard = ({ location, checkins }) => {
   const findCheckins = checkins.filter((checkin) => {

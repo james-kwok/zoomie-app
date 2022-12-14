@@ -48,11 +48,12 @@ button {
   height: 2.5rem;
   width: 100%;
   border-radius: 0.5rem;
-  background-color: $primary;
+  background-image: linear-gradient(to right, $primary, #FFE600);
   border: none;
   box-shadow: 2px 1px 5px rgb(0 0 0 / 0.08);
   cursor: pointer;
   &:hover {
+    background-image: none;
     background-color: $secondary;
     color: $white;
     transition: all 0.25s ease-in-out;

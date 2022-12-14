@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import backIcon from '../../assets/icons/back-arrow.svg';
+import backIcon from '../../assets/icons/chevron-left.png';
 import AuthButton from '../AuthButton/AuthButton';
 import './NavBack.scss';
 

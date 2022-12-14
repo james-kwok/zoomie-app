@@ -29,23 +29,12 @@
   }
 
   &__navigate {
-    width: 2.25rem;
+    width: 2rem;
   }
 
   &__navigate-text {
     color: $white;
     margin-left: 0.25rem;
-  }
-
-  &__logo {
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-right: 1rem;
-  }
-
-  &__logo-text {
-    height: 1.2rem;
-    width: auto;
   }
 
   &__text-container {
@@ -86,6 +75,16 @@
     margin: 1.5rem 0;
   }
 
+  &__icon-container {
+    display: flex;
+    align-items: top;
+  }
+
+  &__icon {
+    height: 1.5rem;
+    margin-right: 0.5rem;
+  }
+
   &__label {
     width: 100%;
     margin-bottom: 1rem;
@@ -101,7 +100,7 @@
     outline: none;
 
     &:focus {
-        border-bottom: 2px solid $secondary;
+      border-bottom: 2px solid $secondary;
     }
   }
 

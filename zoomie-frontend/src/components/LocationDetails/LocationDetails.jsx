@@ -3,6 +3,10 @@ import mapboxgl from '!mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import React, { useRef, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import outdoorIcon from '../../assets/icons/outdoor-icon.png';
+import tagIcon from '../../assets/icons/tag-icon-white.png';
+import routeIcon from '../../assets/icons/route-icon.png';
+import bonesIcon from '../../assets/icons/bones.png';
 import './LocationDetails.scss';
 
 mapboxgl.accessToken = process.env.REACT_APP_MB_ACCESS;
@@ -74,12 +78,35 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
         <div className="LocationDetails__info">
           <div className="LocationDetails__location">
             <div className="LocationDetails__text-container">
-              <h3 className="LocationDetails__title">Location Info</h3>
+              <div className="LocationDetails__icon-container">
+                <img
+                  className="LocationDetails__icon"
+                  src={outdoorIcon}
+                  alt="outdoor-icon"
+                />
+                <h3 className="LocationDetails__title">Park Info</h3>
+              </div>
+
               <h1 className="LocationDetails__info-title">{location.name}</h1>
               <h2 className="LocationDetails__address">{location.address}</h2>
             </div>
-            <div className="LocationDetails__category-label">
-              <p className="LocationDetails__category-text">Off-leash</p>
+            <div className="LocationDetails__category-container">
+              <div className="LocationDetails__category-label">
+                <img
+                  className="LocationDetails__category-tag"
+                  src={tagIcon}
+                  alt="tag-icon"
+                />
+                <p className="LocationDetails__category-text">Off-leash</p>
+              </div>
+              <div className="LocationDetails__category-label--alt">
+                <img
+                  className="LocationDetails__category-tag"
+                  src={tagIcon}
+                  alt="tag-icon"
+                />
+                <p className="LocationDetails__category-text">Fenced</p>
+              </div>
             </div>
             <div className="LocationDetails__button-wrapper">
               {isLoggedIn ? (
@@ -103,13 +130,15 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
             </div>
           </div>
         </div>
-        <div className="LocationDetails__map">
-          <h3 className="LocationDetails__title">Location Map</h3>
-          <div className="LocationDetails__map-info"></div>
-          <div ref={mapContainer} className="LocationDetails__map-container" />
-        </div>
         <div className="LocationDetails__attendance">
-          <h2 className="LocationDetails__attendance-title">Who's Going?</h2>
+          <div className="LocationDetails__icon-container">
+            <img
+              className="LocationDetails__icon"
+              src={bonesIcon}
+              alt="bones-icon"
+            />
+            <h2 className="LocationDetails__attendance-title">Who's Going?</h2>
+          </div>
           <div className="LocationDetails__gallery">
             {checkins.map((item, index) => {
               return (
@@ -128,6 +157,18 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
               );
             })}
           </div>
+        </div>
+        <div className="LocationDetails__map">
+          <div className="LocationDetails__icon-container">
+            <img
+              className="LocationDetails__icon"
+              src={routeIcon}
+              alt="route-icon"
+            />
+            <h3 className="LocationDetails__title">Location Map</h3>
+          </div>
+          <div className="LocationDetails__map-info"></div>
+          <div ref={mapContainer} className="LocationDetails__map-container" />
         </div>
       </div>
     </>

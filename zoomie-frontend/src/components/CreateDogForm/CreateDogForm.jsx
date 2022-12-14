@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Lottie from 'react-lottie';
+import animation from '../../assets/lottie/dog-lottie.json';
 import './CreateDogForm.scss';
 
 const CreateDogForm = () => {
@@ -8,6 +10,15 @@ const CreateDogForm = () => {
   const postDogURL = 'http://localhost:8080/dogs/post';
   const authToken = sessionStorage.getItem('authToken');
   const [error, setError] = useState('');
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animation,
+    rendererSetings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
 
   const [formData, setFormData] = useState({
     name: '',
@@ -62,7 +73,9 @@ const CreateDogForm = () => {
     <>
       <div className="CreateDogForm">
         <form onSubmit={onSubmit} className="CreateDogForm__form">
-          <img className="CreateDogForm" src="" alt="" />
+          <div className="CreateDogForm__animation-container">
+            <Lottie options={defaultOptions} height={250} width={250} />
+          </div>
           <section className="CreateDogForm__section">
             <label className="CreateDogForm__label" htmlFor="name">
               Name

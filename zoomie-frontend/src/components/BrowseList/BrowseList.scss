@@ -5,13 +5,24 @@
 .BrowseList {
   margin: 1rem 0;
   padding: 1rem;
+  &__text-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__icon {
+    height: 1.25rem;
+    margin-right: 0.5rem;
+  }
+
   &__title {
     font-size: $mobile-medium-size;
     line-height: $mobile-medium-lh;
     font-weight: $mobile-medium-weight-heavy;
     color: $secondary;
     text-transform: uppercase;
-    margin-bottom: 1rem;
   }
 
   &__list-link {

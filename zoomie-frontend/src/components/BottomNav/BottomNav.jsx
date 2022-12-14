@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './BottomNav.scss';
-import homeIcon from '../../assets/icons/home-icon.svg';
-import profileIcon from '../../assets/icons/profile-icon.svg';
+import homeIcon from '../../assets/icons/home-icon.png';
+import profileIcon from '../../assets/icons/profile-icon.png';
 
 const BottomNav = ({ isLoggedIn }) => {
   return (

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import './SignUpForm.scss';
 import bg from '../../assets/images/bg.png';
-import backIcon from '../../assets/icons/back-arrow-white.svg';
+import backIcon from '../../assets/icons/chevron-left-white.png';
+import emailIcon from '../../assets/icons/email-icon.png';
+import lockIcon from '../../assets/icons/lock-icon.png';
 import CreateDogPage from '../../pages/CreateDogPage/CreateDogPage';
+import './SignUpForm.scss';
 
 const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
   const [isSignUpError, setIsSignUpError] = useState(false);
@@ -80,9 +82,16 @@ const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
           <div className="SignUpForm__sheet">
             <form onSubmit={onSubmit} className="SignUpForm__form">
               <section className="SignUpForm__section">
-                <label className="SignUpForm__label" htmlFor="username">
-                  Email
-                </label>
+                <div className="SignUpForm__icon-container">
+                  <img
+                    className="SignUpForm__icon"
+                    src={emailIcon}
+                    alt="email-icon"
+                  />
+                  <label className="SignUpForm__label" htmlFor="email">
+                    Email
+                  </label>
+                </div>
                 <input
                   onChange={onChange}
                   id="email"
@@ -94,9 +103,10 @@ const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
                 />
               </section>
               <section className="SignUpForm__section">
-                <label className="SignUpForm__label" htmlFor="password">
-                  Password
-                </label>
+                <div className="SignUpForm__icon-container">
+                  <img className="SignUpForm__icon" src={lockIcon} alt="lock-icon" />
+                  <label className="SignUpForm__label" htmlFor="password">Password</label>
+                </div>
                 <input
                   onChange={onChange}
                   id="password"
