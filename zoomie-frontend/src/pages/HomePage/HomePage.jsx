@@ -2,18 +2,28 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import BrowseList from '../../components/BrowseList/BrowseList';
 import NearbyList from '../../components/NearbyList/NearbyList';
+import Loading from '../../components/Loading/Loading';
 
 const HomePage = () => {
   const locationsURL = 'http://localhost:8080/locations';
-  const checkinsURL = "http://localhost:8080/checkins/";
+  const checkinsURL = 'http://localhost:8080/checkins/';
   const [locations, setLocations] = useState([]);
   const [checkins, setCheckins] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(true);
+    }, 2500);
+  }, [loading]);
 
   useEffect(() => {
     axios
       .get(locationsURL)
       .then((response) => {
-        setLocations(response.data);
+        setTimeout(() => {
+          setLocations(response.data);
+        }, 800);
       })
       .catch((error) => {
         console.log(error);
@@ -32,12 +42,22 @@ const HomePage = () => {
   }, []);
 
   if (!locations || !checkins) {
-    return <></>;
+    return (
+      <>
+        <Loading />
+      </>
+    );
   }
   return (
     <>
-      <NearbyList locations={locations} checkins={checkins} />
-      <BrowseList locations={locations} checkins={checkins} />
+      {!loading ? (
+        <Loading />
+      ) : (
+        <>
+          <NearbyList locations={locations} checkins={checkins} />
+          <BrowseList locations={locations} checkins={checkins} />
+        </>
+      )}
     </>
   );
 };
