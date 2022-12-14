@@ -3,20 +3,16 @@ import { Link } from 'react-router-dom';
 import './AuthButton.scss';
 
 const AuthButton = ({ isLoggedIn }) => {
-  if (isLoggedIn) {
-    return (
-      <Link to="/profile">
-        <button className="AuthButton">My Profile</button>
-      </Link>
-    );
-  } else {
+  if (!isLoggedIn) {
     return (
       <>
         <Link to="/welcome">
-          <button className="AuthButton">Log In</button>
+          <button className="AuthButton">Sign Up</button>
         </Link>
       </>
     );
+  } else {
+    return null;
   }
 };
 

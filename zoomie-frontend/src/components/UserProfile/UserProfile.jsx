@@ -1,9 +1,19 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import editIcon from '../../assets/icons/edit-icon.svg';
 import checkinIcon from '../../assets/icons/checkin-icon.svg';
 import './UserProfile.scss';
 
-const UserProfile = ({ displayProfile, findCheckins, handleLogOut }) => {
+const UserProfile = ({ displayProfile, checkins, setIsLoggedIn }) => {
+  const navigate = useNavigate();
+  const findCheckins = checkins.filter((checkin) => {
+    return checkin.id === displayProfile.id;
+  });
+  const handleLogOut = () => {
+    sessionStorage.setItem('loggedIn', JSON.stringify(false));
+    sessionStorage.clear();
+    setIsLoggedIn(false);
+    navigate('/');
+  };
   return (
     <>
       <div className="UserProfile">
@@ -31,10 +41,7 @@ const UserProfile = ({ displayProfile, findCheckins, handleLogOut }) => {
             {findCheckins.length} Check Ins
           </p>
         </div>
-        <button
-          className="UserProfile__logout-button"
-          onClick={() => handleLogOut()}
-        >
+        <button className="UserProfile__logout-button" onClick={handleLogOut}>
           Log Out
         </button>
       </div>

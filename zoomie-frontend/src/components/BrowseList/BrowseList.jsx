@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import './BrowseList.scss';
 import LocationCard from '../LocationCard/LocationCard';
 import chevronRight from '../../assets/icons/chevron-right.svg';
+import './BrowseList.scss';
 
 const BrowseList = ({ locations, checkins }) => {
   const displayLocations = locations.slice(0, 10);

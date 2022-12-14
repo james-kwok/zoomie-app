@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import bg from '../../assets/images/bg.png';
 import backIcon from '../../assets/icons/back-arrow-white.svg';
 import './LogInForm.scss';
-import bg from '../../assets/images/bg.png';
 
 const LogInForm = ({ setIsLoggedIn, setNewUser }) => {
   const navigate = useNavigate();
@@ -74,7 +74,7 @@ const LogInForm = ({ setIsLoggedIn, setNewUser }) => {
         <div className="LogInForm__sheet">
           <form onSubmit={onSubmit} className="LogInForm__form">
             <section className="LogInForm__section">
-              <label className="LogInForm__label" htmlFor="username">
+              <label className="LogInForm__label" htmlFor="email">
                 Email
               </label>
               <input

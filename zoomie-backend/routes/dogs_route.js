@@ -4,6 +4,7 @@ const dogsController = require('../controllers/dogsController');
 const auth = require('../middleware/auth');
 
 router.get('/', dogsController.getDogList);
+router.post('/post', auth, dogsController.postDogProfile);
 router.get('/profile', auth, dogsController.getUserDog);
 router.get('/:id', dogsController.getSingleDog);
 

@@ -38,8 +38,36 @@ const getUserDog = async (req, res) => {
   }
 };
 
+const postDogProfile = async (req, res) => {
+  try {
+    console.log(req.userData)
+    const userId = await db
+      .select('id')
+      .from('users')
+      .where('id', '=', req.userData.id)
+    const dogProfile = await db('dogs').select('*').insert({
+      name: req.body.name,
+      breed: req.body.breed,
+      img: 'https://res.cloudinary.com/deu69ydvq/image/upload/v1670949565/placeholder-avatar_xe9pk4.webp',
+      bio: req.body.bio,
+      user_id: userId[0].id,
+    });
+    res.status(201).json({
+      message: 'Dog profile created successfully.',
+      dog: dogProfile,
+    });
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      message: 'Unable to create dog profile.',
+      error,
+    });
+  }
+};
+
 module.exports = {
   getDogList,
   getSingleDog,
   getUserDog,
+  postDogProfile,
 };

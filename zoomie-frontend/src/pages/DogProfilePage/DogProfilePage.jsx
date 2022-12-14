@@ -15,7 +15,6 @@ const DogProfilePage = () => {
       .get(dogProfileURL)
       .then((response) => {
         setDogProfile(response.data);
-        window.scrollTo(0, 0);
       })
       .catch((error) => {
         console.log(error);
@@ -33,13 +32,13 @@ const DogProfilePage = () => {
       });
   }, []);
 
+  if (!dogProfile || !checkins) {
+    return <></>;
+  }
+
   const findCheckins = checkins.filter((checkin) => {
     return checkin.id === dogProfile.id;
   });
-
-  if (!dogProfile || !checkins || !findCheckins) {
-    return <></>;
-  }
   return (
     <>
       <DogProfile dogProfile={dogProfile} findCheckins={findCheckins} />

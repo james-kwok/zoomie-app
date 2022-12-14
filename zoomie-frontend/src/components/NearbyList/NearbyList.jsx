@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import './NearbyList.scss';
-import LocationCardXL from '../LocationCardXL/LocationCardXL';
 import pinIcon from '../../assets/icons/pin-icon.svg';
+import LocationCardXL from '../LocationCardXL/LocationCardXL';
+import './NearbyList.scss';
 
 const NearbyList = ({ locations, checkins }) => {
   const displayLocations = locations.slice(0, 10);

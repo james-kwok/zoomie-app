@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import './NavBack.scss';
 import backIcon from '../../assets/icons/back-arrow.svg';
 import AuthButton from '../AuthButton/AuthButton';
+import './NavBack.scss';
 
 const NavBack = ({ isLoggedIn }) => {
   return (

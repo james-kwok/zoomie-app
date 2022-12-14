@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import './Nav.scss';
 import logo from '../../assets/logos/zoomie-logo.svg';
 import logoText from '../../assets/logos/zoomie-text.svg';
 import AuthButton from '../AuthButton/AuthButton';
+import './Nav.scss';
 
 const Nav = ({ isLoggedIn }) => {
   return (
@@ -17,7 +17,7 @@ const Nav = ({ isLoggedIn }) => {
           />
         </Link>
         <div className="Nav__button-container">
-            <AuthButton isLoggedIn={isLoggedIn} />
+          <AuthButton isLoggedIn={isLoggedIn} />
         </div>
       </div>
     </>

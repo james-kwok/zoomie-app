@@ -16,7 +16,7 @@ const usersData = [
     password: hashedPassword('password'),
   },
   {
-    id: 3, 
+    id: 3,
     email: '3@example.com',
     password: hashedPassword('password'),
   },

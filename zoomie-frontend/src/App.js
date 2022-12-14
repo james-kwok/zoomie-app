@@ -15,12 +15,6 @@ const App = () => {
     JSON.parse(sessionStorage.getItem('loggedIn'))
   );
 
-  const handleLogOut = () => {
-    sessionStorage.setItem('loggedIn', JSON.stringify(false));
-    sessionStorage.clear();
-    setIsLoggedIn(false);
-  };
-
   useEffect(() => {
     getLocation();
   }, []);
@@ -46,7 +40,7 @@ const App = () => {
               <>
                 <Nav isLoggedIn={isLoggedIn} />
                 <HomePage />
-                <BottomNav />
+                <BottomNav isLoggedIn={isLoggedIn} />
               </>
             }
           />
@@ -56,7 +50,7 @@ const App = () => {
               <>
                 <NavBack isLoggedIn={isLoggedIn} />
                 <LocationDetailsPage isLoggedIn={isLoggedIn} />
-                <BottomNav />
+                <BottomNav isLoggedIn={isLoggedIn} />
               </>
             }
           />
@@ -68,9 +62,8 @@ const App = () => {
                 <ProfilePage
                   isLoggedIn={isLoggedIn}
                   setIsLoggedIn={setIsLoggedIn}
-                  handleLogOut={handleLogOut}
                 />
-                <BottomNav />
+                <BottomNav isLoggedIn={isLoggedIn} />
               </>
             }
           />
@@ -80,13 +73,18 @@ const App = () => {
               <>
                 <NavBack isLoggedIn={isLoggedIn} />
                 <DogProfilePage />
-                <BottomNav />
+                <BottomNav isLoggedIn={isLoggedIn} />
               </>
             }
           />
           <Route
             path="/welcome"
-            element={<SignUpLogInPage setIsLoggedIn={setIsLoggedIn} />}
+            element={
+              <SignUpLogInPage
+                isLoggedIn={isLoggedIn}
+                setIsLoggedIn={setIsLoggedIn}
+              />
+            }
           />
         </Routes>
       </BrowserRouter>

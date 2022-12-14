@@ -1,12 +1,8 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import UserProfile from '../../components/UserProfile/UserProfile';
-import EmptyProfile from '../../components/EmptyProfile/EmptyProfile';
 
-const ProfilePage = ({ isLoggedIn, handleLogOut }) => {
-  if (!isLoggedIn) {
-    return <EmptyProfile />;
-  }
+const ProfilePage = ({ isLoggedIn, setIsLoggedIn }) => {
   const userProfileURL = 'http://localhost:8080/dogs/profile';
   const checkinsURL = 'http://localhost:8080/checkins';
   const [userProfile, setUserProfile] = useState([]);
@@ -41,11 +37,7 @@ const ProfilePage = ({ isLoggedIn, handleLogOut }) => {
       });
   }, []);
 
-  const findCheckins = checkins.filter((checkin) => {
-    return checkin.id === displayProfile.id;
-  });
-
-  if (!userProfile || !checkins || !displayProfile || !findCheckins[0]) {
+  if (!userProfile || !checkins || !displayProfile) {
     return <></>;
   }
 
@@ -53,8 +45,8 @@ const ProfilePage = ({ isLoggedIn, handleLogOut }) => {
     <>
       <UserProfile
         displayProfile={displayProfile}
-        findCheckins={findCheckins}
-        handleLogOut={handleLogOut}
+        checkins={checkins}
+        setIsLoggedIn={setIsLoggedIn}
       />
     </>
   );
