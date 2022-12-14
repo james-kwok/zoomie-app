@@ -134,7 +134,8 @@
   &__gallery {
     display: flex;
     flex-wrap: wrap;
-    margin: 0.5rem 0 8rem 0;
+    margin: 0.5rem 0 1rem 0;
+    border-bottom: 1px solid $bg-light;
   }
 
   &__profile {
@@ -165,11 +166,11 @@
     line-height: $mobile-small-lh;
     font-weight: $mobile-small-weight-light;
     color: $secondary;
+    margin-bottom: 1.5rem;
   }
 
   &__map {
     padding: 1.5rem 1rem;
-    border-bottom: 1px solid $bg-light;
   }
 
   &__map-container {
