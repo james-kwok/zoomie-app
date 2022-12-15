@@ -22,7 +22,7 @@ To run this project, run ```$ npm install``` in both ```zoomie-frontend``` and `
 
 #### MapBox Access Token
 
-Please sign up for a MapBox account to get an access token if you want to render the map in the ```LocationDetails `` component.
+Please sign up for a MapBox account to get an access token if you want to render the map in the ```LocationDetails``` component.
 
 #### Now you are all set!
 
