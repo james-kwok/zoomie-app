@@ -7,4 +7,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &__lottie {
+    height: 15rem;
+    width: 15rem;
+  }
 }

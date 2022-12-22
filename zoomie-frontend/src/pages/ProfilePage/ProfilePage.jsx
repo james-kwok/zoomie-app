@@ -1,9 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Lottie from 'react-lottie';
-import bgLottie from '../../assets/lottie/bg-lottie.json';
 import UserProfile from '../../components/UserProfile/UserProfile';
-import './ProfilePage.scss'
+import './ProfilePage.scss';
 
 const ProfilePage = ({ isLoggedIn, setIsLoggedIn }) => {
   const userProfileURL = 'http://localhost:8080/dogs/profile';
@@ -43,22 +41,9 @@ const ProfilePage = ({ isLoggedIn, setIsLoggedIn }) => {
   if (!userProfile || !checkins || !displayProfile) {
     return <></>;
   }
-
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: bgLottie,
-    rendererSetings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
-
   return (
     <>
       <div className="ProfilePage">
-        <div className="ProfilePage__bg">
-          <Lottie options={defaultOptions} height={568} width={375} />
-        </div>
         <UserProfile
           displayProfile={displayProfile}
           checkins={checkins}

@@ -12,6 +12,26 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    getLocation();
+  }, []);
+
+  // web API for geolocating user, not used yet, will implement in future
+  const getLocation = () => {
+    if (!navigator.geolocation) {
+      console.log(navigator.geolocation);
+    } else {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const latitude = position.coords.latitude;
+        const longtitude = position.coords.longitude;
+        const timestamp = position.timestamp;
+        console.log(latitude);
+        console.log(longtitude);
+        console.log(timestamp);
+      });
+    }
+  };
+
+  useEffect(() => {
     setTimeout(() => {
       setLoading(true);
     }, 2500);

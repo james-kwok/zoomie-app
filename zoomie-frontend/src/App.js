@@ -15,21 +15,6 @@ const App = () => {
     JSON.parse(sessionStorage.getItem('loggedIn'))
   );
 
-  useEffect(() => {
-    getLocation();
-  }, []);
-
-  // web API for geolocating user, not used yet, will implement in future
-  const getLocation = () => {
-    if (!navigator.geolocation) {
-      console.log(navigator.geolocation);
-    } else {
-      navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position.coords.latitude);
-        console.log(position.coords.longitude);
-      });
-    }
-  };
   return (
     <>
       <BrowserRouter>

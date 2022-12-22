@@ -7,6 +7,12 @@
 
   &__animation-container {
    display: flex;
+   justify-content: center;
+  }
+
+  &__lottie {
+    width: 65%;
+    height: auto;
   }
 
   &__section {
