@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 import './App.scss';
 import BottomNav from './components/BottomNav/BottomNav';
 import Nav from './components/Nav/Nav';
@@ -14,6 +15,43 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
     JSON.parse(sessionStorage.getItem('loggedIn'))
   );
+  const userProfileURL = 'http://localhost:8080/dogs/profile';
+  const checkinsURL = 'http://localhost:8080/checkins';
+  const [userProfile, setUserProfile] = useState([]);
+  const [checkins, setCheckins] = useState([]);
+  const displayProfile = userProfile[0];
+
+  useEffect(() => {
+    const token = sessionStorage.getItem('authToken');
+    axios
+      .get(userProfileURL, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        setUserProfile(response.data);
+        window.scrollTo(0, 0);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [isLoggedIn]);
+
+  useEffect(() => {
+    axios
+      .get(checkinsURL)
+      .then((response) => {
+        setCheckins(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  if (!userProfile || !checkins || !displayProfile) {
+    return <></>;
+  }
 
   return (
     <>
@@ -35,7 +73,10 @@ const App = () => {
             element={
               <>
                 <NavBack isLoggedIn={isLoggedIn} />
-                <LocationDetailsPage isLoggedIn={isLoggedIn} />
+                <LocationDetailsPage
+                  displayProfile={displayProfile}
+                  isLoggedIn={isLoggedIn}
+                />
                 <BottomNav isLoggedIn={isLoggedIn} />
               </>
             }
@@ -46,7 +87,8 @@ const App = () => {
               <>
                 <NavBack isLoggedIn={isLoggedIn} />
                 <ProfilePage
-                  isLoggedIn={isLoggedIn}
+                  displayProfile={displayProfile}
+                  checkins={checkins}
                   setIsLoggedIn={setIsLoggedIn}
                 />
                 <BottomNav isLoggedIn={isLoggedIn} />

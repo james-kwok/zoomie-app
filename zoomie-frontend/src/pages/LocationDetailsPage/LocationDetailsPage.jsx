@@ -3,12 +3,13 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import LocationDetails from '../../components/LocationDetails/LocationDetails';
 
-const LocationDetailsPage = ({ isLoggedIn }) => {
+const LocationDetailsPage = ({ displayProfile, isLoggedIn }) => {
   const { id } = useParams();
   const locationsURL = `http://localhost:8080/locations/${id}`;
   const checkinsURL = `http://localhost:8080/checkins/${id}`;
   const [locations, setLocations] = useState([]);
   const [checkins, setCheckins] = useState([]);
+  const [disable, setDisable] = useState(true);
 
   useEffect(() => {
     axios
@@ -46,7 +47,11 @@ const LocationDetailsPage = ({ isLoggedIn }) => {
           checkins={checkins}
           lng={locations.longitude}
           lat={locations.latitude}
+          displayProfile={displayProfile}
           isLoggedIn={isLoggedIn}
+          disable={disable}
+          setDisable={setDisable}
+          id={id}
         />
       ) : null}
     </>

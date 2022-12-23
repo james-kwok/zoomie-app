@@ -70,6 +70,7 @@
 
   &__category-container {
     display: flex;
+    margin-bottom: 1rem;
   }
 
   &__category-label {
@@ -113,14 +114,14 @@
     height: 3.375rem;
     width: 100%;
     margin-top: 1.5rem;
+
+    &--disabled {
+      display: none;
+    }
   }
 
   &___button {
     cursor: pointer;
-  }
-
-  &__button-text {
-    pointer-events: none;
   }
 
   &__attendance {
@@ -162,7 +163,7 @@
     line-height: $mobile-small-lh;
     font-weight: $mobile-small-weight-light;
     color: $secondary;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.25rem;
   }
 
   &__about {

@@ -39,6 +39,7 @@ const postCheckIn = async (req, res) => {
     const checkins = await db('check-ins').insert({
       dog_id: dogId[0].id,
       location_id: req.body.location_id,
+      status: req.body.status,
     });
     res.status(201).json({ checkins });
   } catch (error) {

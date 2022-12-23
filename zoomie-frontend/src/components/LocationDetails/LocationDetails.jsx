@@ -7,18 +7,34 @@ import locationIcon from '../../assets/icons/location-icon.png';
 import tagIcon from '../../assets/icons/tag-icon-white.png';
 import routeIcon from '../../assets/icons/route-icon.png';
 import bonesIcon from '../../assets/icons/bones.png';
-import infoIcon from '../../assets/icons/info-icon.png'
+import infoIcon from '../../assets/icons/info-icon.png';
 import './LocationDetails.scss';
 
 mapboxgl.accessToken = process.env.REACT_APP_MB_ACCESS;
 
-const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
+const LocationDetails = ({
+  location,
+  checkins,
+  lng,
+  lat,
+  displayProfile,
+  isLoggedIn,
+  id,
+}) => {
   const navigate = useNavigate();
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [error, setError] = useState('');
   const [failedAuth, setFailedAuth] = useState(false);
+  const [status, setStatus] = useState(false);
   const authToken = sessionStorage.getItem('authToken');
+
+  // determine if user is checked in at location, if true disable button
+  useEffect(() => {
+    if (checkins.length > 0) {
+      setStatus(true);
+    }
+  });
 
   useEffect(() => {
     if (!authToken) {
@@ -49,6 +65,7 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
         'http://localhost:8080/checkins',
         {
           location_id: location.id,
+          status: 1,
         },
         {
           headers: {
@@ -60,10 +77,11 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
         setError('Unable to post check-in.');
         return;
       }
-      navigate('/locations');
+      setStatus(true);
+      window.location.reload();
+      navigate(`/locations/${id}`);
     } catch (error) {
       setError('Something went wrong, try again later.');
-      console.log(error);
     }
   };
 
@@ -111,7 +129,13 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
               </div>
             </div>
             {/* conditional button for guest vs logged in state */}
-            <div className="LocationDetails__button-wrapper">
+            <div
+              className={`${
+                status === true
+                  ? 'LocationDetails__button-wrapper--disabled'
+                  : 'LocationDetails__button-wrapper'
+              }`}
+            >
               {isLoggedIn ? (
                 <button
                   onClick={postCheckIn}
@@ -169,9 +193,7 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
                 src={infoIcon}
                 alt="info-icon"
               />
-              <h2 className="LocationDetails__about-title">
-                Park Details
-              </h2>
+              <h2 className="LocationDetails__about-title">Park Details</h2>
             </div>
             <p className="LocationDetails__about-text">
               {location.description}
