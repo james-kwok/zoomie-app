@@ -30,7 +30,7 @@ const addUser = async (req, res) => {
     const newUserCreated = newUser[0];
     // attaching jwt to new sign ups to prevent user from having to sign in right after
     const token = jwt.sign({ id: newUser[0] }, process.env.JWT_SECRET, {
-      expiresIn: '1h',
+      expiresIn: '3h',
     });
     res.status(201).json({
       message: 'User created successfully.',
@@ -66,7 +66,7 @@ const getUser = async (req, res) => {
       return res.status(401).json({ error: 'Incorrect password.' });
     }
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-      expiresIn: '1h',
+      expiresIn: '3h',
     });
 
     return res.status(200).json({
