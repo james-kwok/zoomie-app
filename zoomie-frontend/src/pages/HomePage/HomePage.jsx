@@ -10,6 +10,7 @@ const HomePage = () => {
   const [locations, setLocations] = useState([]);
   const [checkins, setCheckins] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [coords, setCoords] = useState('');
 
   useEffect(() => {
     getLocation();
@@ -18,15 +19,11 @@ const HomePage = () => {
   // web API for geolocating user, not used yet, will implement in future
   const getLocation = () => {
     if (!navigator.geolocation) {
-      console.log(navigator.geolocation);
+      // console.log(navigator.geolocation);
     } else {
       navigator.geolocation.getCurrentPosition((position) => {
-        const latitude = position.coords.latitude;
-        const longtitude = position.coords.longitude;
-        const timestamp = position.timestamp;
-        console.log(latitude);
-        console.log(longtitude);
-        console.log(timestamp);
+        setCoords(position.coords);
+        // console.log(position.coords);
       });
     }
   };
@@ -34,16 +31,14 @@ const HomePage = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(true);
-    }, 2500);
+    }, 2000);
   }, [loading]);
 
   useEffect(() => {
     axios
       .get(locationsURL)
       .then((response) => {
-        setTimeout(() => {
-          setLocations(response.data);
-        }, 800);
+        setLocations(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -61,7 +56,7 @@ const HomePage = () => {
       });
   }, []);
 
-  if (!locations || !checkins) {
+  if (!locations || !checkins || !coords) {
     return (
       <>
         <Loading />
@@ -74,7 +69,11 @@ const HomePage = () => {
         <Loading />
       ) : (
         <>
-          <NearbyList locations={locations} checkins={checkins} />
+          <NearbyList
+            locations={locations}
+            checkins={checkins}
+            coords={coords}
+          />
           <BrowseList locations={locations} checkins={checkins} />
         </>
       )}

@@ -40,12 +40,12 @@ const LocationDetailsPage = ({ isLoggedIn }) => {
   return (
     <>
     {/* ensure React to render only after the app receives data from endpoint */}
-      {locations.lng && locations.lat ? (
+      {locations.longitude && locations.latitude ? (
         <LocationDetails
           location={locations}
           checkins={checkins}
-          lng={locations.lng}
-          lat={locations.lat}
+          lng={locations.longitude}
+          lat={locations.latitude}
           isLoggedIn={isLoggedIn}
         />
       ) : null}

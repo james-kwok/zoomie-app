@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom';
+import * as geolib from 'geolib';
 import pinIcon from '../../assets/icons/pin-icon.png';
 import LocationCardXL from '../LocationCardXL/LocationCardXL';
 import './NearbyList.scss';
 
-const NearbyList = ({ locations, checkins }) => {
-  // will remove this array method when geolocation feature is developed
-  const displayLocations = locations.slice(4, 10);
+const NearbyList = ({ locations, checkins, coords }) => {
+
+  const sortLocations = geolib.orderByDistance(
+    { latitude: coords.latitude, longitude: coords.longitude },
+    locations
+  );
+  console.log(sortLocations);
+
   return (
     <>
       <div className="NearbyList">
@@ -14,7 +20,7 @@ const NearbyList = ({ locations, checkins }) => {
           <h2 className="NearbyList__title">Check-in to nearby parks</h2>
         </div>
         <div className="NearbyList__gallery">
-          {displayLocations.map((location, index) => {
+          {sortLocations.map((location, index) => {
             return (
               <Link to={`/locations/${location.id}`} key={index}>
                 <LocationCardXL location={location} checkins={checkins} />

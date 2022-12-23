@@ -3,8 +3,8 @@ exports.up = function (knex) {
     table.increments('id').primary();
     table.string('address').notNullable();
     table.string('city').notNullable();
-    table.string('lat').notNullable();
-    table.string('lng').notNullable();
+    table.decimal('latitude', [10], [8])
+    table.decimal('longitude', [10], [8])
     table.string('name').notNullable();
     table.string('img').notNullable();
   });
