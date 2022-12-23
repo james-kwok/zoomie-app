@@ -32,31 +32,31 @@ Run ```$ npm start``` in both ```zoomie-frontend``` and ```zoomie-backend``` to 
 
 #### Get all locations
 
-```http
+```
   GET /locations
 ```
 
 #### Get a specific location
 
-```http
+```
   GET /locations/${id}
 ```
 
 #### Get all dog profiles
 
-```http
+```
   GET /dogs
 ```
 
 #### Get a specific dog profile
 
-```http
+```
   GET /dogs/${id}
 ```
 
 #### Get user's dog profile
 
-```http
+```
   GET /dogs/profile
 ```
 
@@ -66,7 +66,7 @@ Run ```$ npm start``` in both ```zoomie-frontend``` and ```zoomie-backend``` to 
 
 #### Create user's dog profile
 
-```http
+```
   POST /dogs/post
 ```
 
@@ -76,13 +76,13 @@ Run ```$ npm start``` in both ```zoomie-frontend``` and ```zoomie-backend``` to 
 
 #### Get all check-ins
 
-```http
+```
   GET /checkins
 ```
 
 #### Create a check-in instance
 
-```http
+```
   POST /checkins
 ```
 
@@ -92,19 +92,19 @@ Run ```$ npm start``` in both ```zoomie-frontend``` and ```zoomie-backend``` to 
 
 #### Get a list of checked-in dogs at a specific location
 
-```http
+```
   GET /checkins/${id}
 ```
 
 #### Create a user account
 
-```http
+```
   POST /users/signup
 ```
 
 #### Log in to an exsiting user account
 
-```http
+```
   POST /users/login
 ```
 
@@ -122,8 +122,8 @@ Run ```$ npm start``` in both ```zoomie-frontend``` and ```zoomie-backend``` to 
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Primary | ![#0a192f](https://via.placeholder.com/20/FFFC00?text=+) #FFFC00 |
-| Secondary | ![#f8f8f8](https://via.placeholder.com/20/11111F?text=+) #11111F |
+| Primary | #FFFC00 |
+| Secondary | #11111F |
 
 
 
