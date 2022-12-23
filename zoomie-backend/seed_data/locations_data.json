@@ -6,6 +6,7 @@
     "latitude": 43.6627503179021,
     "longitude": -79.3747945086417,
     "name": "Allan Gardens",
+    "description": "Allan Gardens is a park and an indoor botanical garden with six greenhouses comprising over 16,000 square feet. The indoor conservatory features colourful plants and flowers from around the world. Seasonal plants supplement the permanent plant collection of botanical importance since 1858. The conservatory boasts the \"Palm House\" (1909) modelled after similar structures in the United States and England.\n\nThe playground features open play opportunities for all ages and includes a water tap and sand play area, and incorporates natural materials such as fieldstone boulders and log seating.\n\nThe Dogs Off-Leash Area is fenced, allows Commercial Dog Walkers and has a separate area for dogs weighing less than 9.1 kg (20 lbs).",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907203/locations/allan_gardens_ndhiya.jpg"
   },
   {
@@ -15,6 +16,7 @@
     "latitude": 43.670757988881,
     "longitude": -79.2867976682943,
     "name": "Balmy Beach Park (Silverbirch Park)",
+    "description": "Created in 1903, this historic 7.3 hectare park is home to the Balmy Beach Club. The park features a lawn bowling club, a playground and outdoor fitness equipment. The Martin Goodman Trail runs through the park parallel to the boardwalk and beach, along the shore of Lake Ontario. The Silverbirch Dogs Off-Leash Area lies along the shoreline southeast of the park, stretching east from the foot of Silver Birch Avenue to the foot of Nursewood Road. It allows Commercial Dog Walkers and is unfenced.\n\nIn the historic Beach neighbourhood south of Queen Street East, a vibrant street with an eclectic mix of shops, cafes, pubs and restaurants. Accessible washrooms open daily from morning to evening, from April/May to October.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907202/locations/balmy_beach_park_yeq50l.jpg"
   },
   {
@@ -24,6 +26,7 @@
     "latitude": 43.6667348330029,
     "longitude": -79.3804427183508,
     "name": "Barbara Hall Park",
+    "description": "A small park on Church Street north of Wellesley Street East featuring a fenced-in splash pad, a fenced Dogs Off-Leash Area and an AIDs Memorial. The park is next to the 519 Community Centre, which hosts events in the park during Pride Week and throughout the year. There is currently a BIXI station on the northwest side of the park.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907201/locations/barbara_hall_park_btwgjz.jpg"
   },
   {
@@ -33,6 +36,7 @@
     "latitude": 43.6611240214631,
     "longitude": -79.4186988177004,
     "name": "Bickford Park",
+    "description": "A 2.8-hectare park near Grace Avenue south of Bloor Street West featuring a ball diamond. The fenced Dogs Off-Leash Area allows Commercial Dog Walkers.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907201/locations/bickford_park_g1djle.jpg"
   },
   {
@@ -42,6 +46,7 @@
     "latitude": 43.6401480737503,
     "longitude": -79.4133538056734,
     "name": "Bill Johnston Park",
+    "description": "A small linear park running the length of north side Western Battery Road near King Street West and Strachan Ave in Liberty Village.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907202/locations/bill_johnston_park_f8anrn.webp"
   },
   {
@@ -51,6 +56,7 @@
     "latitude": 43.6801254304055,
     "longitude": -79.3068907507404,
     "name": "Cassels Avenue Playground",
+    "description": "This 1.6-hectare park near Woodbine Avenue and Gerrard Street East features a splash pad and a children's playground. The unfenced Dogs Off-Leash Area allows Commercial Dog Walkers.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907204/locations/cassels_avenue_playground_j16ska.jpg"
   },
   {
@@ -60,6 +66,7 @@
     "latitude": 43.6904658530111,
     "longitude": -79.4221594761614,
     "name": "Cedarvale Park",
+    "description": "This district park is a hub for outdoor activity. A visit to Cedarvale Park reveals four outdoor tennis courts, two sport fields and a baseball diamond. For a little fun on a sunny summer day there is a splash pad and playground for children to enjoy. Park visitors can make use of the outdoor fitness equipment installed at the south end of the ravine near Heath Street. In the colder weather, visitors can choose to skate outside on the artificial ice rink (December through February weather permitting) or skate indoors at the Phil White Arena.\n\nWalk the paths through the park and ravine to enjoy nature or drop-by to use the Dog Off-Leash Area located east of the arena's parking lot. Cedarvale Park can be found north of Vaughan Road and west of Bathurst Street.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907205/locations/cedarvale_park_gtyibl.jpg"
   },
   {
@@ -69,6 +76,7 @@
     "latitude": 43.6371449625328,
     "longitude": -79.3433463416839,
     "name": "Cherry Beach",
+    "description": "Located on the north shore of the Outer Harbour at the foot of Cherry Street. The park features dog off-leash area, ample parking is located on the Martin Goodman Trail and receives TTC bus service during the summer season. The west side of the beach is popular with kite boarders.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907203/locations/cherry_beach_rslasd.jpg"
   },
   {
@@ -78,6 +86,7 @@
     "latitude": 43.6441746504932,
     "longitude": -79.3938118350841,
     "name": "Clarence Square",
+    "description": "A small downtown park on Spadina Avenue just north of Front Street featuring a mature tree canopy, many park benches and an enclosed dog off-leash area.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907204/locations/clarence_square_ehzqp6.jpg"
   },
   {
@@ -87,6 +96,7 @@
     "latitude": 43.633818836641,
     "longitude": -79.4066665461588,
     "name": "Coronation Park",
+    "description": "Coronation Park can be found just east of Ontario Place along the Martin Goodman Trail. A Royal Oak commemorating the Coronation of King George VI is planted in the southwest corner of the park. This oak is surrounded by a ring of maples, and other trees throughout the park are identified by nearby engraved markers as part of a First World War memorial. A key map just north of the Royal Oak, and other signage through the park, tell the story of the memorial and the building of the park in the 1930s. There is also a Second World War memorial. Coronation Park has three softball diamonds and a dog off-leash area. It is a beautiful spot to sit along the shoreline of Lake Ontario and enjoy a picnic on a warm summer day.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907204/locations/coronation_park_zrc2pu.jpg"
   },
   {
@@ -96,6 +106,7 @@
     "latitude": 43.6989410169486,
     "longitude": -79.3339073367444,
     "name": "Coxwell Ravine Park",
+    "description": "Coxwell Ravine Park is located on the east side of the Don Valley Parkway just north of Don Mills Road. It is part of the extensive East Don Valley Trail system that includes Todmorden Mills Park, Linkwood Lane Park and Charles Sauriol Conservation Area. There is a great picnic area and outstanding opportunities for wildlife viewing.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907206/locations/coxwell_ravine_park_vpcmuh.jpg"
   },
   {
@@ -105,6 +116,7 @@
     "latitude": 43.6779318866242,
     "longitude": -79.3716248962144,
     "name": "Craigleigh Gardens",
+    "description": "A quiet 3.4 hectare park near Castle Frank Road and Bloor Street East featuring an entrance with ornamental gates, a mature tree canopy and a dog off-leash area. The park is adjacent to Milkman's Lane with access to a ravine trail and the Don Valley Brick Works.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907205/locations/craigleigh_gardens_ro3glh.jpg"
   },
   {
@@ -114,6 +126,7 @@
     "latitude": 43.6485566005176,
     "longitude": -79.3679256448347,
     "name": "David Crombie Park",
+    "description": "A 1.6 hectare park south of Front Street between Jarvis and Berkeley Street featuring a ball diamond, a basketball court, a dog off-leash area, two children's playgrounds and a wading pool.\n\nThe park is named after the former Mayor of Toronto who served from 1972 to 1978 and oversaw the creation of the St. Lawrence neighbourhood in which the park is located.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907205/locations/david_crombie_park_szavgt.jpg"
   },
   {
@@ -123,6 +136,7 @@
     "latitude": 43.6875705834818,
     "longitude": -79.3637055866111,
     "name": "Don Valley Brick Works",
+    "description": "Once a former quarry, Don Valley Brick Works Park is now a City of Toronto flagship natural environment park. It is considered a model for urban ecosystem planning given its extensive landscape restoration, re-naturalization, wetland re-establishment, and adaptive management.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907205/locations/don_valley_brick_works_mruwww.jpg"
   },
   {
@@ -132,6 +146,7 @@
     "latitude": 43.6672500307425,
     "longitude": -79.3432236957201,
     "name": "Gerrard Carlaw Parkette",
+    "description": "This park features a dog off-leash area.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907206/locations/gerrard_carlaw_parkette_vqlpx4.jpg"
   },
   {
@@ -141,6 +156,7 @@
     "latitude": 43.6523576530653,
     "longitude": -79.3924139987044,
     "name": "Grange Park",
+    "description": "A 1.8 hectare park near Queen Street West and University Avenue featuring a picnic area, a wading pool and a children's playground. Grange Park is officially owned by the Art Gallery of Ontario, and is run by Toronto Parks, Forestry and Recreation. The late Harriet Boulton, also known as Mrs. Goldwin Smith, provided in her will that the Grange and annexed lands which was her home would be gifted to the Art Museum of Toronto. The land to the south of the Grange were to be made available for use as a park in perpetuity. Title to the Grange and the Park are vested in the Art Gallery of Ontario, which evolved from the Art Museum of Toronto. An agreement between the City of Toronto and the Art Museum of Toronto was made on January 20, 1911 regarding Grange Park.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907206/locations/grange_park_dy3vup.jpg"
   },
   {
@@ -150,6 +166,7 @@
     "latitude": 43.6688727973276,
     "longitude": -79.328463124335,
     "name": "Greenwood Park",
+    "description": "This 6.2 hectare park lies on Greenwood Avenue north of Dundas Street East. It features two lit ball diamonds, a multipurpose sports field, a dog off-leash area, a community garden, a splash pad and a children's playground. The Greenwood Park outdoor pool is located at the north end of the park.\n\nGreenwood Park Outdoor Pool features a 35 m shallow pool which is approximately 2 m at the deep end. There is a large pool deck with a raised seating area on the north side.\n\nSpecial Feature:\nGreenwood Park has the City's first covered outdoor artificial ice rink. It is available in winter for skating, and used for ball hockey in the summer. There is also a pleasure ice skating trail located beside the ice rink, one of a growing number of skating trails found within the City of Toronto.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907206/locations/greenwood_park_gvxoqg.jpg"
   },
   {
@@ -159,6 +176,7 @@
     "latitude": 43.6646375504491,
     "longitude": -79.3380613872338,
     "name": "Hideaway Park",
+    "description": "This small park features a dog off-leash area, a paved small multi-use pad, a wading pool and a children's playground.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907206/locations/hideaway_park_smswz9.jpg"
   },
   {
@@ -168,6 +186,7 @@
     "latitude": 43.6756011684545,
     "longitude": -79.4250549801528,
     "name": "Hillcrest Park",
+    "description": "A 2.1 hectare park at Davenport Road and Christie Street that features a ball diamond, a dog off-leash area, a basketball court, four lit outdoor tennis courts, a community garden, a wading pool and a children's playground. From its perch atop the Davenport escarpment at the south perimeter of the Davenport neighbourhood, Hillcrest Park offers a spectacular view of the city skyline and Lake Ontario. There is street parking around the neighbourhood.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907206/locations/hillcrest_park_dp1ijq.jpg"
   },
   {
@@ -177,6 +196,7 @@
     "latitude": 43.6693938524924,
     "longitude": -79.401775529019,
     "name": "Huron Street Playground",
+    "description": "This small park is located near St. George Street, north of Bloor Street West. In 2022, a dog off-leash area was added to the park. It includes benches and a water fountain with a dog bowl.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907206/locations/huron_street_playground_tioyhf.jpg"
   },
   {
@@ -186,6 +206,7 @@
     "latitude": 43.6682093684686,
     "longitude": -79.2987395464594,
     "name": "Kew Gardens",
+    "description": "This busy 6.5 hectare park lies in Toronto's Beach neighbourhood and stretches from Queen Street East down to the Lakeshore. Along it's Queen Street edge you'll find a cenotaph, seasonal flower beds and a library. The park interior features a wading pool and playground, trails, naturalized and open grassy areas, baseball diamond and a bandstand used for some of the many events that happen in this park. Where the park meets the beach there are tennis courts, a sports pad used as a sports area in summer and artificial ice rink in winter, an enclosed seasonal winter fire pit, and a building with change rooms, washrooms, a snack bar and a water bottle filling station.\n\nAt the foot of Lee Avenue lies the Gardener's Cottage, a historic building also known as Kew Williams House surrounded by attractive seasonal plantings. At its south end this park meets up with the boardwalk and beach that run along the Lake Ontario shoreline. This area is also known as Beaches Park and features a fenced in dogs off leash area as well as the iconic Leuty lifeguard station.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907201/locations/kew_gardens_duy0re.jpg"
   },
   {
@@ -195,6 +216,7 @@
     "latitude": 43.680980971439,
     "longitude": -79.3155329329237,
     "name": "Merrill Bridge Road Park",
+    "description": "A 1.4 hectare park near Woodbine Avenue and Danforth Avenue that features a dog off-leash area. The west end of the park leads down into at forested ravine.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907201/locations/merrill_bridge_road_park_epnshs.jpg"
   },
   {
@@ -204,6 +226,7 @@
     "latitude": 43.6781132084194,
     "longitude": -79.3255369736374,
     "name": "Monarch Park",
+    "description": "A 5 hectare park near Danforth and Coxwell Avenue that features a dog off-leash area, an outdoor pool, a wading pool and a children's playground. During the winter there is also an artificial ice rink in operation.\n\nMonarch Park outdoor swimming pool and artificial ice rink is located inside Monarch Park. The swimming pool area features a 25m pool with diving area, two storey water slide, and a raised seating area. Monarch Park Pool also offers a variety of swimming lessons for all ages, including leadership classes and parent and tot classes.\n\nMonarch Park outdoor pool enclosure includes a wading pool with separate entrance. The wading pool is available on the same operating schedule as the outdoor pool.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907202/locations/monarch_park_xrkum4.jpg"
   },
   {
@@ -213,6 +236,7 @@
     "latitude": 43.6824986962827,
     "longitude": -79.3038366427828,
     "name": "Norwood Park",
+    "description": "A 1.6 hectare park near Gerrard Street East and Woodbine Avenue that features five outdoor tennis courts, a dog off-leash area, a wading pool and a children's playground.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907202/locations/norwood_park_tqp7cs.jpg"
   },
   {
@@ -222,6 +246,7 @@
     "latitude": 43.6834326877826,
     "longitude": -79.3113749034602,
     "name": "Oakcrest Parkette",
+    "description": "Oakcrest Parkette is a park in Ontario located on Oakcrest Avenue. Oakcrest Parkette is situated nearby to the dog park Dogs Off-Leash Park and Merrill Bridge Road Park.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907202/locations/oakcrest_parkette_mbzunm.jpg"
   },
   {
@@ -231,6 +256,7 @@
     "latitude": 43.6551078091028,
     "longitude": -79.3610610802985,
     "name": "Orphan’s Green",
+    "description": "Located between two DVP ramps, this off leash dog park is spacious, offers lots of shade and is wood chip based instead of cement and gravel.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907202/locations/orphans_green_upq6qf.jpg"
   },
   {
@@ -240,6 +266,7 @@
     "latitude": 43.6763641890678,
     "longitude": -79.3955487459469,
     "name": "Ramsden Park",
+    "description": "Ramsden Park has a large dog off-leash area, baseball diamond, two playgrounds and a wading pool. There is also a large outdoor rink, which doubles as a tennis court in the summer.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907202/locations/ramsden_park_ghi6lh.jpg"
   },
   {
@@ -249,6 +276,7 @@
     "latitude": 43.6608385436792,
     "longitude": -79.3626467511964,
     "name": "Regent Park",
+    "description": "Great park with amenities for every kind of outdoor activity. Playgrounds for big kids and little kids and a big field for catch and frisbee.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907203/locations/regent_park_a3jw3w.jpg"
   },
   {
@@ -258,6 +286,7 @@
     "latitude": 43.6703487583724,
     "longitude": -79.3562364683908,
     "name": "Riverdale Park East",
+    "description": "This 18-hectare park near Danforth Avenue and Broadview Avenue is popular for winter tobogganing and views of downtown Toronto skyline. Riverdale Park East features two ball diamonds, three multipurpose sports fields, a running track, seven tennis courts, an artificial outdoor ice rink and ball hockey pad, a picnic area and a children's playground. The ice rink features a hockey pad which is also a pleasure pad. There are change rooms for changing into skates. There is a nice playground to the east of the rink. A naturalized area at the north end of the park has many recreational trails ideal for walking. Located at the north entrance to the park on Broadview Avenue is the Riverdale Park East Outdoor Pool.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907203/locations/riverdale_park_east_aaqrut.webp"
   },
   {
@@ -267,6 +296,7 @@
     "latitude": 43.6657229811468,
     "longitude": -79.3590649841263,
     "name": "Riverdale Park West",
+    "description": "The park has recreational fields for soccer, baseball, and Ultimate on both sides of the river. There is also a swimming pool, tennis courts and outdoor hockey rink to the northeast, and a running track in the centre. A footbridge crosses the Don Valley Parkway, Bayview Avenue, the Canadian National Railway Bala subdivision tracks, and the river and joins the two sides of the valley as well as the Lower Don Recreational Trail that follows the river. The bridge is located near the site of a butternut tree bridge built by Ely Playter that provided access to his property and mill around the 1790s. The bridge is depicted by Elizabeth Simcoe's watercolour painting Playter's Bridge near York, ca. 1796.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907203/locations/riverdale_park_west_jfttbb.jpg"
   },
   {
@@ -276,6 +306,7 @@
     "latitude": 43.6829035488315,
     "longitude": -79.408629118777,
     "name": "Sir Winston Churchill Park",
+    "description": "An 8.6-hectare park on St. Clair Avenue West at Spadina Road, this park features ten lit outdoor tennis courts and a children's playground. The fenced Dogs Off-Leash Area allows Commercial Dog Walkers.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907203/locations/sir_winston_churchhill_park_atvb7u.jpg"
   },
   {
@@ -285,6 +316,7 @@
     "latitude": 43.64860703006,
     "longitude": -79.4433417614469,
     "name": "Sorauren Avenue Park",
+    "description": "The park has two mini-soccer fields for youth soccer, two tennis courts and one baseball diamond for sports. Open space is set aside for a dogs 'off-leash' area. In 2008, one of the former linseed oil buildings was converted to a fieldhouse, and is used for community meetings and community usage. In the wintertime, ice rinks are set up on the field.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907203/locations/sorauren_avenue_park_i1oxz4.jpg"
   },
   {
@@ -294,6 +326,7 @@
     "latitude": 43.6419835440915,
     "longitude": -79.4088730248079,
     "name": "South Stanley Park",
+    "description": "Stanley Park is a park in Toronto, Greater Toronto Area located on King Street West. Stanley Park is situated nearby to the community center Niagara Community Centre and the place of worship Sanctuary Rastafarian Order.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907203/locations/south_stanley_park_vgwjfa.webp"
   },
   {
@@ -303,6 +336,7 @@
     "latitude": 43.6987114104903,
     "longitude": -79.3138839827078,
     "name": "Stan Wadlow Park",
+    "description": "An 8.5 hectare park near O'Connor Avenue and Woodbine Avenue featuring six ball diamonds with one diamond having lights for night play and a clubhouse. The park also has a multipurpose sports field, a dog off-leash area, a splash pad and a children's playground. At the south-west corner of the park is East York Memorial Arena. At the north-west corner of the park on Cedarvale Avenue is the Kiwanis Outdoor Pool.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907204/locations/stan_wadlow_park_jhajgf.jpg"
   },
   {
@@ -312,6 +346,7 @@
     "latitude": 43.6463356956705,
     "longitude": -79.3988747013626,
     "name": "St. Andrew’s Playground",
+    "description": "St. Andrew's Playground is a small park in downtown Toronto. It is located at the 450 Adelaide Street West, at the northwest corner of Brant St and Adelaide. It has a playground for children and an off-leash area for dogs that is surrounded by a short fence, with an accessible water fountain for pets, children, and adults. A Heritage Toronto plaque in the northwest corner describing the history and significance of the park was installed in 2007.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907204/locations/st_andrews_playground_lfpdzi.jpg"
   },
   {
@@ -321,6 +356,7 @@
     "latitude": 43.6593443191534,
     "longitude": -79.3504668624048,
     "name": "Thompson Street Parkette",
+    "description": "Thompson Street Parkette is a park in Ontario located on Broadview Avenue. Thompson Street Parkette is situated nearby to Broadview Hotel and Debre Selam St Michael Ethiopian Orthodox Church.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907204/locations/thompson_street_parkette_h78ldx.jpg"
   },
   {
@@ -330,6 +366,7 @@
     "latitude": 43.6472616448829,
     "longitude": -79.4137482316811,
     "name": "Trinity Bellwoods Park",
+    "description": "A 14.6 hectare park on Queen Street West at Strachan Avenue once the home of University of Trinity College (Trinity College). The park sits atop the now buried Garrison Creek and features three ball diamonds, eight tennis courts, two volleyball courts, an artificial ice rink, a dog off-leash area, a picnic area, a wading pool and a children's playground. Located in the south-west section of the park is the Trinity Community Recreation Centre.\n\nThe outdoor artificial ice rink is located south of Dundas Street West on Gore Vale Avenue.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907204/locations/trinity_bellwoods_park_iktpsi.jpg"
   },
   {
@@ -339,6 +376,7 @@
     "latitude": 43.6702934527022,
     "longitude": -79.4152293958622,
     "name": "Vermont Square Park",
+    "description": "A 1.5 hectare park near Dupont Street and Bathurst Street. The park features a dog off-leash area, three bocce courts, a wading pool and a children's playground. Located at the north end of the park is the William H. Bolton Arena.\n\nVermont Square is a central point for accessing a diverse range of facilities. The square has a large open area to the south that is used for off-leash dog walking and includes three bocce courts. In the middle west is the Dennis Lee Playground which is fenced-in and features a wading pool. To the east is an indoor hockey rink. An indoor pool, community centre and daycare are located on the northern side. There is street parking around the neighbourhood.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907205/locations/vermont_square_park_u4hcf9.jpg"
   },
   {
@@ -348,6 +386,7 @@
     "latitude": 43.6810499763904,
     "longitude": -79.3131270752428,
     "name": "Wildwood Crescent Playground",
+    "description": "This is a small parkette. There's a playground for kids and an area to let your dog off leash. There's also a few benches in the shade.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907205/locations/wildwood_crescent_playground_lcvknd.jpg"
   },
   {
@@ -357,6 +396,7 @@
     "latitude": 43.6743528902076,
     "longitude": -79.3469105603509,
     "name": "Withrow Park",
+    "description": "An 8 hectare park on Logan Avenue just south of Danforth Avenue featuring two ball diamonds, a multipurpose sports field, two outdoor tennis courts, a volleyball court, a dog off-leash area, a wading pool and a children's playground. In the middle of the park is the Withrow Park Outdoor Artificial Ice Rink.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907205/locations/withrow_park_cvbzd3.jpg"
   },
   {
@@ -366,6 +406,7 @@
     "latitude": 43.6799016045893,
     "longitude": -79.4231806966721,
     "name": "Wychwood Barns Park",
+    "description": "This location is the park area that surrounds the former Toronto Transit Commission Barns on three sides. Park features include a children's playground, an open sports field with a natural ice rink in winter, a fenced in dog off-leash area, a beach volleyball court and picnic tables. In addition, approximately 150 trees, 1,500 shrubs and 900 perennials and grasses have been planted. There are circulation paths in the park aligned with the surrounding streets, such as Helena Avenue between Wychwood Avenue and Christie Street on the east-west axis and Slade Avenue on the north-south axis, as well as meandering paths, some of which follow the former streetcar tracks. The layout is intended to complement and create as few barriers as possible, both physical and conceptual, between the park and the buildings and between indoor and outdoor environments.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907205/locations/wychwood_barns_park_qqs58o.jpg"
   },
   {
@@ -375,6 +416,7 @@
     "latitude": 43.7878596632201,
     "longitude": -79.394262718414,
     "name": "Bayview Arena Park",
+    "description": "This park is home to a bike park and a Dogs Off-Leash Area. The Dogs Off-Leash Area is fenced, allows Commercial Dog Walkers and has a separate area for dogs weighing less than 9.1 kg (20 lbs).\n\nCreated by City of Toronto staff and community volunteers to meet the needs of local off-road cyclists, the Bayview Arena Bike Park features a series of dirt jumps, berms and tabletops accessible to riders with various skills and experience. The use of this bike park is free and it is open from dawn until dusk. Rules are posted on-site.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907201/locations/bayview_arena_park_x1xhzj.jpg"
   },
   {
@@ -384,6 +426,7 @@
     "latitude": 43.7534910928902,
     "longitude": -79.4318484537583,
     "name": "Earl Bales Park",
+    "description": "Earl Bales Park is named after Robert Earl Bales, a former Reeve (Mayor) of the Township of North York. This park is situated on lands once owned and farmed by his great-grandfather John Bales. In the early 1900's, after a century as a farm, the land was turned into the York Downs Golf and Country Club. You can still see a few of the old tees and greens as you wander through the park today.\n\nEarl Bales Park is spread across 127 acres (51 hectares) and features playgrounds, a sensory garden, splash pad, outdoor amphitheatre, memorials, paved walking/cycling trails, picnic sites and fire pits. The Dogs Off-Leash Area is fenced and allows Commercial Dog Walkers.\n\nThe park has one of the two Ski and Snowboard Centres run by the City of Toronto. Recent upgrades to the ski chalet and an addition of a quad chair lift have made for a more enjoyable skiing and snowboarding experience on the hills.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907206/locations/earl_bates_park_u6o4ii.jpg"
   },
   {
@@ -393,6 +436,7 @@
     "latitude": 43.7795561585438,
     "longitude": -79.4614440603006,
     "name": "G. Ross Lord Park",
+    "description": "Whether you're a nature or sports enthusiast you'll find something fun to do in G. Ross Lord Park. Over four kilometres of trails, two cricket pitches, a fenced Dogs Off-Leash Area, three soccer fields, picnic sites and a fire pit can be found within the parks boundaries. The park was created in 1972 to help with flood control in the area and named after Dr. G. Ross Lord, former Chairman of the Toronto and Region Conservation Authority. Trails are fully accessible and groomed in the winter for cross-country skiing, weather permitting. There are a number of naturalization projects in the works to help support local wildlife and create a healthier park. This park is a great spot for wildlife and bird watchers alike.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907206/locations/g_ross_lord_park_cuaw7s.jpg"
   },
   {
@@ -402,6 +446,7 @@
     "latitude": 43.7155301192584,
     "longitude": -79.3238466526164,
     "name": "Linkwood Lane Park",
+    "description": "A 2-hectare park near the Eglinton Avenue East and the Don Valley Parkway that features a ball diamond, a multipurpose sports field and a children's playground.\n\nFind the fenced Dogs Off-Leash Area at the corner of Spanbridge Road and Linkwood Lane.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907201/locations/linkwood_lane_park_rskr8b.jpg"
   },
   {
@@ -411,6 +456,7 @@
     "latitude": 43.697593976296,
     "longitude": -79.3705936123651,
     "name": "Sandy Bruce Park",
+    "description": "Formerly known as \"Bayview/Moore\", this one-hectare park features a children's playground and a fenced Dogs Off-Leash Area.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907203/locations/sandy_bruce_park_du0soq.jpg"
   },
   {
@@ -420,6 +466,7 @@
     "latitude": 43.7166210460974,
     "longitude": -79.3884819030221,
     "name": "Sherwood Park",
+    "description": "Located in the valley of Sherwood Park, this picturesque wooded park has two wading pools, great walking or running trails, public bathrooms, picnic tables and a large playground. Our wading pools are located downhill from the park entrance and are spacious with several spray features for all to enjoy. This park offers a fenced off dogs off-leash area. Free parking is available at the front of the park, near the main entrance on Sherwood Street east of Mount Pleasant Avenue.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907203/locations/sherwood_park_epv7pu.jpg"
   },
   {
@@ -429,6 +476,7 @@
     "latitude": 43.7243415006364,
     "longitude": -79.3578471204116,
     "name": "Sunnybrook Park",
+    "description": "Sunnybrook Farm was the 154-hectare country estate of Joseph Kilgour in the late 1800s. It is located north of Leaside and south of the Bridle Path. After Kilgour's passing, his wife Alice donated Sunnybrook Farms to the city in 1928 to be used as a park. The Kilgour barns were preserved and currently serve as a public riding school. The Metropolitan Police stabled here until moving to the stables at Exhibition Place in 2005.\n\nThe Dogs Off-Leash Area is fenced, allows Commercial Dog Walkers and has a separate area for dogs weighing less than 9.1 kg (20 lbs). This park also has bike trails and sports fields.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907204/locations/sunnybrook_park_vntsix.jpg"
   },
   {
@@ -438,6 +486,7 @@
     "latitude": 43.7239031023199,
     "longitude": -79.4287130700156,
     "name": "Woburn Park",
+    "description": "This park has a playground, a sports pad and a fenced Dogs Off-Leash Area.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907205/locations/woburn_park_tktos3.jpg"
   },
   {
@@ -447,6 +496,7 @@
     "latitude": 43.7401067087907,
     "longitude": -79.4048074528006,
     "name": "Yonge and York Mills",
+    "description": "Gorgeous and green, Yonge and York Mills Park provides space for your dog to run and sights for your eyes to feel rejuvenated with. And, if you want to keep your dog leashed up, there are also plenty of trails for the two of you to walk on.",
     "img": "https://res.cloudinary.com/deu69ydvq/image/upload/v1669907205/locations/yonge_and_york_mills_m1llyd.webp"
   }
 ]

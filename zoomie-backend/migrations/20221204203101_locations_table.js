@@ -6,6 +6,7 @@ exports.up = function (knex) {
     table.decimal('latitude', [10], [8])
     table.decimal('longitude', [10], [8])
     table.string('name').notNullable();
+    table.text('description').notNullable();
     table.string('img').notNullable();
   });
 };
