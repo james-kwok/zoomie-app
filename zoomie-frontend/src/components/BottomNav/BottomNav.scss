@@ -3,22 +3,18 @@
 @use '../../styles/partials/typography' as *;
 
 .BottomNav {
+  z-index: 1;
   height: 3.125rem;
-  width: 100%;
+  width: 95%;
   display: flex;
   align-items: center;
   background-color: $white;
-  border-top: 1px solid $gray-light;
+  border-radius: 0.625rem;
   overflow: hidden;
   position: fixed;
-  bottom: 0;
-  box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.05);
-
-  &:hover {
-    border-top: none;
-    margin-bottom: -1px;
-    box-shadow: none;
-  }
+  bottom: 2.5%;
+  left: 2.5%;
+  box-shadow: 2px 1px 5px 0 rgb(0 0 0 / 0.25);
 
   &__left {
     display: flex;
@@ -27,11 +23,6 @@
     height: 100%;
     align-items: center;
     cursor: pointer;
-
-    &:hover {
-      border-top: 4px solid $secondary;
-      margin-bottom: 4px;
-    }
   }
 
   &__right {
@@ -41,11 +32,6 @@
     height: 100%;
     align-items: center;
     cursor: pointer;
-
-    &:hover {
-      border-top: 4px solid $secondary;
-      margin-bottom: 4px;
-    }
   }
 
   &__home-icon {

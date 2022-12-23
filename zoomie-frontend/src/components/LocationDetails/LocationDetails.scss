@@ -18,7 +18,7 @@
 
   &__info {
     width: 100%;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem 0.5rem 1rem;
     border-bottom: 1px solid $bg-light;
   }
 
@@ -110,13 +110,9 @@
   }
 
   &__button-wrapper {
-    z-index: 1;
     height: 3.375rem;
     width: 100%;
-    position: fixed;
-    bottom: 3rem;
-    left: 0;
-    padding: 0 1rem;
+    margin-top: 1.5rem;
   }
 
   &___button {
@@ -175,7 +171,7 @@
 
   &__map-container {
     z-index: 0;
-    height: 25rem;
+    height: 30vh;
     margin-top: 1rem;
     border-radius: 1rem;
     margin-bottom: 6rem;
