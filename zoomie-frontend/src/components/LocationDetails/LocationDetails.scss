@@ -34,7 +34,7 @@
 
   &__icon-container {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
   }
 
   &__icon {
@@ -43,7 +43,7 @@
   }
 
   &__title,
-  &__attendance-title {
+  &__attendance-title, &__about-title {
     font-size: $mobile-medium-size;
     line-height: $mobile-medium-lh;
     font-weight: $mobile-medium-weight-light;
@@ -124,14 +124,14 @@
   }
 
   &__attendance {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem 0 1rem;
+    border-bottom: 1px solid $bg-light;
   }
 
   &__gallery {
     display: flex;
     flex-wrap: wrap;
     margin: 0.5rem 0 1rem 0;
-    border-bottom: 1px solid $bg-light;
   }
 
   &__profile {
@@ -163,6 +163,18 @@
     font-weight: $mobile-small-weight-light;
     color: $secondary;
     margin-bottom: 1.5rem;
+  }
+
+  &__about {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid $bg-light;
+  }
+
+  &__about-text {
+    font-size: $mobile-medium-size;
+    line-height: $mobile-big-lh;
+    font-weight: $mobile-medium-weight-light;
+    margin-top: 1rem;
   }
 
   &__map {

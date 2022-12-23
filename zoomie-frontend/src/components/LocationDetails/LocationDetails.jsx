@@ -3,10 +3,11 @@ import mapboxgl from '!mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import React, { useRef, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import outdoorIcon from '../../assets/icons/outdoor-icon.png';
+import locationIcon from '../../assets/icons/location-icon.png';
 import tagIcon from '../../assets/icons/tag-icon-white.png';
 import routeIcon from '../../assets/icons/route-icon.png';
 import bonesIcon from '../../assets/icons/bones.png';
+import infoIcon from '../../assets/icons/info-icon.png'
 import './LocationDetails.scss';
 
 mapboxgl.accessToken = process.env.REACT_APP_MB_ACCESS;
@@ -82,10 +83,10 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
               <div className="LocationDetails__icon-container">
                 <img
                   className="LocationDetails__icon"
-                  src={outdoorIcon}
-                  alt="outdoor-icon"
+                  src={locationIcon}
+                  alt="location-icon"
                 />
-                <h3 className="LocationDetails__title">Park Info</h3>
+                <h2 className="LocationDetails__title">Park Info</h2>
               </div>
 
               <h1 className="LocationDetails__info-title">{location.name}</h1>
@@ -160,6 +161,23 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
             })}
           </div>
         </div>
+        <div className="LocationDetails__about">
+          <div className="LocationDetails__about-container">
+            <div className="LocationDetails__icon-container">
+              <img
+                className="LocationDetails__icon"
+                src={infoIcon}
+                alt="info-icon"
+              />
+              <h2 className="LocationDetails__about-title">
+                Park Details
+              </h2>
+            </div>
+            <p className="LocationDetails__about-text">
+              {location.description}
+            </p>
+          </div>
+        </div>
         <div className="LocationDetails__map">
           <div className="LocationDetails__icon-container">
             <img
@@ -167,7 +185,7 @@ const LocationDetails = ({ location, checkins, lng, lat, isLoggedIn }) => {
               src={routeIcon}
               alt="route-icon"
             />
-            <h3 className="LocationDetails__title">Location Map</h3>
+            <h2 className="LocationDetails__title">Location Map</h2>
           </div>
           <div className="LocationDetails__map-info"></div>
           <div ref={mapContainer} className="LocationDetails__map-container" />
