@@ -9,8 +9,7 @@ const NearbyList = ({ locations, checkins, coords }) => {
   const sortLocations = geolib.orderByDistance(
     { latitude: coords.latitude, longitude: coords.longitude },
     locations
-  );
-  console.log(sortLocations);
+  ).slice(0, 10);
 
   return (
     <>
