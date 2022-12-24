@@ -18,11 +18,10 @@
   }
 
   &__title {
-    font-size: $mobile-medium-size;
-    line-height: $mobile-medium-lh;
-    font-weight: $mobile-medium-weight-heavy;
+    font-size: $mobile-big-size;
+    line-height: $mobile-big-lh;
+    font-weight: $mobile-big-weight-light;
     color: $secondary;
-    text-transform: uppercase;
   }
 
   &__list-link {
