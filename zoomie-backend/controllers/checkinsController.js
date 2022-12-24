@@ -35,7 +35,6 @@ const postCheckIn = async (req, res) => {
       .select('id')
       .from('dogs')
       .where('user_id', '=', req.userData.id);
-    console.log(dogId[0].id);
     const checkins = await db('check-ins').insert({
       dog_id: dogId[0].id,
       location_id: req.body.location_id,

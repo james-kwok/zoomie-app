@@ -15,9 +15,9 @@ mapboxgl.accessToken = process.env.REACT_APP_MB_ACCESS;
 const LocationDetails = ({
   location,
   checkins,
-  lng,
-  lat,
-  displayProfile,
+  isCheckedIn,
+  status,
+  setStatus,
   isLoggedIn,
   id,
 }) => {
@@ -25,22 +25,16 @@ const LocationDetails = ({
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [error, setError] = useState('');
-  const [failedAuth, setFailedAuth] = useState(false);
-  const [status, setStatus] = useState(false);
-  const authToken = sessionStorage.getItem('authToken');
+  const lng = location.longitude;
+  const lat = location.latitude;
+  const token = sessionStorage.getItem('authToken');
 
-  // determine if user is checked in at location, if true disable button
+  // determine if user is checked in at location, if true disable check in button
   useEffect(() => {
-    if (checkins.length > 0) {
+    if (isCheckedIn === true) {
       setStatus(true);
     }
-  });
-
-  useEffect(() => {
-    if (!authToken) {
-      setFailedAuth(true);
-    }
-  }, [authToken]);
+  }, [isCheckedIn]);
 
   // mapbox API for map feature, will explore more of their features in the future
   useEffect(() => {
@@ -69,7 +63,7 @@ const LocationDetails = ({
         },
         {
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -79,7 +73,6 @@ const LocationDetails = ({
       }
       setStatus(true);
       window.location.reload();
-      navigate(`/locations/${id}`);
     } catch (error) {
       setError('Something went wrong, try again later.');
     }
@@ -150,7 +143,7 @@ const LocationDetails = ({
                   className="LocationDetails__button"
                 >
                   <span className="LocationDetails__button-text">
-                    Log In To Check In
+                    Join Zoomie To Check In
                   </span>
                 </button>
               )}

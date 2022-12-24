@@ -70,7 +70,7 @@ const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
         <div className="SignUpForm">
           <img className="SignUpForm__bg" src={bg} alt="background-image" />
           <div className="SignUpForm__logo-container">
-            <Link to="/locations" className="SignUpForm__navigate-link">
+            <Link to={-1} className="SignUpForm__navigate-link">
               <img
                 className="SignUpForm__navigate"
                 src={backIcon}

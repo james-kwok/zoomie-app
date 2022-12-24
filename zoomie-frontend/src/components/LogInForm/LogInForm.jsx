@@ -65,7 +65,7 @@ const LogInForm = ({ setIsLoggedIn, setNewUser }) => {
       <div className="LogInForm">
         <img className="LogInForm__bg" src={bg} alt="background-image" />
         <div className="LogInForm__logo-container">
-          <Link to="/locations" className="LogInForm__navigate-link">
+          <Link to={-1} className="LogInForm__navigate-link">
             <img
               className="LogInForm__navigate"
               src={backIcon}
