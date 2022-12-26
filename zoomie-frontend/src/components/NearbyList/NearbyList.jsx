@@ -16,7 +16,7 @@ const NearbyList = ({ locations, checkins, coords }) => {
       <div className="NearbyList">
         <div className="NearbyList__text-container">
           <img className="NearbyList__icon" src={pinIcon} alt="location-icon" />
-          <h1 className="NearbyList__title">Nearby Parks</h1>
+          <h1 className="NearbyList__title">Parks Near You</h1>
         </div>
         <div className="NearbyList__gallery">
           {sortLocations.map((location, index) => {

@@ -1,8 +1,7 @@
-import './FeaturedCard.scss';
+import './FeaturedList.scss';
 import arrow from '../../assets/icons/arrow-right.png';
 import dogMeet from '../../assets/illustrations/dog-meet.webp';
 import dogPark from '../../assets/illustrations/dog-park-illustration.webp';
-import parkLandscape from '../../assets/illustrations/landscape-illustration.jpeg';
 import parkBridge from '../../assets/illustrations/park-bridge-illustration.jpeg';
 
 const FeaturedCard = () => {
@@ -74,27 +73,6 @@ const FeaturedCard = () => {
             </div>
             <p className="FeaturedCard__card-text">
               Check in at parks to let others know
-            </p>
-          </div>
-          {/* card #4 */}
-          <div className="FeaturedCard__container">
-            <div className="FeaturedCard__card">
-              <img
-                className="FeaturedCard__image"
-                src={parkLandscape}
-                alt="dog-park-landscape"
-              />
-            </div>
-            <div className="FeaturedCard__text-container">
-              <h2 className="FeaturedCard__card-title">Bond through nature</h2>
-              <img
-                className="FeaturedCard__icon"
-                src={arrow}
-                alt="right-arrow"
-              />
-            </div>
-            <p className="FeaturedCard__card-text">
-              Love nature? So does your dog!
             </p>
           </div>
         </div>

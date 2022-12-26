@@ -10,6 +10,7 @@ import LocationDetailsPage from './pages/LocationDetailsPage/LocationDetailsPage
 import SignUpLogInPage from './pages/SignUpLogInPage/SignUpLogInPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import DogProfilePage from './pages/DogProfilePage/DogProfilePage';
+import BrowsePage from './pages/BrowsePage/BrowsePage';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -32,10 +33,20 @@ const App = () => {
             }
           />
           <Route
+            path="/browse"
+            element={
+              <>
+                <NavBack />
+                <BrowsePage />
+                <BottomNav isLoggedIn={isLoggedIn} />
+              </>
+            }
+          />
+          <Route
             path="/locations/:id"
             element={
               <>
-                <NavBack isLoggedIn={isLoggedIn} />
+                <NavBack />
                 <LocationDetailsPage isLoggedIn={isLoggedIn} />
                 <BottomNav isLoggedIn={isLoggedIn} />
               </>
@@ -45,7 +56,7 @@ const App = () => {
             path="/profile"
             element={
               <>
-                <NavBack isLoggedIn={isLoggedIn} />
+                <NavBack />
                 <ProfilePage
                   isLoggedIn={isLoggedIn}
                   setIsLoggedIn={setIsLoggedIn}
@@ -58,7 +69,7 @@ const App = () => {
             path="/dogs/:id"
             element={
               <>
-                <NavBack isLoggedIn={isLoggedIn} />
+                <NavBack />
                 <DogProfilePage />
                 <BottomNav isLoggedIn={isLoggedIn} />
               </>

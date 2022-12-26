@@ -1,0 +1,44 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+.BrowseCard {
+  padding: 1rem;
+  cursor: pointer;
+
+  &__card {
+    height: 10rem;
+    width: 100%;
+    position: relative;
+    background-color: $secondary;
+    border-radius: 0.625rem;
+  }
+
+  &__card-image {
+    opacity: 62%;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.625rem;
+  }
+
+  &__card-container {
+    margin: 0 1rem;
+    position: absolute;
+    bottom: 60.8px;
+  }
+
+  &__card-title {
+    color: $white;
+    font-size: $mobile-big-size;
+    line-height: $mobile-big-lh;
+    font-weight: $mobile-big-weight-light;
+  }
+
+  &__card-text {
+    color: $white;
+    font-size: $mobile-small-size;
+    line-height: $mobile-small-lh;
+    font-weight: $mobile-small-weight-light;
+    margin-top: 0.15rem;
+  }
+}

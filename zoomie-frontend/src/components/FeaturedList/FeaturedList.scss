@@ -3,6 +3,7 @@
 @use '../../styles/partials/typography' as *;
 
 .FeaturedCard {
+  cursor: pointer;
   padding: 1rem 0;
   display: flex;
   flex-direction: row;
