@@ -1,13 +1,13 @@
-import axios from 'axios';
 import mapboxgl from '!mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import locationIcon from '../../assets/icons/location-icon.png';
 import tagIcon from '../../assets/icons/tag-icon-white.png';
 import routeIcon from '../../assets/icons/route-icon.png';
 import bonesIcon from '../../assets/icons/bones.png';
 import infoIcon from '../../assets/icons/info-icon.png';
+import ActionButton from '../ActionButton/ActionButton';
 import './LocationDetails.scss';
 
 mapboxgl.accessToken = process.env.REACT_APP_MB_ACCESS;
@@ -16,25 +16,14 @@ const LocationDetails = ({
   location,
   checkins,
   isCheckedIn,
-  status,
-  setStatus,
+  setIsCheckedIn,
   isLoggedIn,
-  id,
 }) => {
   const navigate = useNavigate();
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [error, setError] = useState('');
   const lng = location.longitude;
   const lat = location.latitude;
-  const token = sessionStorage.getItem('authToken');
-
-  // determine if user is checked in at location, if true disable check in button
-  useEffect(() => {
-    if (isCheckedIn === true) {
-      setStatus(true);
-    }
-  }, [isCheckedIn]);
 
   // mapbox API for map feature, will explore more of their features in the future
   useEffect(() => {
@@ -50,32 +39,6 @@ const LocationDetails = ({
 
   const handleButton = () => {
     navigate('/welcome');
-  };
-
-  const postCheckIn = async (e) => {
-    try {
-      e.preventDefault();
-      const res = await axios.post(
-        'http://localhost:8080/checkins',
-        {
-          location_id: location.id,
-          status: 1,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      if (!res.data) {
-        setError('Unable to post check-in.');
-        return;
-      }
-      setStatus(true);
-      window.location.reload();
-    } catch (error) {
-      setError('Something went wrong, try again later.');
-    }
   };
 
   return (
@@ -121,22 +84,15 @@ const LocationDetails = ({
                 <p className="LocationDetails__category-text">Fenced</p>
               </div>
             </div>
-            {/* conditional button for guest vs logged in state */}
-            <div
-              className={`${
-                status === true
-                  ? 'LocationDetails__button-wrapper--disabled'
-                  : 'LocationDetails__button-wrapper'
-              }`}
-            >
+            {/* conditional button for guest vs logged in state vs
+             whether user is checked in or not */}
+            <div className="LocationDetails__button-wrapper">
               {isLoggedIn ? (
-                <button
-                  onClick={postCheckIn}
-                  type="submit"
-                  className="LocationDetails__button"
-                >
-                  <span className="LocationDetails__button-text">Check In</span>
-                </button>
+                <ActionButton
+                  location={location}
+                  isCheckedIn={isCheckedIn}
+                  setIsCheckedIn={setIsCheckedIn}
+                />
               ) : (
                 <button
                   onClick={handleButton}

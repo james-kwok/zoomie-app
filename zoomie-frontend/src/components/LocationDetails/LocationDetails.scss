@@ -43,7 +43,8 @@
   }
 
   &__title,
-  &__attendance-title, &__about-title {
+  &__attendance-title,
+  &__about-title {
     font-size: $mobile-medium-size;
     line-height: $mobile-medium-lh;
     font-weight: $mobile-medium-weight-light;
@@ -114,10 +115,6 @@
     height: 3.375rem;
     width: 100%;
     margin-top: 1.5rem;
-
-    &--disabled {
-      display: none;
-    }
   }
 
   &___button {

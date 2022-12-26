@@ -1,0 +1,7 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+.ActionButton {
+  cursor: pointer;
+}

@@ -48,8 +48,25 @@ const postCheckIn = async (req, res) => {
   }
 };
 
+const updateCheckIns = async (req, res) => {
+  try {
+    const checkins = await db('check-ins')
+      .select('*')
+      .where({ dog_id: req.userData.id, location_id: req.body.location_id })
+      .update({
+        status: req.body.status,
+      });
+    res.status(201).json({ checkins });
+  } catch (error) {
+    res.status(400).json({
+      message: 'Check-in was not updated.',
+    });
+  }
+};
+
 module.exports = {
   getCheckIns,
   getCheckedInDogs,
   postCheckIn,
+  updateCheckIns,
 };

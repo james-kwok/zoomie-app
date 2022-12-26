@@ -11,7 +11,6 @@ const LocationDetailsPage = ({ isLoggedIn }) => {
   const [userProfile, setUserProfile] = useState([]);
   const [locations, setLocations] = useState([]);
   const [checkins, setCheckins] = useState([]);
-  const [status, setStatus] = useState(false);
   const [isCheckedIn, setIsCheckedIn] = useState(false);
   const displayProfile = userProfile[0];
   const token = sessionStorage.getItem('authToken');
@@ -60,32 +59,41 @@ const LocationDetailsPage = ({ isLoggedIn }) => {
       });
   }, []);
 
-  // check if user is logged in and if they are checked in
-  if (isLoggedIn && isCheckedIn === false) {
-    const foundCheckin = checkins.find((checkin) => {
-      return checkin.dog_id === displayProfile.id;
-    });
-    if (foundCheckin) {
-      setIsCheckedIn(true);
-    }
-  }
-
   if (!locations || !checkins) {
     return <></>;
   }
 
+  // find logged in user's check-in status
+  useEffect(() => {
+    if (isLoggedIn && checkins) {
+      const findUser = checkins.find((user) => {
+        return user.dog_id === displayProfile.id;
+      });
+      const findCheckin = checkins.filter((checkin) => {
+        return checkin.status > 0;
+      });
+      if (findCheckin.length > 0 && findUser) {
+        setIsCheckedIn(true);
+      } else if (findCheckin.length === 0 && findUser) {
+        setIsCheckedIn(false);
+      }
+    }
+  }, [displayProfile]);
+
+  const checkinList = checkins.filter((item) => {
+    return item.status > 0;
+  });
+
   return (
     <>
       {/* ensure React to render only after the app receives data from endpoint */}
-      {locations.longitude && locations.latitude ? (
+      {locations.longitude && locations.latitude && checkins && checkinList ? (
         <LocationDetails
           location={locations}
-          checkins={checkins}
+          checkins={checkinList}
           isCheckedIn={isCheckedIn}
-          status={status}
-          setStatus={setStatus}
+          setIsCheckedIn={setIsCheckedIn}
           isLoggedIn={isLoggedIn}
-          id={id}
         />
       ) : null}
     </>

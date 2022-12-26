@@ -6,7 +6,12 @@ const LocationCardXL = ({ location, checkins }) => {
     return checkin.location_id === location.id;
   });
 
-  const firstThreeCheckins = findCheckins.slice(0, 3);
+  const checkinList = findCheckins.filter((item) => {
+    return item.status > 0;
+  });
+
+  const firstThreeCheckins = checkinList.slice(0, 3);
+
   return (
     <>
       <div className="LocationCardXL">
@@ -32,7 +37,7 @@ const LocationCardXL = ({ location, checkins }) => {
               );
             })}
             <p className="LocationCardXL__remaining-dogs">
-              {findCheckins.length} Attending
+              {checkinList.length} Attending
             </p>
           </div>
         </div>
