@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
 import backIcon from '../../assets/icons/chevron-left.png';
-import AuthButton from '../AuthButton/AuthButton';
 import './NavBack.scss';
 
-const NavBack = ({ isLoggedIn }) => {
+const NavBack = () => {
   return (
     <>
       <div className="NavBack">
@@ -15,9 +14,6 @@ const NavBack = ({ isLoggedIn }) => {
             alt="back-to-home"
           />
         </Link>
-        <div className="Nav__button-container">
-          <AuthButton isLoggedIn={isLoggedIn} />
-        </div>
       </div>
     </>
   );
