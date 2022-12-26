@@ -15,6 +15,7 @@ mapboxgl.accessToken = process.env.REACT_APP_MB_ACCESS;
 const LocationDetails = ({
   location,
   checkins,
+  userProfile,
   isCheckedIn,
   setIsCheckedIn,
   isLoggedIn,
@@ -87,11 +88,14 @@ const LocationDetails = ({
             {/* conditional button for guest vs logged in state vs
              whether user is checked in or not */}
             <div className="LocationDetails__button-wrapper">
-              {isLoggedIn ? (
+              {isLoggedIn && location && checkins && userProfile ? (
                 <ActionButton
                   location={location}
+                  checkins={checkins}
+                  userProfile={userProfile}
                   isCheckedIn={isCheckedIn}
                   setIsCheckedIn={setIsCheckedIn}
+                  isLoggedIn={isLoggedIn}
                 />
               ) : (
                 <button

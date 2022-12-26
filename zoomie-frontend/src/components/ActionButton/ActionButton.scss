@@ -4,4 +4,14 @@
 
 .ActionButton {
   cursor: pointer;
+
+  &__secondary {
+    background-image: none;
+    background-color: $white;
+    border: 2px solid $secondary;
+
+    &:hover {
+      background-color: $secondary;
+    }
+  }
 }

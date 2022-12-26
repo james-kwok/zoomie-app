@@ -12,7 +12,6 @@ const LocationDetailsPage = ({ isLoggedIn }) => {
   const [locations, setLocations] = useState([]);
   const [checkins, setCheckins] = useState([]);
   const [isCheckedIn, setIsCheckedIn] = useState(false);
-  const displayProfile = userProfile[0];
   const token = sessionStorage.getItem('authToken');
 
   // check if user is logged in
@@ -63,23 +62,6 @@ const LocationDetailsPage = ({ isLoggedIn }) => {
     return <></>;
   }
 
-  // find logged in user's check-in status
-  useEffect(() => {
-    if (isLoggedIn && checkins) {
-      const findUser = checkins.find((user) => {
-        return user.dog_id === displayProfile.id;
-      });
-      const findCheckin = checkins.filter((checkin) => {
-        return checkin.status > 0;
-      });
-      if (findCheckin.length > 0 && findUser) {
-        setIsCheckedIn(true);
-      } else if (findCheckin.length === 0 && findUser) {
-        setIsCheckedIn(false);
-      }
-    }
-  }, [displayProfile]);
-
   const checkinList = checkins.filter((item) => {
     return item.status > 0;
   });
@@ -91,6 +73,7 @@ const LocationDetailsPage = ({ isLoggedIn }) => {
         <LocationDetails
           location={locations}
           checkins={checkinList}
+          userProfile={userProfile}
           isCheckedIn={isCheckedIn}
           setIsCheckedIn={setIsCheckedIn}
           isLoggedIn={isLoggedIn}

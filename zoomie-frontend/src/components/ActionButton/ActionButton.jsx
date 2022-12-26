@@ -1,11 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ActionButton.scss';
 
 // button component for check in / check out
-const ActionButton = ({ location, isCheckedIn }) => {
+const ActionButton = ({
+  location,
+  checkins,
+  userProfile,
+  isCheckedIn,
+  setIsCheckedIn,
+  isLoggedIn,
+}) => {
   const [error, setError] = useState('');
   const token = sessionStorage.getItem('authToken');
+  const displayProfile = userProfile[0];
+
+  // find logged in user's check-in status
+  useEffect(() => {
+    if (isLoggedIn && checkins && userProfile) {
+      const findUser = checkins.find((user) => {
+        return user.dog_id === displayProfile.id;
+      });
+      const { status } = findUser || {};
+      console.log(status);
+      if (status === 1) {
+        setIsCheckedIn(true);
+      } else if (status === 0) {
+        setIsCheckedIn(false);
+      }
+    }
+  });
+
   const postCheckIn = async (e) => {
     try {
       e.preventDefault();
@@ -52,7 +77,6 @@ const ActionButton = ({ location, isCheckedIn }) => {
       }
       window.location.reload();
     } catch (error) {
-      console.log(error)
       setError('Something went wrong, try again later.');
     }
   };
