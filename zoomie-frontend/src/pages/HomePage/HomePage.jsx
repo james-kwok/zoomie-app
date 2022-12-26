@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import BrowseList from '../../components/BrowseList/BrowseList';
 import NearbyList from '../../components/NearbyList/NearbyList';
 import Loading from '../../components/Loading/Loading';
+import FeaturedCard from '../../components/FeaturedCard/FeaturedCard';
 
 const HomePage = () => {
   const locationsURL = 'http://localhost:8080/locations';
@@ -74,6 +75,7 @@ const HomePage = () => {
             checkins={checkins}
             coords={coords}
           />
+          <FeaturedCard />
           <BrowseList locations={locations} checkins={checkins} />
         </>
       )}
