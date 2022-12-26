@@ -18,7 +18,6 @@ const LogInForm = ({ setIsLoggedIn, setNewUser }) => {
   });
 
   const { email, password } = formData;
-  console.log(formData);
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -79,13 +78,11 @@ const LogInForm = ({ setIsLoggedIn, setNewUser }) => {
           </div>
         </div>
         <div
-            className={
-              expand === true
-                ? 'LogInForm__sheet'
-                : 'LogInForm__sheet--expand'
-            }
-            onClick={expandSheet}
-          >
+          className={
+            expand === true ? 'LogInForm__sheet' : 'LogInForm__sheet--expand'
+          }
+          onClick={expandSheet}
+        >
           <form onSubmit={onSubmit} className="LogInForm__form">
             <section className="LogInForm__section">
               <div className="LogInForm__icon-container">

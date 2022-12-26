@@ -22,7 +22,6 @@ const ActionButton = ({
         return user.dog_id === displayProfile.id;
       });
       const { status } = findUser || {};
-      console.log(status);
       if (status === 1) {
         setIsCheckedIn(true);
       } else if (status === 0) {
