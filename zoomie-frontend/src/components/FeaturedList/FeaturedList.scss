@@ -3,13 +3,10 @@
 @use '../../styles/partials/typography' as *;
 
 .FeaturedCard {
-  cursor: pointer;
   padding: 1rem 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  border-top: 1px solid $bg-light;
-  border-bottom: 1px solid $bg-light;
 
   &__title {
     font-size: $mobile-big-size;
@@ -17,7 +14,16 @@
     font-weight: $mobile-big-weight-light;
     color: $secondary;
     width: 100%;
-    margin: 1rem;
+    padding: 0 1rem;
+  }
+
+  &__description {
+    font-size: $mobile-small-size;
+    line-height: $mobile-small-lh;
+    font-weight: $mobile-small-weight-light;
+    color: $gray;
+    margin: 0.25rem 0 1rem 0;
+    padding: 0 1rem;
   }
 
   &__gallery {
@@ -40,6 +46,7 @@
     background-color: #ffe600ee;
     border-radius: 0.625rem;
     margin-bottom: 0.25rem;
+    cursor: pointer;
   }
 
   &__image {

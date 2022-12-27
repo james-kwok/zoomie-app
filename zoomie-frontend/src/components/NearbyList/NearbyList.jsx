@@ -14,9 +14,10 @@ const NearbyList = ({ locations, checkins, coords }) => {
   return (
     <>
       <div className="NearbyList">
-        <div className="NearbyList__text-container">
-          <h1 className="NearbyList__title">Parks Near You</h1>
-        </div>
+        <h1 className="NearbyList__title">Parks Near You</h1>
+        <p className="NearbyList__description">
+          10 parks near your current location
+        </p>
         <div className="NearbyList__gallery">
           {sortLocations.map((location, index) => {
             return (

@@ -5,7 +5,6 @@
 .BrowseCard {
   margin-bottom: 4.5rem;
   padding: 1rem;
-  cursor: pointer;
 
   &__card {
     height: 10rem;
@@ -13,6 +12,11 @@
     position: relative;
     background-color: $secondary;
     border-radius: 0.625rem;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 4px 2px 10px 4px rgb(0 0 0 / 0.15);
+    }
   }
 
   &__card-image {

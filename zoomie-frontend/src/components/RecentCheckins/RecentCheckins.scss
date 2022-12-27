@@ -3,14 +3,21 @@
 @use '../../styles/partials/typography' as *;
 
 .RecentCheckins {
-  margin-top: 6rem;
+  padding: 1rem;
 
   &__title {
     font-size: $mobile-big-size;
     line-height: $mobile-big-lh;
     font-weight: $mobile-big-weight-light;
     color: $secondary;
-    margin: 1rem;
+  }
+
+  &__description {
+    font-size: $mobile-small-size;
+    line-height: $mobile-small-lh;
+    font-weight: $mobile-small-weight-light;
+    color: $gray;
+    margin-top: 0.25rem;
   }
 
   &__card {
@@ -19,7 +26,16 @@
     flex-direction: column;
     justify-content: flex-start;
     border-bottom: 1px solid $bg-light;
-    padding: 1rem;
+    padding: 1rem 0;
+    text-decoration: none;
+  }
+
+  &__card-border {
+    border-left: 3px solid $gray-medium;
+
+    &:hover {
+      border-left: 3px solid $primary;
+    }
   }
 
   &__card-name {
@@ -27,12 +43,14 @@
     line-height: $mobile-medium-lh;
     font-weight: $mobile-medium-weight-light;
     color: $secondary;
+    margin-left: 0.5rem;
   }
 
   &__card-address {
-    color: $secondary;
     font-size: $mobile-small-size;
     line-height: $mobile-small-lh;
     font-weight: $mobile-small-weight-light;
+    color: $secondary;
+    margin-left: 0.5rem;
   }
 }

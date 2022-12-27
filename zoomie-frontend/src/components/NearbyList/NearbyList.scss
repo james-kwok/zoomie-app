@@ -3,28 +3,25 @@
 @use '../../styles/partials/typography' as *;
 
 .NearbyList {
-  // margin-top: 4.375rem;
-  padding: 1rem 0;
   overflow-x: hidden;
   background-color: $white;
-
-  &__text-container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin: 1rem;
-  }
-
-  &__icon {
-    height: 1.25rem;
-    margin-right: 0.5rem;
-  }
+  margin-top: 5.375rem;
+  padding-bottom: 1rem;
 
   &__title {
     font-size: $mobile-big-size;
     line-height: $mobile-big-lh;
     font-weight: $mobile-big-weight-light;
     color: $secondary;
+    margin: 0 1rem;
+  }
+
+  &__description {
+    color: $gray;
+    font-size: $mobile-small-size;
+    line-height: $mobile-small-lh;
+    font-weight: $mobile-small-weight-light;
+    margin: 0.25rem 1rem 0.75rem 1rem;
   }
 
   &__gallery {

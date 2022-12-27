@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import BrowseList from '../../components/BrowseList/BrowseList';
 import NearbyList from '../../components/NearbyList/NearbyList';
 import BrowseCard from '../../components/BrowseCard/BrowseCard';
 import FeaturedList from '../../components/FeaturedList/FeaturedList';
@@ -41,20 +40,22 @@ const HomePage = ({ isLoggedIn }) => {
   }, [loading]);
 
   useEffect(() => {
-    const token = sessionStorage.getItem('authToken');
-    axios
-      .get(userProfileURL, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => {
-        setUserProfile(response.data);
-        window.scrollTo(0, 0);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (isLoggedIn) {
+      const token = sessionStorage.getItem('authToken');
+      axios
+        .get(userProfileURL, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          setUserProfile(response.data);
+          window.scrollTo(0, 0);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }, [isLoggedIn]);
 
   useEffect(() => {
@@ -79,12 +80,22 @@ const HomePage = ({ isLoggedIn }) => {
       });
   }, []);
 
-  if (!locations || !checkins || !coords || !userProfile || !displayProfile) {
+  if (!locations || !checkins || !coords) {
     return (
       <>
         <Loading />
       </>
     );
+  }
+
+  if (isLoggedIn) {
+    if (!userProfile || !displayProfile) {
+      return (
+        <>
+          <Loading />
+        </>
+      );
+    }
   }
   return (
     <>
@@ -92,6 +103,11 @@ const HomePage = ({ isLoggedIn }) => {
         <Loading />
       ) : (
         <>
+          <NearbyList
+            locations={locations}
+            checkins={checkins}
+            coords={coords}
+          />
           {isLoggedIn && locations && checkins && displayProfile ? (
             <RecentCheckins
               locations={locations}
@@ -100,11 +116,6 @@ const HomePage = ({ isLoggedIn }) => {
               isLoggedIn={isLoggedIn}
             />
           ) : null}
-          <NearbyList
-            locations={locations}
-            checkins={checkins}
-            coords={coords}
-          />
           <FeaturedList />
           <BrowseCard />
         </>
