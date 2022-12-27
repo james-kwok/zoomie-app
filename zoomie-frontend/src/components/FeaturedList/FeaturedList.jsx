@@ -23,12 +23,11 @@ const FeaturedCard = () => {
             </div>
             <div className="FeaturedCard__text-container">
               <h2 className="FeaturedCard__card-title">
-                Meet other owners & their dogs
+                See who's going
               </h2>
             </div>
             <p className="FeaturedCard__card-text">
-              Find out who's going to a specific park and socialize dogs the
-              right way
+              Make the best decision for your dog and socialize the right way
             </p>
           </div>
           {/* card #2 */}
@@ -44,7 +43,7 @@ const FeaturedCard = () => {
               <h2 className="FeaturedCard__card-title">Explore new parks</h2>
             </div>
             <p className="FeaturedCard__card-text">
-              Find your next favorite spot and make new connections
+              Go on an adventure with your dog and find that new favorite spot
             </p>
           </div>
           {/* card #3 */}
@@ -57,10 +56,10 @@ const FeaturedCard = () => {
               />
             </div>
             <div className="FeaturedCard__text-container">
-              <h2 className="FeaturedCard__card-title">Make your mark</h2>
+              <h2 className="FeaturedCard__card-title">Be part of a community</h2>
             </div>
             <p className="FeaturedCard__card-text">
-              Check in at parks to start building your community
+              Check in at parks, see familiar faces, start building a community
             </p>
           </div>
         </div>

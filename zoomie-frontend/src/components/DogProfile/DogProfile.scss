@@ -29,11 +29,19 @@
     margin: 1rem 3rem;
   }
 
+  &__breed {
+    color: $gray;
+    font-size: $mobile-big-size;
+    line-height: $mobile-big-lh;
+    font-weight: $mobile-big-weight-light;
+  }
+
   &__bio {
+    color: $secondary;
     font-size: $mobile-medium-size;
-    line-height: $mobile-medium-lh;
+    line-height: $mobile-big-lh;
     font-weight: $mobile-medium-weight-light;
-    margin: 1rem 3rem;
+    margin: 1.5rem 1rem;
   }
 
   &__checkin-card {

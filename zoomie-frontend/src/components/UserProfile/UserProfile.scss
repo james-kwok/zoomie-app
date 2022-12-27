@@ -30,18 +30,18 @@
   }
 
   &__breed {
-    color: $secondary;
-    font-size: $mobile-medium-size;
-    line-height: $mobile-medium-lh;
-    font-weight: $mobile-medium-weight-heavy;
+    color: $gray;
+    font-size: $mobile-big-size;
+    line-height: $mobile-big-lh;
+    font-weight: $mobile-big-weight-light;
   }
 
   &__bio {
     color: $secondary;
     font-size: $mobile-medium-size;
-    line-height: $mobile-medium-lh;
+    line-height: $mobile-big-lh;
     font-weight: $mobile-medium-weight-light;
-    margin: 1rem 3rem;
+    margin: 1.5rem 1rem;
   }
 
   &__edit-form {
@@ -87,6 +87,6 @@
   }
 
   &__logout-button {
-    margin-top: 2.25rem;
+    margin: 1.5rem 0;
   }
 }
