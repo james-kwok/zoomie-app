@@ -1,0 +1,38 @@
+@use '../../styles/partials/breakpoints' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+.RecentCheckins {
+  margin-top: 6rem;
+
+  &__title {
+    font-size: $mobile-big-size;
+    line-height: $mobile-big-lh;
+    font-weight: $mobile-big-weight-light;
+    color: $secondary;
+    margin: 1rem;
+  }
+
+  &__card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-bottom: 1px solid $bg-light;
+    padding: 1rem;
+  }
+
+  &__card-name {
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-light;
+    color: $secondary;
+  }
+
+  &__card-address {
+    color: $secondary;
+    font-size: $mobile-small-size;
+    line-height: $mobile-small-lh;
+    font-weight: $mobile-small-weight-light;
+  }
+}

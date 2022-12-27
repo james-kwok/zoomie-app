@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import UserProfile from '../../components/UserProfile/UserProfile';
-import './ProfilePage.scss';
+import Loading from '../../components/Loading/Loading';
 
 const ProfilePage = ({ isLoggedIn, setIsLoggedIn }) => {
   const userProfileURL = 'http://localhost:8080/dogs/profile';
@@ -39,8 +39,9 @@ const ProfilePage = ({ isLoggedIn, setIsLoggedIn }) => {
   }, []);
 
   if (!userProfile || !checkins || !displayProfile) {
-    return <></>;
+    return <Loading />;
   }
+
   return (
     <>
       <div className="ProfilePage">

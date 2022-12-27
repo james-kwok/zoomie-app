@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import LocationCard from '../LocationCard/LocationCard';
-import browseIcon from '../../assets/icons/search-icon.png';
 import './BrowseList.scss';
 
 const BrowseList = ({ locations, checkins }) => {
@@ -8,11 +7,6 @@ const BrowseList = ({ locations, checkins }) => {
     <>
       <div className="BrowseList">
         <div className="BrowseList__text-container">
-          <img
-            className="BrowseList__icon"
-            src={browseIcon}
-            alt="search-icon"
-          />
           <h2 className="BrowseList__title">Browse All Parks</h2>
         </div>
         <div className="BrowseList__list">

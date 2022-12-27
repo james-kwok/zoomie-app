@@ -5,14 +5,18 @@ import NearbyList from '../../components/NearbyList/NearbyList';
 import BrowseCard from '../../components/BrowseCard/BrowseCard';
 import FeaturedList from '../../components/FeaturedList/FeaturedList';
 import Loading from '../../components/Loading/Loading';
+import RecentCheckins from '../../components/RecentCheckins/RecentCheckins';
 
-const HomePage = () => {
+const HomePage = ({ isLoggedIn }) => {
   const locationsURL = 'http://localhost:8080/locations';
   const checkinsURL = 'http://localhost:8080/checkins/';
+  const userProfileURL = 'http://localhost:8080/dogs/profile';
+  const [userProfile, setUserProfile] = useState([]);
   const [locations, setLocations] = useState([]);
   const [checkins, setCheckins] = useState([]);
   const [loading, setLoading] = useState(false);
   const [coords, setCoords] = useState('');
+  const displayProfile = userProfile[0];
 
   useEffect(() => {
     getLocation();
@@ -37,6 +41,23 @@ const HomePage = () => {
   }, [loading]);
 
   useEffect(() => {
+    const token = sessionStorage.getItem('authToken');
+    axios
+      .get(userProfileURL, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        setUserProfile(response.data);
+        window.scrollTo(0, 0);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [isLoggedIn]);
+
+  useEffect(() => {
     axios
       .get(locationsURL)
       .then((response) => {
@@ -58,7 +79,7 @@ const HomePage = () => {
       });
   }, []);
 
-  if (!locations || !checkins || !coords) {
+  if (!locations || !checkins || !coords || !userProfile || !displayProfile) {
     return (
       <>
         <Loading />
@@ -71,6 +92,14 @@ const HomePage = () => {
         <Loading />
       ) : (
         <>
+          {isLoggedIn && locations && checkins && displayProfile ? (
+            <RecentCheckins
+              locations={locations}
+              checkins={checkins}
+              displayProfile={displayProfile}
+              isLoggedIn={isLoggedIn}
+            />
+          ) : null}
           <NearbyList
             locations={locations}
             checkins={checkins}

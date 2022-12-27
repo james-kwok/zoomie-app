@@ -27,7 +27,7 @@ const App = () => {
             element={
               <>
                 <Nav isLoggedIn={isLoggedIn} />
-                <HomePage />
+                <HomePage isLoggedIn={isLoggedIn} />
                 <BottomNav isLoggedIn={isLoggedIn} />
               </>
             }
