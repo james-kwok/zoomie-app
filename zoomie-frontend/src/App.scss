@@ -48,7 +48,7 @@ button {
   height: 2.5rem;
   width: 100%;
   border-radius: 0.5rem;
-  background-image: linear-gradient(to right, $primary, #FFE600);
+  background-image: linear-gradient(to right, $primary, #ffe600);
   border: none;
   box-shadow: 2px 1px 5px rgb(0 0 0 / 0.08);
   cursor: pointer;
@@ -64,5 +64,5 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
 }

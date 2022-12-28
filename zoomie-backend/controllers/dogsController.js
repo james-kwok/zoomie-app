@@ -41,11 +41,10 @@ const getUserDog = async (req, res) => {
 // using placeholder <img> until upload image feature is ready
 const postDogProfile = async (req, res) => {
   try {
-    console.log(req.userData)
     const userId = await db
       .select('id')
       .from('users')
-      .where('id', '=', req.userData.id)
+      .where('id', '=', req.userData.id);
     const dogProfile = await db('dogs').select('*').insert({
       name: req.body.name,
       breed: req.body.breed,
@@ -58,9 +57,29 @@ const postDogProfile = async (req, res) => {
       dog: dogProfile,
     });
   } catch (error) {
-    console.log(error)
+    console.log(error);
     res.status(500).json({
       message: 'Unable to create dog profile.',
+      error,
+    });
+  }
+};
+
+const updateDogProfile = async (req, res) => {
+  try {
+    const updateProfile = await db('dogs')
+      .select('*')
+      .where({ user_id: req.userData.id })
+      .update({
+        name: req.body.name,
+        breed: req.body.breed,
+        bio: req.body.bio,
+      });
+    res.status(201).json({ updateProfile });
+  } catch (error) {
+    console.log(error)
+    res.status(400).json({
+      message: 'Dog profile was not updated.',
       error,
     });
   }
@@ -70,5 +89,6 @@ module.exports = {
   getDogList,
   getSingleDog,
   getUserDog,
+  updateDogProfile,
   postDogProfile,
 };

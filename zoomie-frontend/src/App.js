@@ -67,7 +67,12 @@ const App = () => {
           />
           <Route
             path="/profile/edit"
-            element={<EditProfile isLoggedIn={isLoggedIn} />}
+            element={
+              <>
+                <NavBack />
+                <EditProfile isLoggedIn={isLoggedIn} />
+              </>
+            }
           />
           <Route
             path="/dogs/:id"

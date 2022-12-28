@@ -72,6 +72,11 @@ const CreateDogForm = () => {
               className="CreateDogForm__lottie"
             />
           </div>
+          <h1 className="CreateDogForm__title">Create Profile</h1>
+          <p className="CreateDogForm__description">
+            Create a profile for your dog, others will see your profile when you
+            check in at a park.
+          </p>
           <section className="CreateDogForm__section">
             <label className="CreateDogForm__label" htmlFor="name">
               Name

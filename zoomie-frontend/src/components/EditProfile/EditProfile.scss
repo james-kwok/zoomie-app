@@ -3,16 +3,21 @@
 @use '../../styles/partials/typography' as *;
 
 .EditProfile {
+  margin: 4.5rem 0;
   padding: 2rem;
 
-  &__animation-container {
-   display: flex;
-   justify-content: center;
+  &__title {
+    font-size: $mobile-big-size;
+    line-height: $mobile-big-lh;
+    font-weight: $mobile-big-weight-light;
+    color: $secondary;
   }
 
-  &__lottie {
-    width: 65%;
-    height: auto;
+  &__description {
+    color: $gray;
+    font-size: $mobile-small-size;
+    line-height: $mobile-small-lh;
+    font-weight: $mobile-small-weight-light;
   }
 
   &__section {
@@ -26,6 +31,9 @@
     width: 100%;
     margin-bottom: 1rem;
     color: $secondary;
+    font-size: $mobile-medium-size;
+    line-height: $mobile-medium-lh;
+    font-weight: $mobile-medium-weight-heavy;
   }
 
   &__input {
@@ -37,7 +45,7 @@
     outline: none;
 
     &:focus {
-        border-bottom: 2px solid $secondary;
+      border-bottom: 2px solid $secondary;
     }
   }
 
