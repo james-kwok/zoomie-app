@@ -6,21 +6,17 @@ import './ActionButton.scss';
 const ActionButton = ({
   location,
   checkins,
-  userProfile,
+  findUser,
   isCheckedIn,
   setIsCheckedIn,
   isLoggedIn,
 }) => {
   const [error, setError] = useState('');
   const token = sessionStorage.getItem('authToken');
-  const displayProfile = userProfile[0];
 
   // find logged in user's check-in status
   useEffect(() => {
-    if (isLoggedIn && checkins && userProfile) {
-      const findUser = checkins.find((user) => {
-        return user.dog_id === displayProfile.id;
-      });
+    if (checkins && location && findUser && isLoggedIn) {
       const { status } = findUser || {};
       if (status === 1) {
         setIsCheckedIn(true);
@@ -28,7 +24,7 @@ const ActionButton = ({
         setIsCheckedIn(false);
       }
     }
-  }, [userProfile]);
+  }, [findUser]);
 
   const postCheckIn = async (e) => {
     try {

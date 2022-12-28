@@ -36,7 +36,7 @@ const HomePage = ({ isLoggedIn }) => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(true);
-    }, 2000);
+    }, 1500);
   }, [loading]);
 
   useEffect(() => {

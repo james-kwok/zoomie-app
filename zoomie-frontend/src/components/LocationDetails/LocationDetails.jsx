@@ -38,6 +38,14 @@ const LocationDetails = ({
     new mapboxgl.Marker().setLngLat([lng, lat]).addTo(map.current);
   });
 
+  // find if user is checked in or not
+
+  const findUser = checkins.find((user) => {
+    if (isLoggedIn) {
+      return user.dog_id === userProfile[0].id;
+    }
+  });
+
   const handleButton = () => {
     navigate('/welcome');
   };
@@ -92,7 +100,7 @@ const LocationDetails = ({
                 <ActionButton
                   location={location}
                   checkins={checkins}
-                  userProfile={userProfile}
+                  findUser={findUser}
                   isCheckedIn={isCheckedIn}
                   setIsCheckedIn={setIsCheckedIn}
                   isLoggedIn={isLoggedIn}
