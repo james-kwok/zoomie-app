@@ -28,7 +28,7 @@ const ActionButton = ({
         setIsCheckedIn(false);
       }
     }
-  });
+  }, [userProfile]);
 
   const postCheckIn = async (e) => {
     try {
