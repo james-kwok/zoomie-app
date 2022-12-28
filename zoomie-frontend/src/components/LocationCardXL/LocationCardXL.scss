@@ -14,23 +14,22 @@
     :hover {
       transition: all 0.2s ease-in-out;
       transform: scale(1.03);
-      opacity: 100%;
-      filter: contrast(105%);
+      opacity: 94%;
     }
   }
 
   &__gradient {
-    opacity: 85%;
     &::after {
       display: block;
       position: relative;
       background-image: linear-gradient($black, $black);
-      opacity: 30%;
+      opacity: 35%;
       margin-top: -154px;
       height: 9.375rem;
       width: 100%;
       content: '';
       border-radius: 0.625rem;
+      pointer-events: none;
     }
   }
 
@@ -38,6 +37,7 @@
     height: 9.375rem;
     width: 11.7rem;
     border-radius: 0.625rem;
+    pointer-events: none;
   }
 
   &__title {

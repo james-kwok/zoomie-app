@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
 import './App.scss';
 import BottomNav from './components/BottomNav/BottomNav';
 import Nav from './components/Nav/Nav';
@@ -11,6 +10,7 @@ import SignUpLogInPage from './pages/SignUpLogInPage/SignUpLogInPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import DogProfilePage from './pages/DogProfilePage/DogProfilePage';
 import BrowsePage from './pages/BrowsePage/BrowsePage';
+import EditProfile from './components/EditProfile/EditProfile';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -64,6 +64,10 @@ const App = () => {
                 <BottomNav isLoggedIn={isLoggedIn} />
               </>
             }
+          />
+          <Route
+            path="/profile/edit"
+            element={<EditProfile isLoggedIn={isLoggedIn} />}
           />
           <Route
             path="/dogs/:id"

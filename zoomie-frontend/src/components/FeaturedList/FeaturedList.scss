@@ -22,6 +22,7 @@
     line-height: $mobile-small-lh;
     font-weight: $mobile-small-weight-light;
     color: $gray;
+    width: 100%;
     margin: 0.25rem 0 1rem 0;
     padding: 0 1rem;
   }
@@ -46,7 +47,6 @@
     background-color: #ffe600ee;
     border-radius: 0.625rem;
     margin-bottom: 0.25rem;
-    cursor: pointer;
   }
 
   &__image {
@@ -64,7 +64,7 @@
   &__card-title {
     font-size: $mobile-medium-size;
     line-height: $mobile-medium-lh;
-    font-weight: $mobile-medium-weight-light;
+    font-weight: $mobile-medium-weight-heavy;
     color: $secondary;
   }
 
