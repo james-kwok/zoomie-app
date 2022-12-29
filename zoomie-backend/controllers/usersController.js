@@ -25,12 +25,12 @@ const addUser = async (req, res) => {
       email: email,
       password: bcrypt.hashSync(password, 10),
     });
-    
+
     // note to self: assign id to newUserCreated in sign up flow
     const newUserCreated = newUser[0];
     // attaching jwt to new sign ups to prevent user from having to sign in right after
     const token = jwt.sign({ id: newUser[0] }, process.env.JWT_SECRET, {
-      expiresIn: '3h',
+      expiresIn: '24h',
     });
     res.status(201).json({
       message: 'User created successfully.',
@@ -40,7 +40,6 @@ const addUser = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       message: 'Unable to create user.',
-      error,
     });
   }
 };
@@ -66,7 +65,7 @@ const getUser = async (req, res) => {
       return res.status(401).json({ error: 'Incorrect password.' });
     }
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-      expiresIn: '3h',
+      expiresIn: '24h',
     });
 
     return res.status(200).json({
@@ -74,9 +73,7 @@ const getUser = async (req, res) => {
       token: token,
     });
   } catch (error) {
-    res
-      .status(500)
-      .json({ message: 'There was an error with the server', error: error });
+    res.status(500).json({ message: 'There was an error with the server' });
   }
 };
 

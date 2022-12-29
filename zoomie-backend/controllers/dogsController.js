@@ -60,7 +60,6 @@ const postDogProfile = async (req, res) => {
     console.log(error);
     res.status(500).json({
       message: 'Unable to create dog profile.',
-      error,
     });
   }
 };
@@ -77,10 +76,9 @@ const updateDogProfile = async (req, res) => {
       });
     res.status(201).json({ updateProfile });
   } catch (error) {
-    console.log(error)
+    console.log(error);
     res.status(400).json({
       message: 'Dog profile was not updated.',
-      error,
     });
   }
 };

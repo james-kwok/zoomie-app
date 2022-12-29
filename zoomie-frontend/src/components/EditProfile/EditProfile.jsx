@@ -12,8 +12,6 @@ const EditProfile = ({ isLoggedIn }) => {
   const [error, setError] = useState('');
   const token = sessionStorage.getItem('authToken');
 
-  console.log(userProfile);
-
   useEffect(() => {
     axios
       .get(userProfileURL, {
@@ -77,7 +75,6 @@ const EditProfile = ({ isLoggedIn }) => {
         }
         navigate('/');
       } catch (error) {
-        console.log(error);
         setError('Something went wrong, try again later.');
       }
     };

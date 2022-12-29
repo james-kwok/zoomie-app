@@ -40,7 +40,9 @@ const postCheckIn = async (req, res) => {
       location_id: req.body.location_id,
       status: req.body.status,
     });
-    res.status(201).json({ checkins });
+    res
+      .status(201)
+      .json({ message: 'Check-in created successfully.', checkins });
   } catch (error) {
     res.status(400).json({
       message: 'Check-in was not registered.',
@@ -56,7 +58,9 @@ const updateCheckIns = async (req, res) => {
       .update({
         status: req.body.status,
       });
-    res.status(201).json({ checkins });
+    res
+      .status(201)
+      .json({ message: 'Check-in updated successfully', checkins });
   } catch (error) {
     res.status(400).json({
       message: 'Check-in was not updated.',
