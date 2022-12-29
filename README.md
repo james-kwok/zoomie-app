@@ -1,4 +1,3 @@
-
 # Zoomie 🐶
 
 Zoomie is an application that allows dog owners to check into and browse from a list of nearby dog parks / dog-friendly areas in Downtown Toronto. Gain control, make the best decision for your dogs, and socialize them the right way with Zoomie!
@@ -8,7 +7,7 @@ To run this project, run ```$ npm install``` in both ```zoomie-frontend``` and `
 
 #### Knex.js & MySQL
 
-```seed_data``` is included in this repo to get you started with Knex.js migrations and seeds. One tip is to run them in this particular order to avoid DB issues. Run this command line ```$ knex migrate:up``` with the following migration files in this order: ```locations```, ```users```, ```dogs```, ```checkins```. As for seeding your DB, it is recommended to run: ```$ knex seed:run --specific=``` with the following seed files in this order: ```locations```, ```users```, ```dogs```.
+```seed_data``` is included in this repo to get you started with Knex.js migrations and seeds. One tip is to run them in this particular order to avoid DB issues. Run this command line ```$ knex migrate:up``` with the following migration files in this order: ```locations```, ```users```, ```dogs```, ```checkins```. As for seeding your DB, run: ```$ knex seed:run --specific=``` with the following seed files in this order: ``` locations```, ```users```, ```dogs```.
 
 #### .env
 
@@ -23,7 +22,7 @@ To run this project, run ```$ npm install``` in both ```zoomie-frontend``` and `
 
 #### MapBox Access Token
 
-Please sign up for a MapBox account to get an access token if you would like to render the map in the ```LocationDetails``` component.
+Please sign up for a MapBox account to get an access token if you want to render the map in the ```LocationDetails``` component.
 
 #### Now you are all set!
 
@@ -54,7 +53,7 @@ Run ```$ npm start``` in both ```zoomie-frontend``` and ```zoomie-backend``` to 
   GET /dogs/${id}
 ```
 
-#### Get user's dog profile
+#### Get the user's dog profile
 
 ```
   GET /dogs/profile
@@ -64,7 +63,7 @@ Run ```$ npm start``` in both ```zoomie-frontend``` and ```zoomie-backend``` to 
 | :----| 
 | Auth |
 
-#### Create user's dog profile
+#### Create a user's dog profile
 
 ```
   POST /dogs/post
@@ -102,7 +101,7 @@ Run ```$ npm start``` in both ```zoomie-frontend``` and ```zoomie-backend``` to 
   POST /users/signup
 ```
 
-#### Log in to an exsiting user account
+#### Log in to an existing user account
 
 ```
   POST /users/login
@@ -125,19 +124,13 @@ Run ```$ npm start``` in both ```zoomie-frontend``` and ```zoomie-backend``` to 
 | Primary | #FFFC00 |
 | Secondary | #11111F |
 
-
-
-
 ## Built with
 
 ```React.js``` ```SASS``` ```Node.js``` ```Express``` ```Knex.js``` ```MySQL```
 
-
 ## 🔗 Links
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://ca.linkedin.com/in/itsjameskwok)
-
 
 ## Support
 
 For support, email kinkwanjames@gmail.com or DM me on Discord @ kwozy#3200.
-
