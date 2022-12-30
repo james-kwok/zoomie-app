@@ -1,39 +1,25 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import getDogProfile from '../../utils/getDogProfile';
+import getCheckins from '../../utils/getCheckins';
+import Loading from '../../components/Loading/Loading';
 import DogProfile from '../../components/DogProfile/DogProfile';
 
 const DogProfilePage = () => {
   const { id } = useParams();
-  const dogProfileURL = `http://localhost:8080/dogs/${id}`;
-  const checkinsURL = 'http://localhost:8080/checkins';
   const [dogProfile, setDogProfile] = useState(null);
   const [checkins, setCheckins] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(dogProfileURL)
-      .then((response) => {
-        setDogProfile(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    getDogProfile({ id, setDogProfile });
   }, [id]);
 
   useEffect(() => {
-    axios
-      .get(checkinsURL)
-      .then((response) => {
-        setCheckins(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    getCheckins({ setCheckins });
   }, []);
 
   if (!dogProfile || !checkins) {
-    return <></>;
+    return <Loading />;
   }
 
   return (

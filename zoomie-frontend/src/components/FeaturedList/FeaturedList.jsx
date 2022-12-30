@@ -1,7 +1,7 @@
-import './FeaturedList.scss';
 import dogMeet from '../../assets/illustrations/dog-meet.webp';
 import dogPark from '../../assets/illustrations/dog-park-illustration.webp';
 import parkBridge from '../../assets/illustrations/park-bridge-illustration.jpeg';
+import './FeaturedList.scss';
 
 const FeaturedCard = () => {
   return (
@@ -22,9 +22,7 @@ const FeaturedCard = () => {
               />
             </div>
             <div className="FeaturedCard__text-container">
-              <h2 className="FeaturedCard__card-title">
-                See who's going
-              </h2>
+              <h2 className="FeaturedCard__card-title">See who's going</h2>
             </div>
             <p className="FeaturedCard__card-text">
               Make the best decision for your dog and socialize the right way
@@ -56,7 +54,9 @@ const FeaturedCard = () => {
               />
             </div>
             <div className="FeaturedCard__text-container">
-              <h2 className="FeaturedCard__card-title">Be part of a community</h2>
+              <h2 className="FeaturedCard__card-title">
+                Be part of a community
+              </h2>
             </div>
             <p className="FeaturedCard__card-text">
               Check in at parks, see familiar faces, start building a community

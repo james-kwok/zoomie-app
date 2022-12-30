@@ -1,31 +1,18 @@
-import './EditProfile.scss';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import getUser from '../../utils/getUser';
 import Loading from '../../components/Loading/Loading';
-import axios from 'axios';
+import './EditProfile.scss';
 
 const EditProfile = ({ isLoggedIn }) => {
   const navigate = useNavigate();
-  const userProfileURL = 'http://localhost:8080/dogs/profile';
   const updateDogURL = 'http://localhost:8080/dogs/profile';
   const [userProfile, setUserProfile] = useState([]);
   const [error, setError] = useState('');
   const token = sessionStorage.getItem('authToken');
 
   useEffect(() => {
-    axios
-      .get(userProfileURL, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => {
-        setUserProfile(response.data);
-        window.scrollTo(0, 0);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    getUser({ setUserProfile });
   }, [isLoggedIn]);
 
   const [formData, setFormData] = useState({
