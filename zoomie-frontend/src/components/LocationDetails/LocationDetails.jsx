@@ -41,7 +41,7 @@ const LocationDetails = ({
   // find if user is checked in or not
 
   const findUser = checkins.find((user) => {
-    if (isLoggedIn && userProfile && checkins) {
+    if (isLoggedIn && userProfile[0] && checkins.length > 1) {
       return user.dog_id === userProfile[0].id;
     }
   });
