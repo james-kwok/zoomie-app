@@ -9,7 +9,7 @@ import './CreateDogForm.scss';
 const CreateDogForm = () => {
   const navigate = useNavigate();
   const postDogURL = 'http://localhost:8080/dogs/post';
-  const authToken = sessionStorage.getItem('authToken');
+  const token = sessionStorage.getItem('authToken');
   const [error, setError] = useState('');
 
   const [formData, setFormData] = useState({
@@ -43,7 +43,7 @@ const CreateDogForm = () => {
           {
             headers: {
               'Content-Type': 'application/json',
-              Authorization: `Bearer ${authToken}`,
+              Authorization: `Bearer ${token}`,
             },
           }
         );

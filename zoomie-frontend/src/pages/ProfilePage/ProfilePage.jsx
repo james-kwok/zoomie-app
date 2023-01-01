@@ -1,41 +1,20 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import getUser from '../../utils/getUser';
+import getCheckins from '../../utils/getCheckins';
 import UserProfile from '../../components/UserProfile/UserProfile';
 import Loading from '../../components/Loading/Loading';
 
 const ProfilePage = ({ isLoggedIn, setIsLoggedIn }) => {
-  const userProfileURL = 'http://localhost:8080/dogs/profile';
-  const checkinsURL = 'http://localhost:8080/checkins';
   const [userProfile, setUserProfile] = useState([]);
   const [checkins, setCheckins] = useState([]);
   const displayProfile = userProfile[0];
 
   useEffect(() => {
-    const token = sessionStorage.getItem('authToken');
-    axios
-      .get(userProfileURL, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => {
-        setUserProfile(response.data);
-        window.scrollTo(0, 0);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    getUser({ setUserProfile });
   }, [isLoggedIn]);
 
   useEffect(() => {
-    axios
-      .get(checkinsURL)
-      .then((response) => {
-        setCheckins(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    getCheckins({ setCheckins });
   }, []);
 
   if (!userProfile || !checkins || !displayProfile) {

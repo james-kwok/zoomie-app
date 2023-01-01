@@ -27,7 +27,6 @@ const UserProfile = ({ displayProfile, checkins, setIsLoggedIn }) => {
           <p className="UserProfile__name">{displayProfile.name}</p>
           <p className="UserProfile__breed">{displayProfile.breed}</p>
           <p className="UserProfile__bio">{displayProfile.bio}</p>
-          {/* Will implement edit profile at a later date! */}
           <Link to="/profile/edit" className="UserProfile__edit-form">
             <img className="UserProfile__icon" src={editIcon} alt="edit-icon" />
             <p className="UserProfile__link">Edit Profile</p>

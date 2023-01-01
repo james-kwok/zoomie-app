@@ -1,5 +1,8 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
+import getCoords from '../../utils/getCoords';
+import getUser from '../../utils/getUser';
+import getLocations from '../../utils/getLocations';
+import getCheckins from '../../utils/getCheckins';
 import NearbyList from '../../components/NearbyList/NearbyList';
 import BrowseCard from '../../components/BrowseCard/BrowseCard';
 import FeaturedList from '../../components/FeaturedList/FeaturedList';
@@ -7,78 +10,40 @@ import Loading from '../../components/Loading/Loading';
 import RecentCheckins from '../../components/RecentCheckins/RecentCheckins';
 
 const HomePage = ({ isLoggedIn }) => {
-  const locationsURL = 'http://localhost:8080/locations';
-  const checkinsURL = 'http://localhost:8080/checkins/';
-  const userProfileURL = 'http://localhost:8080/dogs/profile';
   const [userProfile, setUserProfile] = useState([]);
   const [locations, setLocations] = useState([]);
   const [checkins, setCheckins] = useState([]);
   const [loading, setLoading] = useState(false);
   const [coords, setCoords] = useState('');
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
   const displayProfile = userProfile[0];
 
   useEffect(() => {
-    getLocation();
-  }, []);
-
-  // web API for geolocating user, not used yet, will implement in future
-  const getLocation = () => {
-    if (!navigator.geolocation) {
-      // console.log(navigator.geolocation);
-    } else {
-      navigator.geolocation.getCurrentPosition((position) => {
-        setCoords(position.coords);
-        // console.log(position.coords);
-      });
-    }
-  };
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(true);
-    }, 1500);
-  }, [loading]);
-
-  useEffect(() => {
+    // check if user is logged in
     if (isLoggedIn) {
-      const token = sessionStorage.getItem('authToken');
-      axios
-        .get(userProfileURL, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-        .then((response) => {
-          setUserProfile(response.data);
-          window.scrollTo(0, 0);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      getUser({ setUserProfile });
     }
   }, [isLoggedIn]);
 
   useEffect(() => {
-    axios
-      .get(locationsURL)
-      .then((response) => {
-        setLocations(response.data);
+    // get user coords, all locations, all check ins
+    getCoords({ setCoords });
+    getLocations({ setLocations });
+    getCheckins({ setCheckins });
+    Promise.all([getCoords, getLocations, getCheckins])
+      .then((result) => {
+        setSuccess(result);
+        setLoading(false);
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => setError(error));
   }, []);
 
   useEffect(() => {
-    axios
-      .get(checkinsURL)
-      .then((response) => {
-        setCheckins(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+    setTimeout(() => {
+      setLoading(true);
+    }, 800);
+  }, [loading]);
 
   if (!locations || !checkins || !coords) {
     return (

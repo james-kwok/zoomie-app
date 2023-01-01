@@ -1,7 +1,6 @@
 import './LocationCardXL.scss';
 
 const LocationCardXL = ({ location, checkins }) => {
-  // once geolocation is implmented, these array methods won't be used here
   const findCheckins = checkins.filter((checkin) => {
     return checkin.location_id === location.id;
   });

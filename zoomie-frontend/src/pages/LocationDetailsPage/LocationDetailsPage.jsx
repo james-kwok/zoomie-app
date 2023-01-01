@@ -1,65 +1,36 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import getUser from '../../utils/getUser';
+import getLocationId from '../../utils/getLocationId';
+import getCheckinsAtLocation from '../../utils/getCheckinsAtLocation';
 import LocationDetails from '../../components/LocationDetails/LocationDetails';
 
 const LocationDetailsPage = ({ isLoggedIn }) => {
   const { id } = useParams();
-  const userProfileURL = 'http://localhost:8080/dogs/profile';
-  const locationsURL = `http://localhost:8080/locations/${id}`;
-  const checkinsURL = `http://localhost:8080/checkins/${id}`;
   const [userProfile, setUserProfile] = useState([]);
-  const [locations, setLocations] = useState([]);
+  const [location, setLocation] = useState([]);
   const [checkins, setCheckins] = useState([]);
   const [isCheckedIn, setIsCheckedIn] = useState(false);
-  const token = sessionStorage.getItem('authToken');
 
-  // check if user is logged in
   useEffect(() => {
+    // check if user is logged in
     if (isLoggedIn) {
-      axios
-        .get(userProfileURL, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
-        .then((response) => {
-          setUserProfile(response.data);
-          window.scrollTo(0, 0);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      getUser({ setUserProfile });
     }
   }, [isLoggedIn]);
 
-  // get location details
   useEffect(() => {
-    axios
-      .get(locationsURL)
-      .then((response) => {
-        setLocations(response.data);
-        window.scrollTo(0, 0);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // get location details
+    getLocationId({ id, setLocation });
   }, [id]);
 
-  // get checkins at location
   useEffect(() => {
-    axios
-      .get(checkinsURL)
-      .then((response) => {
-        setCheckins(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // get checkins at location
+    getCheckinsAtLocation({ id, setCheckins });
   }, []);
 
-  if (!locations || !checkins) {
-    return <></>;
+  if (!location || !checkins) {
+    return <Loading />;
   }
 
   const checkinList = checkins.filter((item) => {
@@ -69,9 +40,9 @@ const LocationDetailsPage = ({ isLoggedIn }) => {
   return (
     <>
       {/* ensure React to render only after the app receives data from endpoint */}
-      {locations.longitude && locations.latitude && checkins && checkinList ? (
+      {location.longitude && location.latitude && checkins && checkinList ? (
         <LocationDetails
-          location={locations}
+          location={location}
           checkins={checkinList}
           userProfile={userProfile}
           isCheckedIn={isCheckedIn}
