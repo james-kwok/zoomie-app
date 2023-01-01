@@ -63,7 +63,17 @@ Run ```$ npm start``` in both ```zoomie-frontend``` and ```zoomie-backend``` to 
 | :----| 
 | Auth |
 
-#### Create a user's dog profile
+#### Update the user's dog profile
+
+```
+  PUT /dogs/profile
+```
+
+| Requirements |            
+| :----| 
+| Auth |
+
+#### Create the user's dog profile
 
 ```
   POST /dogs/post
@@ -83,6 +93,17 @@ Run ```$ npm start``` in both ```zoomie-frontend``` and ```zoomie-backend``` to 
 
 ```
   POST /checkins
+```
+
+| Requirements |            
+| :----| 
+| Auth |
+
+
+#### Update a check-in instance to check-out
+
+```
+  PUT /checkins
 ```
 
 | Requirements |            
