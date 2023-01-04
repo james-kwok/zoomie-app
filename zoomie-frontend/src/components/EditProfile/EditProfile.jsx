@@ -35,7 +35,7 @@ const EditProfile = ({ isLoggedIn }) => {
     e.preventDefault();
 
     if (!name || !breed || !bio) {
-      setError('All fields are required');
+      setError(error, 'All fields are required');
     }
 
     const updateProfile = async () => {
