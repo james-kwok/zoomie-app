@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import bg from '../../assets/images/bg.png';
 import backIcon from '../../assets/icons/chevron-left-white.png';
@@ -9,6 +9,7 @@ import CreateDogPage from '../../pages/CreateDogPage/CreateDogPage';
 import './SignUpForm.scss';
 
 const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
+  const navigate = useNavigate();
   const [expand, setExpand] = useState(true);
   const [isSignUpError, setIsSignUpError] = useState(false);
   const [error, setError] = useState('');
@@ -27,7 +28,7 @@ const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
 
     if (!e.target.email.value || !e.target.password.value) {
       setIsSignUpError(true);
-      setError('Make sure to fill out all the fields');
+      setError(isSignUpError, error, 'Make sure to fill out all the fields');
       return;
     }
 
@@ -46,7 +47,7 @@ const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
         setIsLoggedIn(true);
         sessionStorage.setItem('authToken', res.data.token);
         sessionStorage.setItem('loggedIn', 'true');
-        navigate('/');
+        navigate('/profile/create');
       } catch (error) {
         setIsSignUpError(true);
         setError('Something went wrong, try again later.');
@@ -68,7 +69,7 @@ const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
         </>
       ) : (
         <div className="SignUpForm">
-          <img className="SignUpForm__bg" src={bg} alt="background-image" />
+          <img className="SignUpForm__bg" src={bg} alt="background" />
           <div className="SignUpForm__logo-container">
             <Link to={-1} className="SignUpForm__navigate-link">
               <img

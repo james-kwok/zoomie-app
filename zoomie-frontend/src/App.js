@@ -11,6 +11,7 @@ import ProfilePage from './pages/ProfilePage/ProfilePage';
 import DogProfilePage from './pages/DogProfilePage/DogProfilePage';
 import BrowsePage from './pages/BrowsePage/BrowsePage';
 import EditProfile from './components/EditProfile/EditProfile';
+import CreateDogPage from './pages/CreateDogPage/CreateDogPage';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -93,6 +94,7 @@ const App = () => {
               />
             }
           />
+          <Route path="/profile/create" element={<CreateDogPage />} />
         </Routes>
       </BrowserRouter>
     </>

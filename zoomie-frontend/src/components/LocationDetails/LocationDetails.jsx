@@ -1,4 +1,4 @@
-import mapboxgl from '!mapbox-gl';
+import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import React, { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -41,8 +41,10 @@ const LocationDetails = ({
   // find if user is checked in or not
 
   const findUser = checkins.find((user) => {
-    if (isLoggedIn && userProfile[0] && checkins.length > 1) {
+    if (isLoggedIn && userProfile[0] && checkins.length > 0) {
       return user.dog_id === userProfile[0].id;
+    } else {
+      return null;
     }
   });
 

@@ -15,8 +15,6 @@ const HomePage = ({ isLoggedIn }) => {
   const [checkins, setCheckins] = useState([]);
   const [loading, setLoading] = useState(false);
   const [coords, setCoords] = useState('');
-  const [success, setSuccess] = useState('');
-  const [error, setError] = useState('');
   const displayProfile = userProfile[0];
 
   useEffect(() => {
@@ -32,11 +30,10 @@ const HomePage = ({ isLoggedIn }) => {
     getLocations({ setLocations });
     getCheckins({ setCheckins });
     Promise.all([getCoords, getLocations, getCheckins])
-      .then((result) => {
-        setSuccess(result);
+      .then(() => {
         setLoading(false);
       })
-      .catch((error) => setError(error));
+      .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {

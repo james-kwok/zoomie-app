@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import getUser from '../../utils/getUser';
 import Loading from '../../components/Loading/Loading';
 import './EditProfile.scss';

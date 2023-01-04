@@ -4,6 +4,7 @@ import getUser from '../../utils/getUser';
 import getLocationId from '../../utils/getLocationId';
 import getCheckinsAtLocation from '../../utils/getCheckinsAtLocation';
 import LocationDetails from '../../components/LocationDetails/LocationDetails';
+import Loading from '../../components/Loading/Loading';
 
 const LocationDetailsPage = ({ isLoggedIn }) => {
   const { id } = useParams();
@@ -27,7 +28,7 @@ const LocationDetailsPage = ({ isLoggedIn }) => {
   useEffect(() => {
     // get checkins at location
     getCheckinsAtLocation({ id, setCheckins });
-  }, []);
+  }, [id]);
 
   if (!location || !checkins) {
     return <Loading />;
