@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import bg from '../../assets/images/bg.png';
+// import bg from '../../assets/images/bg.png';
 import backIcon from '../../assets/icons/chevron-left-white.png';
 import emailIcon from '../../assets/icons/email-icon.png';
 import lockIcon from '../../assets/icons/lock-icon.png';
@@ -56,10 +56,6 @@ const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
     signUp();
   };
 
-  const expandSheet = () => {
-    setExpand(false);
-  };
-
   return (
     <>
       {/* form to create a dog profile will render after sign up */}
@@ -69,7 +65,7 @@ const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
         </>
       ) : (
         <div className="SignUpForm">
-          <img className="SignUpForm__bg" src={bg} alt="background" />
+          {/* <img className="SignUpForm__bg" src={bg} alt="background" /> */}
           <div className="SignUpForm__logo-container">
             <Link to={-1} className="SignUpForm__navigate-link">
               <img
@@ -86,14 +82,7 @@ const SignUpForm = ({ isLoggedIn, setIsLoggedIn, setNewUser }) => {
               </p>
             </div>
           </div>
-          <div
-            className={
-              expand === true
-                ? 'SignUpForm__sheet'
-                : 'SignUpForm__sheet--expand'
-            }
-            onClick={expandSheet}
-          >
+          <div className="LogInForm__sheet">
             <form onSubmit={onSubmit} className="SignUpForm__form">
               <section className="SignUpForm__section">
                 <div className="SignUpForm__icon-container">

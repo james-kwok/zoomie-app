@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
-import bg from '../../assets/images/bg.png';
+// import bg from '../../assets/images/bg.png';
 import backIcon from '../../assets/icons/chevron-left-white.png';
 import emailIcon from '../../assets/icons/email-icon.png';
 import lockIcon from '../../assets/icons/lock-icon.png';
@@ -55,14 +55,10 @@ const LogInForm = ({ setIsLoggedIn, setNewUser }) => {
     logIn();
   };
 
-  const expandSheet = () => {
-    setExpand(false);
-  };
-
   return (
     <>
       <div className="LogInForm">
-        <img className="LogInForm__bg" src={bg} alt="background-image" />
+        {/* <img className="LogInForm__bg" src={bg} alt="background-image" /> */}
         <div className="LogInForm__logo-container">
           <Link to={-1} className="LogInForm__navigate-link">
             <img
@@ -77,12 +73,7 @@ const LogInForm = ({ setIsLoggedIn, setNewUser }) => {
             <p className="LogInForm__text">Welcome back! 🐶</p>
           </div>
         </div>
-        <div
-          className={
-            expand === true ? 'LogInForm__sheet' : 'LogInForm__sheet--expand'
-          }
-          onClick={expandSheet}
-        >
+        <div className="LogInForm__sheet">
           <form onSubmit={onSubmit} className="LogInForm__form">
             <section className="LogInForm__section">
               <div className="LogInForm__icon-container">
