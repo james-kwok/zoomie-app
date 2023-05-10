@@ -47,6 +47,13 @@
     background-color: #ffe600ee;
     border-radius: 0.625rem;
     margin-bottom: 0.25rem;
+    cursor: pointer;
+
+    &:hover {
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.02);
+      opacity: 94%;
+    }
   }
 
   &__image {
