@@ -1,15 +1,13 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
-// import bg from '../../assets/images/bg.png';
-import backIcon from '../../assets/icons/chevron-left-white.png';
+import backIcon from '../../assets/icons/chevron-left-secondary.png';
 import emailIcon from '../../assets/icons/email-icon.png';
 import lockIcon from '../../assets/icons/lock-icon.png';
 import './LogInForm.scss';
 
 const LogInForm = ({ setIsLoggedIn, setNewUser }) => {
   const navigate = useNavigate();
-  const [expand, setExpand] = useState(true);
   const [isLoginError, setIsLoginError] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
